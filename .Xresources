@@ -28,7 +28,8 @@ URxvt.internalBorder:		10
 URxvt.intensityStyles:		false
 URxvt.background:		#121212
 URxvt.depth:			32
-URxvt.font:			xft:Inconsolata:size=13
+;URxvt.font:			xft:Inconsolata:size=13
+URxvt.font:			xft:InconsolataNerdFontMono:size=13
 URxvt.scrollBar:		false
 URxvt.cursorColor:		white
 URxvt.colorUL:			#4682B4
@@ -37,6 +38,6 @@ Xft.autohint:	0
 Xft.antialias:	1
 Xft.hinting:	true
 Xft.hintstyle:	hintslight
-Xft.dpi:	96
+;Xft.dpi:	96
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
