@@ -17,7 +17,7 @@ alias diff="diff --color=auto"
 alias ll="ls -l"
 alias la="ls -al"
 
-alias e="vim"
+alias v="vim"
 alias r="ranger"
 
 alias config="git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
