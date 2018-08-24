@@ -41,3 +41,5 @@ Xft.hintstyle:	hintslight
 ;Xft.dpi:	96
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
+
+Xcursor.theme:	capitaine-cursors
