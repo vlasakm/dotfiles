@@ -27,7 +27,7 @@ font-1 = SymbolsNerdFont:size=12:weight=light;2
 
 modules-left = i3
 ;modules-center = xwindow
-modules-right = pulseaudio xkeyboard wlan date 
+modules-right = pulseaudio xkeyboard wlan date time
 
 [module/xwindow]
 type = internal/xwindow
@@ -85,13 +85,19 @@ label-connected =   %essid%
 
 format-disconnected =
 
-[module/date]
+[module/time]
 type = internal/date
 interval = 5
 
-date = "%Y-%m-%d"
 time = %H:%M
-label = "  %date%     %time%"
+label =   %time%
+
+[module/date]
+type = internal/date
+interval = 120
+
+date = "%Y-%m-%d"
+label =   %date%
 
 [module/pulseaudio]
 type = internal/pulseaudio
