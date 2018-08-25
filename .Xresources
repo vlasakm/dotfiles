@@ -1,4 +1,4 @@
-; Colors copied from github.com/bresilla/dotfiles/
+!Colors copied from github.com/bresilla/dotfiles/
 
 *accent:	#DD9DB8
 *bckgrd:	#1E1E29
@@ -38,8 +38,9 @@ Xft.autohint:	0
 Xft.antialias:	1
 Xft.hinting:	true
 Xft.hintstyle:	hintslight
-;Xft.dpi:	96
+!Xft.dpi:	96
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
 Xcursor.theme:	capitaine-cursors
+Xcursor.size:	8
