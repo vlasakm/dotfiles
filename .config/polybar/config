@@ -25,9 +25,9 @@ module-margin = 2
 font-0 = sans:pixelsize=10;2
 font-1 = SymbolsNerdFont:size=12:weight=light;2
 
-modules-left = i3
+modules-left = i3 xwindow
 ;modules-center = xwindow
-modules-right = pulseaudio xkeyboard wlan date time
+modules-right = mpd pulseaudio xkeyboard wlan date time
 
 [module/xwindow]
 type = internal/xwindow
@@ -64,15 +64,9 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online =   <label-song> (<label-time>)
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
+label-song-maxlen = 50
 label-song-ellipsis = true
 
 [module/wlan]
