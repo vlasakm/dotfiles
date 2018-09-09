@@ -10,13 +10,15 @@ PS1='[\u@\h \W]\$ '
 
 # OWN ADDITIONS
 
-# BASIC
+# KEY BINDINGS
 alias info="info --vi-keys"
+maninfo () {
+	info "$@" --subnodes -o - | less ;
+}
 
 # COLOR
 alias ls="ls -hN --color=auto --group-directories-first"
 alias grep="grep --color=auto"
-alias diff="diff --color=auto"
 
 # ls shorts
 alias ll="ls -l"
