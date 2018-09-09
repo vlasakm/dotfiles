@@ -1,0 +1,5 @@
+URxvt.internalBorder:		10
+URxvt.intensityStyles:		false
+URxvt.depth:			32
+URxvt.font:			xft:InconsolataNerdFontMono:size=13
+URxvt.scrollBar:		false
