@@ -8,13 +8,16 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# OWN ADDITIONS
+## OWN ADDITIONS
 
 # KEY BINDINGS
 alias info="info --vi-keys"
 maninfo () {
 	info "$@" --subnodes -o - | less ;
 }
+
+# SAFETY
+alias rm="rm -i"
 
 # COLOR
 alias ls="ls -hN --color=auto --group-directories-first"
