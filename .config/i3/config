@@ -1,4 +1,4 @@
-# vim: ft=i3
+# vim: set ft=i3
 
 # i3-gaps
 for_window [class="^.*"] border pixel 2
@@ -15,9 +15,10 @@ set $termexec $TERMINAL -e
 
 # start on startup
 exec --no-startup-id redshift
-exec --no-startup-id feh --bg-scale --no-fehbg /home/michal/.config/wallpapers/cDvIVbE.jpg
+exec --no-startup-id betterlockscreen -w
 exec --no-startup-id $HOME/.config/polybar/launch.sh
 #exec --no-startup-id compton
+#exec --no-startup-id xss-lock -- betterlockscreen -l dimblur
 exec firefox
 
 # inspired by Luke Smith
@@ -97,8 +98,8 @@ bindsym $mod+Shift+l		move right
 #bindsym $mod+z			gaps outer current plus 5
 #bindsym $mod+Shift+z		gaps outer current minus 5
 
-bindsym $mod+Shift+x		exec "i3lock -c '#111111'"
-#bindsym $mod+Shift+x		exec --no-startup-id prompt "Are you sure you want to shutdown?" "$shutdown"
+bindsym $mod+x			exec betterlockscreen -l dimblur
+bindsym $mod+Shift+x		exec betterlockscreen -s dimblur
 
 #bindsym $mod+c			exec --no-startup-id camtoggle
 ##bindsym $mod+Shift+c
@@ -165,6 +166,4 @@ client.focused			$accent		$accent		$black		$accent
 client.focused_inactive		$grey		$grey		$white		$grey
 client.unfocused		$grey		$grey		$white		$grey
 client.urgent 			$red		$red		$black		$red
-
-
 
