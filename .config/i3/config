@@ -43,13 +43,13 @@ bindsym $mod+Shift+w		exec --no-startup-id $BROWSER
 bindsym $mod+e			exec $term -e neomutt
 #bindsym $mod+Shift+e		exec --no-startup-id tutorialvids
 
-bindsym $mod+r 			exec $term -e ranger
-bindsym $mod+Shift+r		exec $term -e sudo ranger /
+bindsym $mod+r 			exec $termexec ranger
+bindsym $mod+Shift+r		exec $termexec sudo ranger /
 
 bindsym $mod+t			split toggle
 #bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
 
-#bindsym $mod+y			exec $term -e calcurse
+bindsym $mod+y			exec $term -e calcurse
 #bindsym $mod+Shift+y		exec --no-startup-id "bash ~/.scripts/i3resize left"
 
 #bindsym $mod+u			[instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
