@@ -27,16 +27,16 @@ draw_bold_text_with_bright_colors: false
 
 font:
   normal:
-    family: InconsolataNerdFontMono
+    family: monospace
     style: Regular
 
   # The bold font face
   bold:
-    family: InconsolataNerdFontMono
+    family: monospace
     style: Bold
 
   italic:
-    family: InconsolataNerdFontMono
+    family: monospace
     style: Italic
 
   size: 13.0
