@@ -10,3 +10,8 @@
 	interactive = auto
 	ui = true
 	pager = true
+[alias]
+	co = checkout
+	br = branch
+	ci = commit -v
+	st = status
