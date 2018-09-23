@@ -75,3 +75,6 @@ __prompt_command() {
 
     PS1+=" " # space at the end
 }
+
+# bash_completion
+source /usr/share/bash-completion/bash_completion
