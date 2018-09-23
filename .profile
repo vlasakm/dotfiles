@@ -3,7 +3,7 @@
 export PATH="$PATH:$HOME/.scripts"
 
 export EDITOR="vim"
-export TERMINAL="urxvt"
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 export READER="zathura"
 
