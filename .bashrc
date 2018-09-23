@@ -65,10 +65,13 @@ __prompt_command() {
     PS1+="\n"
 
     if [ $EXIT != 0 ]; then
-        PS1+="${RED}\$${RESET}" # red if exit code non 0
+        PS1+="${RED}" # red if exit code non 0
     else
-        PS1+="${GREEN}\$${RESET}" # green if exit code 0
+        PS1+="${GREEN}" # green if exit code 0
     fi
+
+    PS1+='\$' # prompt char
+    PS1+="${RESET}"
 
     PS1+=" " # space at the end
 }
