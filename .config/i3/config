@@ -8,7 +8,7 @@ smart_gaps on
 smart_borders on
 
 # mod key
-set $mod Mod1
+set $mod Mod4
 
 # definitions
 set $termexec $TERMINAL -e
