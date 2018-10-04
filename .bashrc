@@ -12,9 +12,6 @@ PS1='[\u@\h \W]\$ '
 
 # KEY BINDINGS
 alias info="info --vi-keys"
-maninfo () {
-	info "$@" --subnodes -o - | less ;
-}
 
 # SAFETY
 alias rm="rm -i"
@@ -28,11 +25,21 @@ alias ll="ls -l"
 alias la="ls -al"
 
 # working fast
+alias s="sudo "
 alias v="vim"
-alias r="ranger"
+alias g="git"
 
 # dotfiles vcs
 alias config="git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
+
+# FUNCTIONS
+maninfo () {
+	info "$@" --subnodes -o - | less ;
+}
+
+groffman () {
+	zcat "$1" | groff -man -T "${2:-default}" | less ; 
+}
 
 # PS1
 # inspired from https://stackoverflow.com/questions/16715103/bash-prompt-with-last-exit-code 
@@ -77,4 +84,5 @@ __prompt_command() {
 }
 
 # bash_completion
-source /usr/share/bash-completion/bash_completion
+. /usr/share/bash-completion/bash_completion
+
