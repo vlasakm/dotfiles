@@ -11,3 +11,5 @@ set autoindent
 set nostartofline
 
 set relativenumber
+
+autocmd FileType html setlocal tabstop=2
