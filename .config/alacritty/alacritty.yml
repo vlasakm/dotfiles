@@ -11,7 +11,7 @@ window:
     x: 10
     y: 10
 
-  decorations: false
+  decorations: none
 
 scrolling:
   history: 10000
