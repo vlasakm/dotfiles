@@ -1,14 +1,9 @@
 ; Michal Vlasák polybar config
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #121212
+background = #222222
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #f8f8f2
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
+foreground = #eeeeee
 alert = #bd2c40
 
 [bar/top]
@@ -49,7 +44,6 @@ index-sort = true
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
