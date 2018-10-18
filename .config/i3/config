@@ -121,8 +121,9 @@ bindsym $mod+n			exec $termexec newsboat
 bindsym $mod+m 			exec --no-startup-id $termexec ncmpcpp
 bindsym $mod+Shift+m		exec --no-startup-id mpc mute
 
-bindsym Print 			exec --no-startup-id scrot
-bindsym Shift+Print		exec --no-startup-id scrot -u
+bindsym Print 			exec --no-startup-id scrot -e 'mv $f ~/media/screenshots'
+bindsym Shift+Print		exec --no-startup-id scrot -u -e 'mv $f ~/media/screenshots'
+
 
 set $ws1 "1"
 set $ws2 "2"
