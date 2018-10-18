@@ -86,15 +86,19 @@ bindsym $mod+f			fullscreen toggle
 
 bindsym $mod+h			focus left
 bindsym $mod+Shift+h		move left
+bindsym $mod+Ctrl+h		resize grow left 1 px or 1 ppt
 
 bindsym $mod+j			focus down
 bindsym $mod+Shift+j		move down
+bindsym $mod+Ctrl+j		resize grow down 1 px or 1 ppt
 
 bindsym $mod+k			focus up
 bindsym $mod+Shift+k		move up
+bindsym $mod+Ctrl+k		resize grow up 1 px or 1 ppt
 
 bindsym $mod+l			focus right
 bindsym $mod+Shift+l		move right
+bindsym $mod+Ctrl+l		resize grow right 1 px or 1 ppt
 
 #bindsym $mod+z			gaps outer current plus 5
 #bindsym $mod+Shift+z		gaps outer current minus 5
