@@ -30,7 +30,7 @@ alias v="vim"
 alias g="git"
 
 # dotfiles vcs
-alias config="git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
+alias config="git --git-dir=$HOME/.myconf.git/ --work-tree=$HOME"
 
 # FUNCTIONS
 maninfo () {
