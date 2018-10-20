@@ -7,7 +7,7 @@ export PATH="$PATH:$HOME/.scripts:/usr/local/texlive/2018/bin/x86_64-linux"
 
 export EDITOR="vim"
 export TERMINAL="alacritty"
-export BROWSER="firefox"
+export BROWSER="firefox-developer-edition"
 export READER="zathura"
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
