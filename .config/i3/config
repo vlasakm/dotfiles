@@ -15,7 +15,8 @@ set $termexec $TERMINAL -e
 
 # start on startup
 exec --no-startup-id redshift
-exec --no-startup-id betterlockscreen -w
+#exec --no-startup-id betterlockscreen -w
+exec --no-startup-id feh --bg-scale --no-fehbg /home/michal/.config/wallpapers/The-Witcher-3-Wild-Hunt-Game-Logo-Wallpaper.jpg
 exec --no-startup-id $HOME/.config/polybar/launch.sh
 #exec --no-startup-id compton
 #exec --no-startup-id xss-lock -- betterlockscreen -l dimblur
@@ -103,8 +104,8 @@ bindsym $mod+Ctrl+l		resize grow right 1 px or 1 ppt
 #bindsym $mod+z			gaps outer current plus 5
 #bindsym $mod+Shift+z		gaps outer current minus 5
 
-bindsym $mod+x			exec betterlockscreen -l dimblur
-bindsym $mod+Shift+x		exec betterlockscreen -s dimblur
+#bindsym $mod+x			exec betterlockscreen -l dimblur
+#bindsym $mod+Shift+x		exec betterlockscreen -s dimblur
 
 #bindsym $mod+c			exec --no-startup-id camtoggle
 ##bindsym $mod+Shift+c
