@@ -13,7 +13,7 @@ user_pref("dom.event.clipboardevents.enabled", false);
 user_pref("findbar.highlightAll", true);
 user_pref("network.IDN_show_punycode", true);
 user_pref("browser.tabs.insertAfterCurrent", true);
-user_pref("browser.tabs.closeWindowWithLastTab", false);
+user_pref("browser.tabs.closeWindowWithLastTab", true);
 user_pref("toolkit.cosmeticAnimations.enabled", false);
 user_pref("full-screen-api.transition-duration.enter", "0 0");
 user_pref("full-screen-api.transition-duration.leave", "0 0");
