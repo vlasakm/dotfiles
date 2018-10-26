@@ -35,7 +35,7 @@ bindsym $mod+Shift+Escape       exec shutdown now
 #bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Are you sure you want to reboot?" "$reboot"
 
 bindsym $mod+q			[con_id="__focused__" instance="^(?!math|dropdown).*$"] kill
-#bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!math|dropdown).*$"] kill
+bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!math|dropdown).*$"] kill
 
 bindsym $mod+w			exec --no-startup-id $BROWSER
 bindsym $mod+Shift+w		exec --no-startup-id $BROWSER --private-window
@@ -71,7 +71,6 @@ bindsym $mod+p			exec --no-startup-id mpc toggle
 #bindsym $mod+Shift+s		gaps inner current minus 5
 
 bindsym $mod+d			exec --no-startup-id dmenu_run -l 3 -fn mono -nb '#111111' -nf '#eeeeee' -p run: -sb '#555555' -sf '#ffffff'
-
 #bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 #set $freeze Distraction-free mode (mod+shift+esc to exit)
@@ -81,8 +80,8 @@ bindsym $mod+d			exec --no-startup-id dmenu_run -l 3 -fn mono -nb '#111111' -nf 
 bindsym $mod+f			fullscreen toggle
 #bindsym $mod+Shift+f		mode "$freeze"
 
-#bindsym $mod+g			workspace prev
-#bindsym $mod+Shift+g		exec --no-startup-id gimp; workspace $ws5
+bindsym $mod+g			gaps inner current set 25
+bindsym $mod+Shift+g		gaps inner current set 0
 
 bindsym $mod+h			focus left
 bindsym $mod+Shift+h		move left
@@ -158,7 +157,7 @@ bindsym $mod+Shift+6	move container to workspace $ws6
 bindsym $mod+Shift+7	move container to workspace $ws7
 bindsym $mod+Shift+8	move container to workspace $ws8
 bindsym $mod+Shift+9	move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+0	move container to workspace $ws10
 
 # colors
 set $accent	#999999
@@ -172,4 +171,3 @@ client.focused			$accent		$accent		$black		$accent
 client.focused_inactive		$grey		$grey		$white		$grey
 client.unfocused		$grey		$grey		$white		$grey
 client.urgent 			$red		$red		$black		$red
-
