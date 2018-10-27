@@ -1,0 +1,4 @@
+feh -B '#111111' \
+-N \
+--scale-down \
+--auto-zoom
