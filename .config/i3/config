@@ -102,8 +102,8 @@ bindsym $mod+Ctrl+l		resize grow right 1 px or 1 ppt
 #bindsym $mod+z			gaps outer current plus 5
 #bindsym $mod+Shift+z		gaps outer current minus 5
 
-#bindsym $mod+x			exec betterlockscreen -l dimblur
-#bindsym $mod+Shift+x		exec betterlockscreen -s dimblur
+bindsym $mod+x			exec systemctl suspend
+bindsym $mod+Shift+x		exec systemctl hibernate
 
 #bindsym $mod+c			exec --no-startup-id camtoggle
 ##bindsym $mod+Shift+c
