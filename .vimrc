@@ -16,4 +16,7 @@ set nostartofline
 
 set number
 
+set undofile
+set undodir=~/.vim/undodir
+
 autocmd FileType html setlocal tabstop=2
