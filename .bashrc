@@ -27,7 +27,20 @@ alias la="ls -al"
 # working fast
 alias s="sudo "
 alias v="vim"
-alias g="git"
+
+# git aliases
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gcam='git commit -a -m'
+alias gcm='git commit -m'
+alias gco='git checkout'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gpom='git push origin master'
+alias gr='git remote'
+alias gs='git status'
 
 # dotfiles vcs
 alias config="git --git-dir=$HOME/.myconf.git/ --work-tree=$HOME"
