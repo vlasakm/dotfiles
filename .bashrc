@@ -30,9 +30,10 @@ alias v="vim"
 
 # git aliases
 alias ga='git add'
+alias gap='git add --patch'
 alias gb='git branch'
-alias gc='git commit'
-alias gca='git commit -a'
+alias gc='git commit -v'
+alias gca='git commit -a -v'
 alias gcam='git commit -a -m'
 alias gcm='git commit -m'
 alias gco='git checkout'
@@ -40,7 +41,9 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias gpom='git push origin master'
 alias gr='git remote'
+alias gsh='git show'
 alias gs='git status'
+alias gl='git lg'
 
 # dotfiles vcs
 alias config="git --git-dir=$HOME/.myconf.git/ --work-tree=$HOME"
