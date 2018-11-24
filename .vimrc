@@ -3,22 +3,29 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 set nocompatible
+set lazyredraw
 
-filetype plugin on
+colorscheme badwolf
 
 syntax on
+set number
+set cursorline
+set showmatch
+set wildmenu
 
 set ignorecase
 set smartcase
+set incsearch
+set hlsearch
 
 set autoindent
 set nostartofline
-
-set number
+set scrolloff=3
 
 set undofile
 set undodir=~/.vim/undodir
 
+filetype plugin on
 autocmd FileType html setlocal tabstop=2
 
 map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
