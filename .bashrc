@@ -48,6 +48,9 @@ alias gl='git lg'
 # dotfiles vcs
 alias config="git --git-dir=$HOME/.myconf.git/ --work-tree=$HOME"
 
+# docker
+alias jlab='docker run --rm -p 80:8888 -v "$PWD":/jup/ jupyter'
+
 # FUNCTIONS
 maninfo () {
 	info "$@" --subnodes -o - | less ;
@@ -56,6 +59,9 @@ maninfo () {
 groffman () {
 	zcat "$1" | groff -man -T "${2:-default}" | less ; 
 }
+
+# VARIABLES
+export ASAN_OPTIONS=symbolize=1:debug=1:detect_leaks=1:strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1
 
 # PS1
 # inspired from https://stackoverflow.com/questions/16715103/bash-prompt-with-last-exit-code 
