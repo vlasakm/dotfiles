@@ -5,18 +5,18 @@ set fileencoding=utf-8
 set nocompatible
 set lazyredraw
 
-colorscheme badwolf
+"colorscheme badwolf
 
 syntax on
 set number
-set cursorline
+"set cursorline
 set showmatch
 set wildmenu
 
 set ignorecase
 set smartcase
 set incsearch
-set hlsearch
+"set hlsearch
 
 set autoindent
 set nostartofline
