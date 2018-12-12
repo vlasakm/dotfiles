@@ -31,6 +31,7 @@ alias la="ls -al"
 # working fast
 alias s="sudo "
 alias v="vim"
+alias ytdl="youtube-dl"
 
 # git aliases
 alias ga='git add'
