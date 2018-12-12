@@ -106,5 +106,4 @@ __prompt_command() {
 }
 
 # bash_completion
-. /usr/share/bash-completion/bash_completion
-
+source /usr/share/bash-completion/bash_completion
