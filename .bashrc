@@ -10,6 +10,10 @@ PS1='[\u@\h \W]\$ '
 
 ## OWN ADDITIONS
 
+# BASH SETTINGS
+shopt -s autocd
+HISTSIZE=10000
+
 # KEY BINDINGS
 alias info="info --vi-keys"
 
