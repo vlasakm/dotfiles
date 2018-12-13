@@ -29,7 +29,7 @@ bindsym $mod+Return 		exec $TERMINAL
 #bindsym $mod+space		focus mode_toggle
 
 #bindsym $mod+Escape		workspace prev
-bindsym $mod+Shift+Escape       exec shutdown now 
+bindsym $mod+Shift+Escape       exec systemctl poweroff
 
 #bindsym $mod+BackSpace
 #bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Are you sure you want to reboot?" "$reboot"
