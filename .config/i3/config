@@ -47,7 +47,7 @@ bindsym $mod+r 			exec $termexec ranger
 bindsym $mod+Shift+r		exec $termexec sudo ranger /
 
 bindsym $mod+t			split toggle
-#bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
+bindsym $mod+Shift+t		layout toggle split
 
 bindsym $mod+y			exec $termexec calcurse
 #bindsym $mod+Shift+y		exec --no-startup-id "bash ~/.scripts/i3resize left"
