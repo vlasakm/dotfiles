@@ -1,32 +1,43 @@
-scriptencoding utf-8
-set encoding=utf-8
-set fileencoding=utf-8
-
+" Basic
 set nocompatible
 set lazyredraw
+filetype plugin on
+set splitbelow splitright
 
-"colorscheme badwolf
+" UTF-8
+set encoding=utf-8
+"set fileencoding=utf-8
+"scriptencoding utf-8
 
+" UI
 syntax on
 set number
-"set cursorline
 set showmatch
-set wildmenu
+"set wildmenu
+"set cursorline
+"colorscheme badwolf
 
+" Search
 set ignorecase
 set smartcase
 set incsearch
 "set hlsearch
 
-set autoindent
+" Indent / cursor behavior
+set smartindent
 set nostartofline
 set scrolloff=3
 
+" Undo
 set undofile
 set undodir=~/.vim/undodir
 
-filetype plugin on
-autocmd FileType html setlocal tabstop=2
+" Delete trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
 
+" Clang-format
 map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
 imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
+
+" Filetype specific
+autocmd FileType html,tex,latex,context setlocal tabstop=2
