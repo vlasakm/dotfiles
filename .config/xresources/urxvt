@@ -1,5 +1,0 @@
-URxvt.internalBorder:		10
-URxvt.intensityStyles:		false
-URxvt.depth:			32
-URxvt.font:			xft:monospace:size=13
-URxvt.scrollBar:		false

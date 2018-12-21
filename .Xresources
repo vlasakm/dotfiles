@@ -1,5 +1,0 @@
-#include ".config/xresources/snazzy-colors"
-#include ".config/xresources/darkbackground-colors"
-#include ".config/xresources/xcursor"
-#include ".config/xresources/xft"
-#include ".config/xresources/urxvt"
