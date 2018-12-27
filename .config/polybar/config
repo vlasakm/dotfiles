@@ -1,10 +1,10 @@
 ; Michal Vlasák polybar config
 
 [colors]
-background = #181818
-background-alt = #444
+background = #22181818
+background-alt = #70444444
 foreground = #eeeeee
-alert = #bd2c40
+alert = #55bd2c40
 
 [bar/top]
 width = 100%
