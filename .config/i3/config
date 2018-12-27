@@ -15,7 +15,7 @@ set $termexec $TERMINAL -e
 
 # start on startup
 exec --no-startup-id redshift
-exec --no-startup-id feh --bg-scale --no-fehbg /home/michal/.config/wallpapers/space.png
+exec --no-startup-id feh --bg-scale --no-fehbg /home/michal/.config/wallpapers/l65z85d3he011.jpg
 exec --no-startup-id polybar top
 exec --no-startup-id compton
 #exec --no-startup-id xss-lock
@@ -56,7 +56,7 @@ bindsym $mod+y			exec $termexec calcurse
 #bindsym $mod+Shift+u		exec --no-startup-id "bash ~/.scripts/i3resize down"
 
 bindsym $mod+i 			exec $termexec htop
-#bindsym $mod+Shift+i		exec --no-startup-id "bash ~/.scripts/i3resize up"
+bindsym $mod+Shift+i		exec $termexec ipython
 
 #bindsym $mod+o			sticky toggle
 #bindsym $mod+Shift+o		exec --no-startup-id "bash ~/.scripts/i3resize right"
@@ -80,7 +80,7 @@ bindsym $mod+d			exec --no-startup-id dmenu_run -l 3 -fn mono -nb '#111111' -nf 
 bindsym $mod+f			fullscreen toggle
 #bindsym $mod+Shift+f		mode "$freeze"
 
-bindsym $mod+g			gaps inner current set 25
+bindsym $mod+g			gaps inner current set 15
 bindsym $mod+Shift+g		gaps inner current set 0
 
 bindsym $mod+h			focus left
