@@ -40,4 +40,4 @@ map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
 imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
 
 " Filetype specific
-autocmd FileType html,tex,latex,context setlocal tabstop=2
+autocmd FileType html,css,tex,latex,context setlocal tabstop=2
