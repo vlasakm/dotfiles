@@ -56,20 +56,26 @@ alias config="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 # docker
 alias jlab='docker run --rm -p 80:8888 -v "$PWD":/jup/ jupyter'
 
+
 # FUNCTIONS
 maninfo () {
 	info "$@" --subnodes -o - | less ;
 }
 
 groffman () {
-	zcat "$1" | groff -man -T "${2:-default}" | less ; 
+	zcat "$1" | groff -man -T "${2:-default}" | less ;
 }
+
 
 # VARIABLES
 export ASAN_OPTIONS=symbolize=1:debug=1:detect_leaks=1:strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1
 
+
+# NNN
+export NNN_USE_EDITOR=1
+
 # PS1
-# inspired from https://stackoverflow.com/questions/16715103/bash-prompt-with-last-exit-code 
+# inspired from https://stackoverflow.com/questions/16715103/bash-prompt-with-last-exit-code
 # https://github.com/sindresorhus/pure
 # https://github.com/sapegin/dotfiles/blob/dd063f9c30de7d2234e8accdb5272a5cc0a3388b/includes/bash_prompt.bash
 
