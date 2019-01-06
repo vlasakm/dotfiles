@@ -41,3 +41,13 @@ imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
 
 " Filetype specific
 autocmd FileType html,css,tex,latex,context setlocal tabstop=2
+
+" No arrow keys
+noremap <Up> <Nop>
+inoremap <Up> <Nop>
+noremap <Down> <Nop>
+inoremap <Down> <Nop>
+noremap <Left> <Nop>
+inoremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Right> <Nop>
