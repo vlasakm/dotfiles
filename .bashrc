@@ -53,9 +53,6 @@ alias gl='git lg'
 # dotfiles vcs
 alias config="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 
-# docker
-alias jlab='docker run --rm -p 80:8888 -v "$PWD":/jup/ jupyter'
-
 
 # FUNCTIONS
 maninfo () {
