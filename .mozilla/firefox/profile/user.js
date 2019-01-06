@@ -3,8 +3,6 @@ user_pref("reader.parse-on-load.enabled", false);
 user_pref("browser.bookmarks.openInTabClosesMenu", false);
 user_pref("browser.search.context.loadInBackground", true);
 user_pref("browser.tabs.loadBookmarksInBackground", true);
-user_pref("view_source.editor.external", true);
-user_pref("view_source.editor.path", "vim");
 user_pref("browser.fullscreen.autohide", false);
 user_pref("geo.enabled", false);
 user_pref("layout.word_select.eat_space_to_next_word", true);
