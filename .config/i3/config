@@ -15,7 +15,7 @@ set $termexec $TERMINAL -e
 
 # start on startup
 exec --no-startup-id redshift
-exec --no-startup-id feh --bg-scale --no-fehbg /home/michal/.wallpaper
+exec --no-startup-id feh --bg-fill --no-fehbg /home/michal/.wallpaper
 exec --no-startup-id polybar top
 #exec --no-startup-id compton
 #exec --no-startup-id xss-lock
