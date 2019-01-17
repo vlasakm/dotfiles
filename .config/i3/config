@@ -17,6 +17,7 @@ set $termexec $TERMINAL -e
 exec --no-startup-id redshift
 exec --no-startup-id feh --bg-fill --no-fehbg /home/michal/.wallpaper
 exec --no-startup-id polybar top
+exec --no-startup-id dunst
 #exec --no-startup-id compton
 #exec --no-startup-id xss-lock
 exec "$BROWSER"
