@@ -10,7 +10,7 @@ export PATH="$PATH:$HOME/.scripts:/usr/local/texlive/2018/bin/x86_64-linux"
 #export INFOPATH=${INFOPATH:+$INFOPATH:}/usr/local/texlive/2018/texmf-dist/doc/info
 
 export EDITOR="vim"
-export TERMINAL="alacritty"
+export TERMINAL="st"
 export BROWSER="firefox"
 export READER="zathura"
 
