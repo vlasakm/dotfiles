@@ -1,5 +1,3 @@
-; Michal Vlasák polybar config
-
 [colors]
 background = #101010
 background-alt = #303030
@@ -35,6 +33,8 @@ blacklist-3 = caps lock
 [module/i3]
 type = internal/i3
 index-sort = true
+enable-click = false
+enable-scroll = false
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
