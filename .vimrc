@@ -12,6 +12,7 @@ set encoding=utf-8
 " UI
 syntax on
 set number
+set relativenumber
 set showmatch
 "set wildmenu
 "set cursorline
