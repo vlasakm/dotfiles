@@ -118,7 +118,7 @@ bindsym $mod+m 			exec --no-startup-id $termexec ncmpcpp
 bindsym $mod+Shift+m		exec --no-startup-id pavucontrol
 
 bindsym Print 			exec --no-startup-id scrot -e 'mv "$f" ~/media/screenshots && notify-send "Screenshot saved" "$f"'
-bindsym Shift+Print		exec --no-startup-id scrot -u -e 'mv "$f" ~/media/screenshots && notify-send "Screenshot saved" "$f"'
+bindsym Shift+Print		exec --no-startup-id scrot -s -e 'mv "$f" ~/media/screenshots && notify-send "Screenshot saved" "$f"'
 
 set $ws1 "1"
 set $ws2 "2"
