@@ -1,7 +1,3 @@
-#
-# ~/.bash_profile
-#
-
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 export PATH="$PATH:$HOME/.scripts:/usr/local/texlive/2018/bin/x86_64-linux"
