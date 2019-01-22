@@ -1,12 +1,5 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
 
 ## OWN ADDITIONS
 
@@ -58,10 +51,6 @@ alias config="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 # FUNCTIONS
 maninfo () {
 	info "$@" --subnodes -o - | less ;
-}
-
-groffman () {
-	zcat "$1" | groff -man -T "${2:-default}" | less ;
 }
 
 
