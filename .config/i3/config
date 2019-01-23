@@ -18,6 +18,7 @@ exec --no-startup-id redshift
 exec --no-startup-id feh --bg-fill --no-fehbg /home/michal/.wallpaper
 exec --no-startup-id polybar top
 exec --no-startup-id dunst
+exec --no-startup-id emacs --daemon
 #exec --no-startup-id compton
 #exec --no-startup-id xss-lock
 exec "$BROWSER"
@@ -41,8 +42,8 @@ bindsym $mod+Shift+q		kill
 bindsym $mod+w			exec --no-startup-id $BROWSER
 bindsym $mod+Shift+w		exec --no-startup-id $BROWSER --private-window
 
-bindsym $mod+e			exec $termexec neomutt
-#bindsym $mod+Shift+e		exec --no-startup-id tutorialvids
+bindsym $mod+e			exec --no-startup-id emacsclient -c
+bindsym $mod+Shift+e		exec --no-startup-id $termexec neomutt
 
 bindsym $mod+r 			exec $termexec ranger
 bindsym $mod+Shift+r		exec $termexec sudo ranger /
