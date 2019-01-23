@@ -21,17 +21,17 @@ exec --no-startup-id dunst
 exec --no-startup-id emacs --daemon
 #exec --no-startup-id compton
 #exec --no-startup-id xss-lock
-exec "$BROWSER"
+exec --no-startup-id "$BROWSER"
 
 # inspired by Luke Smith
-bindsym $mod+Return 		exec $TERMINAL
+bindsym $mod+Return 		exec --no-startup-id $TERMINAL
 #bindsym $mod+Shift+Return	exec --no-startup-id samedir
 
 bindsym $mod+space 		exec --no-startup-id playerctl play-pause
 bindsym $mod+Shift+space	exec --no-startup-id playerctl next
 
 #bindsym $mod+Escape		workspace prev
-bindsym $mod+Shift+Escape       exec systemctl poweroff
+bindsym $mod+Shift+Escape       exec --no-startup-id systemctl poweroff
 
 #bindsym $mod+BackSpace
 #bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Are you sure you want to reboot?" "$reboot"
@@ -45,20 +45,20 @@ bindsym $mod+Shift+w		exec --no-startup-id $BROWSER --private-window
 bindsym $mod+e			exec --no-startup-id emacsclient -c
 bindsym $mod+Shift+e		exec --no-startup-id $termexec neomutt
 
-bindsym $mod+r 			exec $termexec ranger
-bindsym $mod+Shift+r		exec $termexec sudo ranger /
+bindsym $mod+r 			exec --no-startup-id $termexec ranger
+bindsym $mod+Shift+r		exec --no-startup-id $termexec sudo ranger /
 
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+t		layout toggle split
 
-bindsym $mod+y			exec $termexec calcurse
+bindsym $mod+y			exec --no-startup-id  $termexec calcurse
 #bindsym $mod+Shift+y		exec --no-startup-id "bash ~/.scripts/i3resize left"
 
 #bindsym $mod+u			[instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 #bindsym $mod+Shift+u		exec --no-startup-id "bash ~/.scripts/i3resize down"
 
-bindsym $mod+i 			exec $termexec htop
-bindsym $mod+Shift+i		exec $termexec ipython
+bindsym $mod+i 			exec --no-startup-id $termexec htop
+bindsym $mod+Shift+i		exec --no-startup-id $termexec ipython
 
 #bindsym $mod+o			sticky toggle
 #bindsym $mod+Shift+o		exec --no-startup-id "bash ~/.scripts/i3resize right"
@@ -67,7 +67,7 @@ bindsym $mod+p			exec --no-startup-id mpc toggle
 #bindsym $mod+Shift+p		exec --no-startup-id lmc pause
 
 #bindsym $mod+a			[instance="math"] scratchpad show; [instance="math"] move position center
-#bindsym $mod+Shift+a		exec $termexec pulsemixer
+#bindsym $mod+Shift+a		exec --no-startup-id $termexec pulsemixer
 
 #bindsym $mod+s			gaps inner current plus 5
 #bindsym $mod+Shift+s		gaps inner current minus 5
@@ -100,20 +100,20 @@ bindsym $mod+Ctrl+l		resize grow right 1 px or 1 ppt
 #bindsym $mod+z			gaps outer current plus 5
 #bindsym $mod+Shift+z		gaps outer current minus 5
 
-bindsym $mod+x			exec systemctl suspend
-bindsym $mod+Shift+x		exec systemctl hibernate
+bindsym $mod+x			exec --no-startup-id systemctl suspend
+bindsym $mod+Shift+x		exec --no-startup-id systemctl hibernate
 
 #bindsym $mod+c			exec --no-startup-id camtoggle
 ##bindsym $mod+Shift+c
 
-bindsym $mod+v			exec $termexec ncmpcpp -s visualizer
+bindsym $mod+v			exec --no-startup-id $termexec ncmpcpp -s visualizer
 #bindsym $mod+Shift+v		exec --no-startup-id projectM-pulseaudio
 
 #bindsym $mod+b			bar mode toggle
 #bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id bottomleft
 
-bindsym $mod+n			exec $termexec nnn
-bindsym $mod+Shift+n		exec $termexec sudo nnn /
+bindsym $mod+n			exec --no-startup-id $termexec nnn
+bindsym $mod+Shift+n		exec --no-startup-id $termexec sudo nnn /
 
 bindsym $mod+m 			exec --no-startup-id $termexec ncmpcpp
 bindsym $mod+Shift+m		exec --no-startup-id pavucontrol
