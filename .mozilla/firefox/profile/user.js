@@ -1,11 +1,28 @@
-user_pref("extensions.pocket.enabled", false);
-user_pref("reader.parse-on-load.enabled", false);
+// https://github.com/mozilla/gecko-dev/blob/master/browser/app/profile/firefox.js
 user_pref("browser.bookmarks.openInTabClosesMenu", false);
-user_pref("browser.search.context.loadInBackground", true);
-user_pref("browser.tabs.loadBookmarksInBackground", true);
+user_pref("browser.bookmarks.restore_default_bookmarks", false);
+user_pref("browser.bookmarks.showMobileBookmarks", false);
+user_pref("browser.ctrlTab.migrated", true);
+user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 user_pref("browser.fullscreen.autohide", false);
+user_pref("browser.newtabpage.enabled", false);
+user_pref("browser.search.context.loadInBackground", true);
+user_pref("browser.search.countryCode", "CZ");
+user_pref("browser.search.hiddenOneOffs", "Google,Bing,Amazon.com,DuckDuckGo,Twitter,Wikipedia (en)");
+user_pref("browser.search.region", "CZ");
+user_pref("browser.startup.homepage", "about:blank");
+user_pref("browser.startup.page", 3);
+user_pref("browser.tabs.closeWindowWithLastTab", true);
+user_pref("browser.tabs.extraDragSpace", true);
+user_pref("browser.tabs.insertAfterCurrent", true);
+user_pref("browser.tabs.loadBookmarksInBackground", true);
+user_pref("browser.uidensity", 1);
+user_pref("extensions.pocket.enabled", false);
+user_pref("general.warnOnAboutConfig", false);
 user_pref("geo.enabled", false);
 user_pref("layout.word_select.eat_space_to_next_word", true);
+user_pref("network.http.throttle.enable ", false);
+user_pref("reader.parse-on-load.enabled", false);
 
 // Fonts
 user_pref("font.default.x-western", "sans-serif");
@@ -20,8 +37,6 @@ user_pref("devPixelsPerPx", "1.0");
 user_pref("dom.event.clipboardevents.enabled", false);
 user_pref("findbar.highlightAll", true);
 user_pref("network.IDN_show_punycode", true);
-user_pref("browser.tabs.insertAfterCurrent", true);
-user_pref("browser.tabs.closeWindowWithLastTab", true);
 user_pref("toolkit.cosmeticAnimations.enabled", false);
 user_pref("full-screen-api.transition-duration.enter", "0 0");
 user_pref("full-screen-api.transition-duration.leave", "0 0");
