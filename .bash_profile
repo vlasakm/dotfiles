@@ -7,6 +7,7 @@ export PATH="$PATH:$HOME/.scripts:/usr/local/texlive/2018/bin/x86_64-linux"
 
 export EDITOR="vim"
 export TERMINAL="st"
+export TERMEXEC="$TERMINAL -e"
 export BROWSER="firefox"
 export READER="zathura"
 

@@ -10,9 +10,6 @@ smart_borders on
 # mod key
 set $mod Mod4
 
-# definitions
-set $termexec $TERMINAL -e
-
 # start on startup
 exec --no-startup-id redshift
 exec --no-startup-id feh --bg-fill --no-fehbg /home/michal/.wallpaper
@@ -43,22 +40,22 @@ bindsym $mod+w			exec --no-startup-id $BROWSER
 bindsym $mod+Shift+w		exec --no-startup-id $BROWSER --private-window
 
 bindsym $mod+e			exec --no-startup-id emacsclient -c
-bindsym $mod+Shift+e		exec --no-startup-id $termexec neomutt
+bindsym $mod+Shift+e		exec --no-startup-id $TERMEXEC neomutt
 
-bindsym $mod+r 			exec --no-startup-id $termexec ranger
-bindsym $mod+Shift+r		exec --no-startup-id $termexec sudo ranger /
+bindsym $mod+r 			exec --no-startup-id $TERMEXEC ranger
+bindsym $mod+Shift+r		exec --no-startup-id $TERMEXEC sudo ranger /
 
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+t		layout toggle split
 
-bindsym $mod+y			exec --no-startup-id  $termexec calcurse
+bindsym $mod+y			exec --no-startup-id  $TERMEXEC calcurse
 #bindsym $mod+Shift+y		exec --no-startup-id "bash ~/.scripts/i3resize left"
 
 #bindsym $mod+u			[instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 #bindsym $mod+Shift+u		exec --no-startup-id "bash ~/.scripts/i3resize down"
 
-bindsym $mod+i 			exec --no-startup-id $termexec htop
-bindsym $mod+Shift+i		exec --no-startup-id $termexec ipython
+bindsym $mod+i 			exec --no-startup-id $TERMEXEC htop
+bindsym $mod+Shift+i		exec --no-startup-id $TERMEXEC ipython
 
 #bindsym $mod+o			sticky toggle
 #bindsym $mod+Shift+o		exec --no-startup-id "bash ~/.scripts/i3resize right"
@@ -67,7 +64,7 @@ bindsym $mod+p			exec --no-startup-id mpc toggle
 #bindsym $mod+Shift+p		exec --no-startup-id lmc pause
 
 #bindsym $mod+a			[instance="math"] scratchpad show; [instance="math"] move position center
-#bindsym $mod+Shift+a		exec --no-startup-id $termexec pulsemixer
+#bindsym $mod+Shift+a		exec --no-startup-id $TERMEXEC pulsemixer
 
 #bindsym $mod+s			gaps inner current plus 5
 #bindsym $mod+Shift+s		gaps inner current minus 5
@@ -106,16 +103,16 @@ bindsym $mod+Shift+x		exec --no-startup-id systemctl hibernate
 #bindsym $mod+c			exec --no-startup-id camtoggle
 ##bindsym $mod+Shift+c
 
-bindsym $mod+v			exec --no-startup-id $termexec ncmpcpp -s visualizer
+bindsym $mod+v			exec --no-startup-id $TERMEXEC ncmpcpp -s visualizer
 #bindsym $mod+Shift+v		exec --no-startup-id projectM-pulseaudio
 
 #bindsym $mod+b			bar mode toggle
 #bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id bottomleft
 
-bindsym $mod+n			exec --no-startup-id $termexec nnn
-bindsym $mod+Shift+n		exec --no-startup-id $termexec sudo nnn /
+bindsym $mod+n			exec --no-startup-id $TERMEXEC nnn
+bindsym $mod+Shift+n		exec --no-startup-id $TERMEXEC sudo nnn /
 
-bindsym $mod+m 			exec --no-startup-id $termexec ncmpcpp
+bindsym $mod+m 			exec --no-startup-id $TERMEXEC ncmpcpp
 bindsym $mod+Shift+m		exec --no-startup-id pavucontrol
 
 bindsym Print 			exec --no-startup-id scrot -e 'mv "$f" ~/media/screenshots && notify-send "Screenshot saved" "$f"'
