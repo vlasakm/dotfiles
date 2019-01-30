@@ -18,7 +18,7 @@ module-margin = 1
 font-0 = monospace:pixelsize=11;3
 font-1 = SymbolsNerdFont:size=10.5:weight=light;2
 
-modules-left = i3
+modules-left = bspwm i3
 modules-right = pulseaudio battery xkeyboard wlan date time
 
 [module/xkeyboard]
@@ -29,6 +29,21 @@ label-layout =  %layout%
 blacklist-0 = num lock
 blacklist-2 = scroll lock
 blacklist-3 = caps lock
+
+[module/bspwm]
+type = internal/bspwm
+enable-click = false
+enable-scroll = false
+
+label-focused = " %index% "
+label-focused-background = ${colors.background-alt}
+
+label-urgent = " %index% "
+label-urgent-background = ${colors.alert}
+
+label-occupied = " %index% "
+label-empty = " %index% "
+label-dimmed = " %index% "
 
 [module/i3]
 type = internal/i3
