@@ -2,6 +2,8 @@
 background = #101010
 background-alt = #303030
 foreground = #ffffff
+foreground-dimmed = #a0a0a0
+foreground-dark = #404040
 alert = #55bd2c40
 
 [bar/top]
@@ -35,15 +37,16 @@ type = internal/bspwm
 enable-click = false
 enable-scroll = false
 
-label-focused = " %index% "
-label-focused-background = ${colors.background-alt}
+label-focused = " %name% "
 
-label-urgent = " %index% "
-label-urgent-background = ${colors.alert}
+label-urgent = " %name% "
+label-urgent-foreground = ${colors.alert}
 
-label-occupied = " %index% "
-label-empty = " %index% "
-label-dimmed = " %index% "
+label-occupied = " %name% "
+label-occupied-foreground = ${colors.foreground-dimmed}
+
+label-empty = " %name% "
+label-empty-foreground = ${colors.foreground-dark}
 
 [module/i3]
 type = internal/i3
@@ -52,17 +55,17 @@ enable-click = false
 enable-scroll = false
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused = %name%
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %name%
+label-unfocused-foreground = ${colors.foreground-dimmed}
 label-unfocused-padding = 1
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${colors.alert}
+label-urgent = %name%
+label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 1
 
 [module/wlan]
