@@ -20,7 +20,7 @@ alias grep="grep --color=auto"
 
 # ls shorts
 alias ll="ls -l"
-alias la="ls -al"
+alias la="ls -Al"
 
 # working fast
 alias s="sudo "
