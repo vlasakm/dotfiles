@@ -12,5 +12,5 @@ export BROWSER="firefox"
 export READER="zathura"
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
-	pgrep -x i3 || exec ssh-agent startx
+	pgrep -x bspwm || exec ssh-agent startx
 fi
