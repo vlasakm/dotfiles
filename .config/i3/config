@@ -69,7 +69,7 @@ bindsym $mod+p			exec --no-startup-id mpc toggle
 #bindsym $mod+s			gaps inner current plus 5
 #bindsym $mod+Shift+s		gaps inner current minus 5
 
-bindsym $mod+d			exec --no-startup-id dmenu_run -l 10 -fn "monospace-12" -nb '#101010' -nf '#ffffff' -p "run:" -sb '#303030' -sf '#ffffff'
+bindsym $mod+d			exec --no-startup-id dmenu_launch
 #bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f			fullscreen toggle
