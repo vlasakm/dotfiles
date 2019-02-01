@@ -17,12 +17,16 @@ user_pref("browser.tabs.extraDragSpace", true);
 user_pref("browser.tabs.insertAfterCurrent", true);
 user_pref("browser.tabs.loadBookmarksInBackground", true);
 user_pref("browser.uidensity", 1);
+user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
+user_pref("browser.warnOnQuit", false);
 user_pref("extensions.pocket.enabled", false);
 user_pref("general.warnOnAboutConfig", false);
 user_pref("geo.enabled", false);
 user_pref("layout.word_select.eat_space_to_next_word", true);
+user_pref("media.eme.enabled", true);
 user_pref("network.http.throttle.enable ", false);
 user_pref("reader.parse-on-load.enabled", false);
+user_pref("signon.rememberSignons", false);
 
 // Fonts
 user_pref("font.default.x-western", "sans-serif");
