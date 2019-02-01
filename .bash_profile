@@ -1,6 +1,6 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-export PATH="$PATH:$HOME/.scripts:/usr/local/texlive/2018/bin/x86_64-linux"
+export PATH="$HOME/.scripts:$PATH:/usr/local/texlive/2018/bin/x86_64-linux"
 
 #export MANPATH=${MANPATH:+$MANPATH:}/usr/local/texlive/2018/texmf-dist/doc/man
 #export INFOPATH=${INFOPATH:+$INFOPATH:}/usr/local/texlive/2018/texmf-dist/doc/info
