@@ -5,7 +5,8 @@
 
 # BASH SETTINGS
 shopt -s autocd
-HISTSIZE=10000
+HISTSIZE=-1
+HISTFILESIZE=-1
 
 # KEY BINDINGS
 alias info="info --vi-keys"
