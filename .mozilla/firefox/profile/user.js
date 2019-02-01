@@ -40,3 +40,6 @@ user_pref("network.IDN_show_punycode", true);
 user_pref("toolkit.cosmeticAnimations.enabled", false);
 user_pref("full-screen-api.transition-duration.enter", "0 0");
 user_pref("full-screen-api.transition-duration.leave", "0 0");
+
+// Allow non-signed extensions in dev-edition
+user_pref("xpinstall.signatures.required", false);
