@@ -19,6 +19,7 @@ user_pref("browser.tabs.loadBookmarksInBackground", true);
 user_pref("browser.uidensity", 1);
 user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
 user_pref("browser.warnOnQuit", false);
+user_pref("devtools.theme", "dark");
 user_pref("extensions.pocket.enabled", false);
 user_pref("general.warnOnAboutConfig", false);
 user_pref("geo.enabled", false);
