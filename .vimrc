@@ -3,6 +3,7 @@ set nocompatible
 set lazyredraw
 filetype plugin on
 set splitbelow splitright
+set clipboard=unnamedplus
 
 " UTF-8
 set encoding=utf-8
@@ -15,14 +16,11 @@ set number
 set relativenumber
 set showmatch
 "set wildmenu
-"set cursorline
-"colorscheme badwolf
 
 " Search
 set ignorecase
 set smartcase
 set incsearch
-"set hlsearch
 
 " Indent / cursor behavior
 set smartindent
