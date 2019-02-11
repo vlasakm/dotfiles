@@ -1,0 +1,3 @@
+maninfo () {
+	info "$@" --subnodes -o - | less ;
+}

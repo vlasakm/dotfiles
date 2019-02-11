@@ -1,0 +1,42 @@
+# KEY BINDINGS
+alias info="info --vi-keys"
+
+# SAFETY
+alias rm="rm -i"
+
+# COLOR
+alias ls="ls -hN --color=auto --group-directories-first"
+alias grep="grep --color=auto"
+
+# ls shorts
+alias ll="ls -l"
+alias la="ls -Al"
+
+# working fast
+alias s="sudo "
+alias v="vim"
+alias ytdl="youtube-dl"
+
+# git aliases
+alias ga='git add'
+alias gap='git add --patch'
+alias gb='git branch'
+alias gc='git commit -v'
+alias gca='git commit -a -v'
+alias gcam='git commit -a -m'
+alias gcm='git commit -m'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gpom='git push origin master'
+alias gr='git reset'
+alias gs='git status'
+alias gsh='git show'
+alias gl='git lg'
+
+# dotfiles vcs
+alias config="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
+
+# wget
+alias wget='wget --hsts-file="{$XDG_CACHE_HOME:-"$HOME/.cache"}/wget-hsts"'
