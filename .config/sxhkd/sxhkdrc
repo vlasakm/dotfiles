@@ -23,10 +23,10 @@ super + {_,shift + }e
 	$TERMEXEC neomutt
 
 # suspend / hibernate
-super + {_,shift + }x
+super + {_,shift + }BackSpace
 	systemctl {suspend,hibernate}
 
-# dmenu_launch
+# dmenu menus
 super + d ; {c,k,l,p}
 	{dmenu_clip,dmenu_kill,dmenu_launch,passmenu}
 
