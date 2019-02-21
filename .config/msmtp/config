@@ -1,0 +1,15 @@
+defaults
+auth		on
+tls		on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+port		587
+logfile		msmtp-log
+
+account		gmail
+host		smtp.gmail.com
+user		lahcim8
+# from has to be set, but is infered from 'From:'
+from
+passwordeval   "pass app/gmail/lahcim8"
+
+account default : gmail
