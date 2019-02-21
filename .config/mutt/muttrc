@@ -1,0 +1,38 @@
+# General settings
+hdr_order date subkect from to cc
+set sort = 'reverse-date'		# latest messeges on top
+set envelope_from			# let msmtp choose account
+set fast_reply				# skip to compose when replying
+set fcc_attach				# save attachments with the body
+unset mime_forward			# forward attachments as part of body
+set forward_format = "Fwd: %s"		# format of subject when forwarding
+set forward_decode			# decode when forwarding
+set forward_quote			# include message in forwards
+set reverse_name			# reply as whomever it was to
+set include				# include message in replies
+set header_cache = ~/.cache/mutt	# cache headers
+#set message_cachedir = "~/.cache/mutt" # dont cache messages, yet
+
+bind pager j next-line
+bind pager k previous-line
+bind browser h goto-parent
+bind browser l select-entry
+bind attach,index,pager \CD next-page
+bind attach,index,pager \CU previous-page
+bind pager g top
+bind pager G bottom
+bind attach,index g first-entry
+bind attach,index G last-entry
+
+# GMAIL
+set realname = "Michal Vlasák"
+set imap_user = lahcim8@gmail.com
+set from = "Michal Vlasák <lahcim8@gmail.com>"
+set imap_pass = "`pass app/gmail/lahcim8`"
+set folder    = imaps://lahcim8@imap.gmail.com/
+set spoolfile = +INBOX
+mailboxes     = +INBOX
+unset record
+
+# MSMTP
+set sendmail  = "/usr/bin/msmtp"
