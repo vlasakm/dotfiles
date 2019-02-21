@@ -1,8 +1,6 @@
 [user]
 	name = Michal Vlasák
 	email = lahcim8@gmail.com
-[core]
-	editor = vim
 [color]
 	diff = auto
 	status = auto
