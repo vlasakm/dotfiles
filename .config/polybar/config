@@ -1,7 +1,7 @@
 [colors]
 background = #101010
-background-alt = #303030
-foreground = #ffffff
+foreground = #fafafa
+foreground-bright = #ffffff
 foreground-dimmed = #a0a0a0
 foreground-dark = #404040
 alert = #55bd2c40
