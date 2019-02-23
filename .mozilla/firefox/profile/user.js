@@ -39,6 +39,8 @@ user_pref("network.http.throttle.enable ", false);
 user_pref("reader.parse-on-load.enabled", false);
 user_pref("signon.remembersignons", false);
 user_pref("signon.rememberSignons", false);
+user_pref("widget.chrome.allow-gtk-dark-theme", true);
+user_pref("widget.content.allow-gtk-dark-theme", true);
 
 // Fonts
 user_pref("font.default.x-western", "sans-serif");
