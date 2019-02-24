@@ -1,0 +1,7 @@
+#!/bin/sh
+exec pkill -x "$( \
+	ps -u "$USER" -o cmd= \
+	| grep -v dmenu_kill \
+	| sort \
+	| dmenu -p "kill:"
+)"

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /usr/bin/dmenu -l 10 -fn "monospace-12" -nb '#101010' -nf '#ffffff' -sb '#303030' -sf '#ffffff' "$@"

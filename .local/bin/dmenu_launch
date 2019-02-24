@@ -1,0 +1,26 @@
+#!/bin/sh
+exec $(printf '%s\n' \
+	chromium \
+	cmus \
+	compton \
+	dunst \
+	emacs \
+	firefox \
+	gucharmap \
+	gramps \
+	idle \
+	jupyter-lab \
+	lobase \
+	localc \
+	lodraw \
+	loimpress \
+	lomath \
+	mathematica \
+	pavucontrol \
+	reboot \
+	redshift \
+	spotifyd \
+	syncthing \
+	st \
+	vlc \
+| dmenu -p "run:")
