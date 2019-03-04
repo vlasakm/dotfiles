@@ -29,4 +29,4 @@ st:exec st #
 vlc:exec vlc #
 '
 
-eval "$(grep "^$(grep -v '#$\|^$\|^#' <<< "$programs" | cut -d ':' -f 1 | dmenu):" <<< "$programs" | cut -d ':' -f 2)"
+eval "$(grep "^$(grep -v '#$\|^$\|^#' <<< "$programs" | cut -d ':' -f 1 | dmenu -p "run:"):" <<< "$programs" | cut -d ':' -f 2)"
