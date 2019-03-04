@@ -1,26 +1,32 @@
-#!/bin/sh
-exec $(printf '%s\n' \
-	chromium \
-	cmus \
-	compton \
-	dunst \
-	emacs \
-	firefox \
-	gucharmap \
-	gramps \
-	idle \
-	jupyter-lab \
-	lobase \
-	localc \
-	lodraw \
-	loimpress \
-	lomath \
-	mathematica \
-	pavucontrol \
-	reboot \
-	redshift \
-	spotifyd \
-	syncthing \
-	st \
-	vlc \
-| dmenu -p "run:")
+#!/bin/bash
+
+programs='
+alacritty:exec alacritty
+chromium:exec chromium #
+cmus:exec cmus #
+compton:exec compton #
+dunst:exec dunst #
+emacs:exec emacs #
+firefox:exec firefox #
+gucharmap:exec gucharmap #
+gramps:exec gramps
+htop:$TERMEXEC htop
+idle:exec idle #
+ipython:$TERMEXEC ipython
+jupyter-lab:exec jupyter-lab
+lobase:exec lobase
+localc:exec localc
+lodraw:exec lodraw
+loimpress:exec loimpress
+lomath:exec lomath
+mathematica:exec mathematica
+pavucontrol:exec pavucontrol
+reboot:exec reboot
+redshift:exec redshift
+spotifyd:exec spotifyd #
+syncthing:exec syncthing
+st:exec st #
+vlc:exec vlc #
+'
+
+eval "$(grep "^$(grep -v '#$\|^$\|^#' <<< "$programs" | cut -d ':' -f 1 | dmenu):" <<< "$programs" | cut -d ':' -f 2)"
