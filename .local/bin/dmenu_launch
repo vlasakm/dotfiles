@@ -14,11 +14,12 @@ htop:$TERMEXEC htop
 idle:exec idle #
 ipython:$TERMEXEC ipython
 jupyter-lab:exec jupyter-lab
-lobase:exec lobase
-localc:exec localc
-lodraw:exec lodraw
-loimpress:exec loimpress
-lomath:exec lomath
+lobase:exec lobase #
+calc:exec localc
+lodraw:exec lodraw #
+impress:exec loimpress
+lomath:exec lomath #
+writer:exec lowriter
 mathematica:exec mathematica
 pavucontrol:exec pavucontrol
 reboot:exec reboot
@@ -27,6 +28,7 @@ spotifyd:exec spotifyd #
 syncthing:exec syncthing
 st:exec st #
 vlc:exec vlc #
+vivado:source /opt/Xilinx/Vivado/2018.2/.settings64-Vivado.sh && exec env _JAVA_AWT_WM_NONREPARENTING=1 vivado
 '
 
 eval "$(grep "^$(grep -v '#$\|^$\|^#' <<< "$programs" | cut -d ':' -f 1 | dmenu -p "run:"):" <<< "$programs" | cut -d ':' -f 2)"
