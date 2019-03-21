@@ -15,7 +15,7 @@ syntax on
 set number
 set relativenumber
 set showmatch
-"set wildmenu
+highlight Visual cterm=reverse ctermbg=NONE
 
 " Search
 set ignorecase
