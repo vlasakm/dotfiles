@@ -30,4 +30,7 @@ end
 define hookpost-run
     skipstl
 end
+define hookpost-start
+    skipstl
+end
 #####
