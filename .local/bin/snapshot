@@ -1,0 +1,53 @@
+#!/bin/bash
+
+dest="$HOME/backup/snapshot"
+gitargs=("--git-dir=$HOME/.dotfiles.git/" "--work-tree=$HOME")
+host="$(hostname)"
+
+verbose () { echo "snapshot: $1" >&2 ; }
+
+cd
+
+case "$1" in
+s|send)
+	# dotfiles
+	verbose "pushing dotfiles"
+	git "${gitargs[@]}" push
+	# state
+	verbose "archiving state"
+	tar -c --zstd -f "$dest/state.tar.zst" .mozilla/ .config/fish/fish_variables
+	# machine specific
+	verbose "archiving '$host' specific"
+	tar -c --zstd -f "$dest/$(hostname)-config.tar.zst" .config/syncthing .stignore
+	# secret
+	verbose "archiving secret"
+	tar -c --zstd -f - .ssh/ .gnupg/ .password-store/ | gpg --yes -c -e -r F33D3A25013080DA7C28843CBE2668D9DB47C0D1 --output "$dest/secret.tar.zst.gpg"
+	verbose "success"
+;;
+r|receive)
+	# dotfiles
+	verbose "pulling dotfiles"
+	git "${gitargs[@]}" pull
+	# state
+	verbose "extracting state"
+	pkill firefox
+	mv .mozilla mozilla-old
+	tar -x --zstd -f "$dest/state.tar.zst"
+	rm -rf .cache
+	# secret
+	verbose "extracting secret"
+	mkdir secret-old && mv .ssh/ .gnupg/ .password-store/ secret-old
+	gpg --batch -d "$dest/secret.tar.zst.gpg" | tar -xv --zstd -f -
+	# not changed often
+	if [[ "$2" == all ]]; then
+		# machine specific
+		verbose "extracting '$host' specific"
+		tar -x --zstd -f "$dest/$host.tar.zst"
+	fi
+	verbose "success"
+;;
+c|confirm)
+	verbose "deleting *-old"
+	rm -rf mozilla-old secret-old
+	verbose "success"
+esac
