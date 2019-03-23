@@ -5,6 +5,7 @@ alacritty:exec alacritty
 chromium:exec chromium #
 cmus:exec cmus #
 compton:exec compton #
+code:exec code
 dunst:exec dunst #
 emacs:exec emacs #
 firefox:exec firefox #
