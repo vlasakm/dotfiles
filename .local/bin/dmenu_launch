@@ -25,6 +25,7 @@ mathematica:exec mathematica
 pavucontrol:exec pavucontrol
 reboot:exec reboot
 redshift:exec redshift
+sqldeveloper:exec env _JAVA_AWT_WM_NONREPARENTING=1 JAVA_HOME=/usr/lib/jvm/default oracle-sqldeveloper
 spotifyd:exec spotifyd #
 syncthing:exec syncthing
 st:exec st #
