@@ -2,35 +2,32 @@
 
 programs='
 alacritty:exec alacritty
+calc:exec localc
 chromium:exec chromium #
 cmus:exec cmus #
+code:exec code #
 compton:exec compton #
-code:exec code
 dunst:exec dunst #
 emacs:exec emacs #
 firefox:exec firefox #
-gucharmap:exec gucharmap #
 gramps:exec gramps
+gucharmap:exec gucharmap #
 htop:$TERMEXEC htop
 idle:exec idle #
+impress:exec loimpress
 ipython:$TERMEXEC ipython
 jupyter-lab:exec jupyter-lab
-lobase:exec lobase #
-calc:exec localc
-lodraw:exec lodraw #
-impress:exec loimpress
-lomath:exec lomath #
-writer:exec lowriter
 mathematica:exec mathematica
 pavucontrol:exec pavucontrol
 reboot:exec reboot
 redshift:exec redshift
-sqldeveloper:exec env _JAVA_AWT_WM_NONREPARENTING=1 JAVA_HOME=/usr/lib/jvm/default oracle-sqldeveloper
 spotifyd:exec spotifyd #
-syncthing:exec syncthing
+sqldeveloper:exec env _JAVA_AWT_WM_NONREPARENTING=1 JAVA_HOME=/usr/lib/jvm/default oracle-sqldeveloper
 st:exec st #
-vlc:exec vlc #
+syncthing:exec syncthing
 vivado:source /opt/Xilinx/Vivado/2018.2/.settings64-Vivado.sh && exec env _JAVA_AWT_WM_NONREPARENTING=1 vivado
+vlc:exec vlc #
+writer:exec lowriter
 '
 
 eval "$(grep "^$(grep -v '#$\|^$\|^#' <<< "$programs" | cut -d ':' -f 1 | dmenu -p "run:"):" <<< "$programs" | cut -d ':' -f 2)"
