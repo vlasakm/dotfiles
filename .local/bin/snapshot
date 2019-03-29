@@ -15,7 +15,7 @@ s|send)
 	git "${gitargs[@]}" push
 	# state
 	verbose "archiving state"
-	tar -c --zstd -f "$dest/state.tar.zst" .mozilla/ .config/fish/fish_variables
+	tar -c --zstd -f "$dest/state.tar.zst" .mozilla/ .config/fish/fish_variables .local/share/fish/fish_history
 	# machine specific
 	verbose "archiving '$host' specific"
 	tar -c --zstd -f "$dest/$(hostname)-config.tar.zst" .config/syncthing .stignore
