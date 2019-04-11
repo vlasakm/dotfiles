@@ -37,7 +37,7 @@ user_pref("lightweightThemes.selectedThemeID", "firefox-compact-dark@mozilla.org
 user_pref("media.eme.enabled", true);
 user_pref("network.http.throttle.enable ", false);
 user_pref("privacy.donottrackheader.enabled", true);
-user_pref("reader.parse-on-load.enabled", false);
+//user_pref("reader.parse-on-load.enabled", false);
 user_pref("signon.remembersignons", false);
 user_pref("signon.rememberSignons", false);
 user_pref("widget.chrome.allow-gtk-dark-theme", true);
