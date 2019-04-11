@@ -38,6 +38,9 @@ autocmd BufWritePre * %s/\s\+$//e
 map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
 imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
 
+" Termdebug
+packadd termdebug
+
 " Filetype specific
 autocmd FileType html,css,tex,latex,context setlocal tabstop=2
 
