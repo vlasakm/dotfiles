@@ -22,10 +22,10 @@ pavucontrol:exec pavucontrol
 reboot:exec reboot
 redshift:exec redshift
 spotifyd:exec spotifyd #
-sqldeveloper:exec env _JAVA_AWT_WM_NONREPARENTING=1 JAVA_HOME=/usr/lib/jvm/default oracle-sqldeveloper
+sqldeveloper:exec env _JAVA_AWT_WM_NONREPARENTING=1 JAVA_HOME=/usr/lib/jvm/default _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true" oracle-sqldeveloper
 st:exec st #
 syncthing:exec syncthing
-vivado:source /opt/Xilinx/Vivado/2018.2/.settings64-Vivado.sh && exec env _JAVA_AWT_WM_NONREPARENTING=1 vivado
+vivado:source /opt/Xilinx/Vivado/2018.2/.settings64-Vivado.sh && exec env _JAVA_AWT_WM_NONREPARENTING=1 _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true" vivado
 vlc:exec vlc #
 writer:exec lowriter
 '
