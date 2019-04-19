@@ -12,6 +12,7 @@ emacs:exec emacs #
 firefox:exec firefox #
 gramps:exec gramps
 gucharmap:exec gucharmap #
+gvim: exec gvim
 htop:$TERMEXEC htop
 idle:exec idle #
 impress:exec loimpress
