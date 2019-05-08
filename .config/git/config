@@ -1,6 +1,8 @@
 [user]
 	name = Michal Vlasák
 	email = lahcim8@gmail.com
+[diff]
+	algorithm = patience
 [color]
 	diff = auto
 	status = auto
