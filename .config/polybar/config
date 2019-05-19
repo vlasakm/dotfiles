@@ -23,6 +23,8 @@ font-1 = SymbolsNerdFont:size=10.5:weight=light;2
 modules-left = bspwm i3
 modules-right = pulseaudio battery xkeyboard wlan date time
 
+wm-restack = bspwm
+
 [module/xkeyboard]
 type = internal/xkeyboard
 
