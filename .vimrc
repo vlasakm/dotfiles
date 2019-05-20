@@ -11,10 +11,11 @@ set encoding=utf-8
 "scriptencoding utf-8
 
 " UI
-syntax on
+syntax enable
 set number
 set relativenumber
 set showmatch
+set showcmd
 highlight Visual cterm=reverse ctermbg=NONE
 
 " Search
