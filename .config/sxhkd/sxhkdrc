@@ -20,7 +20,7 @@ super + {_,shift + }w
 
 # launch email client
 super + {_,shift + }e
-	$TERMEXEC neomutt
+	{emacsclient -c,$TERMEXEC neomutt}
 
 # suspend / hibernate
 super + {_,shift + }BackSpace

@@ -7,6 +7,7 @@ feh --bg-scale --no-fehbg "$HOME/.wallpaper" &
 redshift &
 dunst &
 "$BROWSER" &
+#emacs --daemon &
 
 bspc monitor -d 1 2 3 4 5
 
@@ -24,3 +25,4 @@ bspc config ignore_ewmh_focus    true
 
 bspc rule -a Pinentry-gtk-2 state=floating
 bspc rule -a Zathura state=tiled
+bspc rule -a Emacs state=tiled
