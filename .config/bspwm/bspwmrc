@@ -7,7 +7,6 @@ feh --bg-scale --no-fehbg "$HOME/.wallpaper" &
 redshift &
 dunst &
 "$BROWSER" &
-#emacs --daemon &
 
 bspc monitor -d 1 2 3 4 5
 
