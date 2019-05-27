@@ -1,4 +1,8 @@
 set confirm off
+set pagination off
+set print pretty on
+set print asm-demangle on
+set disassembly-flavor intel
 
 # also needed: sudo strip /usr/lib/libstdc++.so.6
 # https://unix.stackexchange.com/questions/246143/gdb-throws-error-on-arch-linux
