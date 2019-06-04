@@ -1,7 +1,8 @@
 #!/bin/bash
 
 programs='
-alacritty:exec alacritty
+alacritty:exec alacritty #
+aerc:$TERMEXEC env TERM=xterm-256color aerc
 calc:exec localc
 chromium:exec chromium #
 cmus:exec cmus #
@@ -18,13 +19,14 @@ idle:exec idle #
 impress:exec loimpress
 ipython:$TERMEXEC ipython
 jupyter-lab:exec jupyter-lab
-mathematica:exec mathematica
+mathematica:exec mathematica #
 pavucontrol:exec pavucontrol
-reboot:exec reboot
+reboot:exec reboot #
 redshift:exec redshift
-spotifyd:exec spotifyd #
+spotify:exec spotify
+spotifyd:exec spotifyd
 sqldeveloper:exec env _JAVA_AWT_WM_NONREPARENTING=1 JAVA_HOME=/usr/lib/jvm/default _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true" oracle-sqldeveloper
-st:exec st #
+st:exec st
 syncthing:exec syncthing
 vivado:source /opt/Xilinx/Vivado/2018.2/.settings64-Vivado.sh && exec env _JAVA_AWT_WM_NONREPARENTING=1 _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true" vivado
 vlc:exec vlc #
