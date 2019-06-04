@@ -4,7 +4,7 @@
 
 # spawn terminal / terminal with tmux
 super + {_,shift + }Return
-	{$TERMINAL,$TERMEXEC tmux}
+	$TERMEXEC tmux
 
 # screenshot
 {_,shift + }Print
