@@ -42,6 +42,12 @@ imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
 " Termdebug
 packadd termdebug
 
+call plug#begin('~/.vim/plugged')
+Plug 'lervag/vimtex'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+" TODO: Plug 'Chiel92/vim-autoformat'
+call plug#end()
+
 " Filetype specific
 autocmd FileType html,css,tex,latex,context setlocal tabstop=2
 
