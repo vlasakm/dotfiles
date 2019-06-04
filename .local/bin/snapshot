@@ -9,7 +9,7 @@ verbose () { echo "snapshot: $1" >&2 ; }
 cd
 
 case "$1" in
-s|send)
+push)
 	# dotfiles
 	verbose "pushing dotfiles"
 	git "${gitargs[@]}" push
@@ -24,7 +24,7 @@ s|send)
 	tar -c --zstd -f - .ssh/ .gnupg/ .password-store/ | gpg --yes -c -e -r F33D3A25013080DA7C28843CBE2668D9DB47C0D1 --output "$dest/secret.tar.zst.gpg"
 	verbose "success"
 ;;
-r|receive)
+pull)
 	# dotfiles
 	verbose "pulling dotfiles"
 	git "${gitargs[@]}" pull
@@ -37,7 +37,7 @@ r|receive)
 	# secret
 	verbose "extracting secret"
 	mkdir secret-old && mv .ssh/ .gnupg/ .password-store/ secret-old
-	gpg --batch -d "$dest/secret.tar.zst.gpg" | tar -xv --zstd -f -
+	gpg --homedir secret-old/.gnupg/ --batch -d "$dest/secret.tar.zst.gpg" | tar -x --zstd -f -
 	# not changed often
 	if [[ "$2" == all ]]; then
 		# machine specific
