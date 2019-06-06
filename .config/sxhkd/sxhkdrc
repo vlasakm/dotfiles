@@ -4,7 +4,7 @@
 
 # spawn terminal / terminal with tmux
 super + {_,shift + }Return
-	$TERMEXEC tmux
+	$TERMEXEC tmux {-L stmux -f "$HOME/.stmux.conf", }
 
 # screenshot
 {_,shift + }Print
