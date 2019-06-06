@@ -32,20 +32,20 @@ set scrolloff=3
 set undofile
 set undodir=~/.vim/undodir
 
-" Delete trailing whitespace on save
-autocmd BufWritePre * %s/\s\+$//e
-
-" Clang-format
-map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
-imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
+" Autoformat
+autocmd BufWrite * :Autoformat
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
 
 " Termdebug
 packadd termdebug
 
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'lervag/vimtex'
 Plug 'vim-scripts/DoxygenToolkit.vim'
-" TODO: Plug 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat'
 call plug#end()
 
 " Filetype specific
