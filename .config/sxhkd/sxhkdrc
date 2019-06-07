@@ -34,6 +34,16 @@ super + d ; {c,k,l,p}
 super + n
 	$TERMEXEC nnn
 
+super + m
+	$TERMEXEC tmux new -A -s music ncspot \; set status off \;
+
+super + {equal,plus}
+	pactl set-sink-input-volume $(pactl list sink-inputs | sed -n '/Sink Input #\(.*\)/ \{s//\1/;h\}; /application.name = "librespot"/ \{x;p;q\}') {-,+}5%
+
+super + space
+	playerctl play-pause
+
+
 #
 # bspwm hotkeys
 #
