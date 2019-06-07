@@ -4,7 +4,7 @@
 
 # spawn terminal / terminal with tmux
 super + {_,shift + }Return
-	$TERMEXEC tmux {-L stmux -f "$HOME/.stmux.conf", }
+	$TERMEXEC tmux {new-session \; set status off \; set destroy-unattached, }
 
 # screenshot
 {_,shift + }Print
