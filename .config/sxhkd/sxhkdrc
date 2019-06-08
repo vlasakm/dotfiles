@@ -43,6 +43,8 @@ super + {equal,plus}
 super + space
 	playerctl play-pause
 
+super + {less,greater}
+	playerctl {previous,next}
 
 #
 # bspwm hotkeys
