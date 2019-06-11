@@ -1,4 +1,6 @@
 feh -B '#111111' \
 -N \
 --scale-down \
---auto-zoom
+--auto-zoom \
+--sort filename \
+--version-sort
