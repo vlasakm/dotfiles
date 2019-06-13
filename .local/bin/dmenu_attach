@@ -1,0 +1,2 @@
+#!/bin/sh
+exec $TERMEXEC tmux attach -t "$(tmux ls | dmenu | cut -d: -f1)"

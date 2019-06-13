@@ -27,8 +27,8 @@ super + {_,shift + }BackSpace
 	systemctl {suspend,hibernate}
 
 # dmenu menus
-super + d ; {c,k,l,p}
-	{dmenu_clip,dmenu_kill,dmenu_launch,passmenu}
+super + d ; {a,c,k,l,p}
+	{dmenu_attach,dmenu_clip,dmenu_kill,dmenu_launch,passmenu}
 
 # launch nnn
 super + n
