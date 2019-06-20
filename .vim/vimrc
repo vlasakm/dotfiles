@@ -1,14 +1,19 @@
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-commentary' " 'gc' for commenting
+Plug 'tpope/vim-surround'
+Plug 'lervag/vimtex' " tex/latex/contex
+Plug 'vim-scripts/DoxygenToolkit.vim' " :Dox for C++
+Plug 'Chiel92/vim-autoformat' " autoformatting different file formats
+Plug 'jacoborus/tender.vim' " tender color scheme
+call plug#end()
+
 " Basic
-set nocompatible
 set lazyredraw
-filetype plugin on
+set ttyfast
 set splitbelow splitright
 set clipboard=unnamedplus
-
-" UTF-8
 set encoding=utf-8
-"set fileencoding=utf-8
-"scriptencoding utf-8
 
 " UI
 syntax enable
@@ -16,7 +21,13 @@ set number
 set relativenumber
 set showmatch
 set showcmd
-highlight Visual cterm=reverse ctermbg=NONE
+set t_8f=[38;2;%lu;%lu;%lum " set foreground color
+set t_8b=[48;2;%lu;%lu;%lum " set background color
+set t_Co=256 " enable 256 colors
+set termguicolors " enable 24-bit colors
+colorscheme tender
+highlight Normal guibg=NONE
+" highlight Visual cterm=reverse ctermbg=NONE
 
 " Search
 set ignorecase
@@ -24,9 +35,9 @@ set smartcase
 set incsearch
 
 " Indent / cursor behavior
-set smartindent
+set autoindent
 set nostartofline
-set scrolloff=3
+set scrolloff=2
 
 " Undo
 set undofile
@@ -40,15 +51,8 @@ let g:autoformat_retab = 0
 " Termdebug
 packadd termdebug
 
-call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'lervag/vimtex'
-Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'Chiel92/vim-autoformat'
-call plug#end()
-
 " Filetype specific
+filetype plugin on
 autocmd FileType html,css,tex,latex,context setlocal tabstop=2
 
 " No arrow keys
