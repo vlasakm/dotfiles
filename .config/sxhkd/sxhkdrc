@@ -20,7 +20,7 @@ super + {_,shift + }w
 
 # launch email client
 super + {_,shift + }e
-	$TERMEXEC neomutt
+	$TERMEXEC {aerc,neomutt}
 
 # suspend / hibernate
 super + {_,shift + }BackSpace

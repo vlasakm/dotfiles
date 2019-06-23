@@ -2,7 +2,7 @@
 
 programs='
 alacritty:exec alacritty #
-aerc:$TERMEXEC env TERM=xterm-256color aerc
+aerc:$TERMEXEC aerc
 calc:exec localc
 chromium:exec chromium #
 cmus:exec cmus #
