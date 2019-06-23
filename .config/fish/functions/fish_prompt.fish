@@ -1,11 +1,3 @@
-set __fish_git_prompt_showdirtystate 'yes'
-set __fish_git_prompt_showstashstate 'yes'
-set __fish_git_prompt_showuntrackedfiles 'yes'
-set __fish_git_prompt_showupstream 'yes'
-
-set fish_prompt_pwd_dir_length 0
-
-
 function fish_prompt --description 'Write out the prompt'
 
 	set stat $status
