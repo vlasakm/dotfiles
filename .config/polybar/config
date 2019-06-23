@@ -50,26 +50,6 @@ label-occupied-foreground = ${colors.foreground-dimmed}
 label-empty = " %name% "
 label-empty-foreground = ${colors.foreground-dark}
 
-[module/i3]
-type = internal/i3
-index-sort = true
-enable-click = false
-enable-scroll = false
-
-; focused = Active workspace on focused monitor
-label-focused = %name%
-label-focused-padding = 1
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
-label-unfocused-foreground = ${colors.foreground-dimmed}
-label-unfocused-padding = 1
-
-; urgent = Workspace with urgency hint set
-label-urgent = %name%
-label-urgent-foreground = ${colors.alert}
-label-urgent-padding = 1
-
 [module/wlan]
 type = internal/network
 interface = wlp5s0
