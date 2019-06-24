@@ -1,9 +1,9 @@
-if status is-interactive
-	set -x GPG_TTY (tty)
+set -x GPG_TTY (tty)
 
+if status is-interactive
 	alias config 'git --git-dir="$HOME/.dotfiles.git/" --work-tree="$HOME"'
 	alias gdb 'gdb -q'
-	alias grep 'grep --color=auto $argv'
+	alias grep 'grep --color=auto'
 	alias info 'info --vi-keys'
 	alias la 'ls -lA'
 	alias ll 'ls -l'
