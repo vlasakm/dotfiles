@@ -20,13 +20,14 @@ syntax enable
 set number
 set relativenumber
 set showcmd
+
+" Colors
+set termguicolors " enable 24-bit colors
 set t_8f=[38;2;%lu;%lu;%lum " set foreground color
 set t_8b=[48;2;%lu;%lu;%lum " set background color
-set t_Co=256 " enable 256 colors
-set termguicolors " enable 24-bit colors
 colorscheme tender
 highlight Normal guibg=NONE
-" highlight Visual cterm=reverse ctermbg=NONE
+highlight Visual guibg=#303030
 
 " Search
 set ignorecase
