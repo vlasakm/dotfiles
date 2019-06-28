@@ -55,7 +55,7 @@ if status is-login
 
 	# Use gpg-agent as ssh-agent
 	set -x SSH_AGENT_PID
-	set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh
+	set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 
 	# Start X at login on tty1
 	if test -z "$DISPLAY" -a $XDG_VTNR = 1
