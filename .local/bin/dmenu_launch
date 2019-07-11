@@ -6,22 +6,23 @@ aerc:$TERMEXEC aerc
 calc:exec localc
 chromium:exec chromium #
 cmus:exec cmus #
-code:exec code #
+code:exec code
 compton:exec compton #
-emacs:exec emacs #
+emacs:exec emacs
 firefox:exec firefox #
+geany:exec geany
 gramps:exec gramps
 gucharmap:exec gucharmap
-gvim: exec gvim
 htop:$TERMEXEC htop
 idle:exec idle #
 impress:exec loimpress
 ipython:$TERMEXEC ipython
 jupyter-lab:exec jupyter-lab
+keepassxc:exec keepassxc
 ncspot:$TERMEXEC ncspot
 pavucontrol:exec pavucontrol
-reboot:exec reboot #
-redshift:exec redshift
+reboot:exec reboot
+redshift:exec redshift #
 st:exec st
 syncthing:exec syncthing
 vlc:exec vlc #
