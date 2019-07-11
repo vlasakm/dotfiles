@@ -5,7 +5,7 @@ Plug 'tpope/vim-surround'
 Plug 'lervag/vimtex' " tex/latex/contex
 Plug 'vim-scripts/DoxygenToolkit.vim' " :Dox for C++
 Plug 'Chiel92/vim-autoformat' " autoformatting different file formats
-Plug 'jacoborus/tender.vim' " tender color scheme
+Plug 'nanotech/jellybeans.vim' " jellybeans color scheme
 call plug#end()
 
 " Basic
@@ -25,9 +25,14 @@ set showcmd
 set termguicolors " enable 24-bit colors
 set t_8f=[38;2;%lu;%lu;%lum " set foreground color
 set t_8b=[48;2;%lu;%lu;%lum " set background color
-colorscheme tender
+
+" Colorscheme
+colorscheme jellybeans
 highlight Normal guibg=NONE
-highlight Visual guibg=#303030
+highlight LineNr guibg=NONE
+highlight CursorLineNr guibg=NONE
+highlight NonText guibg=NONE
+highlight SpecialKey guibg=NONE
 
 " Search
 set ignorecase
