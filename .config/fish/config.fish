@@ -46,7 +46,8 @@ if status is-login
 	set -x NNN_USE_EDITOR "1"
 	set -x PASSWORD_STORE_CLIP_TIME "3"
 	set -x LESS "-R"
-	set -x GOPATH ~/.local/share/go
+	set -x GOPATH "$HOME/.local/share/go"
+	set -x QT_QPA_PLATFORMTHEME "qt5ct"
 
 	# Address sanitizer options
 	set -x ASAN_OPTIONS  "symbolize=1:debug=1:detect_leaks=1:strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1"
