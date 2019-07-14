@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary' " 'gc' for commenting
 Plug 'tpope/vim-surround'
-Plug 'lervag/vimtex' " tex/latex/contex
+" Plug 'lervag/vimtex' " tex/latex/contex
 Plug 'vim-scripts/DoxygenToolkit.vim' " :Dox for C++
 Plug 'Chiel92/vim-autoformat' " autoformatting different file formats
 Plug 'nanotech/jellybeans.vim' " jellybeans color scheme
