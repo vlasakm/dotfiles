@@ -1,4 +1,8 @@
 " Plugins
+packadd termdebug
+let g:termdebug_wide=160
+packadd matchit
+
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary' " 'gc' for commenting
 Plug 'tpope/vim-surround'
@@ -52,9 +56,6 @@ set undodir=~/.vim/undodir
 autocmd BufWrite * :Autoformat
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
-
-" Termdebug
-packadd termdebug
 
 " Filetype specific
 filetype plugin on
