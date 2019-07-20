@@ -1,10 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -o pipefail
 
 dest="$HOME/backup/snapshot"
 gitargs=("--git-dir=$HOME/.dotfiles.git/" "--work-tree=$HOME")
 host="$(hostname)"
+olddir=".snapshot-old"
+
+# state dirs
+state=(.mozilla/firefox/profile .vim/undodir .gramps .config/transmission-daemon .local/share/zathura)
+# state files
+state+=(.viminfo .config/fish/fish_variables .local/share/fish/fish_history .clang-format)
+# machine specific dirs
+machine=(.config/syncthing .stfolder)
+# machine specific files
+machine+=(.stignore)
+# secret dirs
+secret=(.ssh .gnupg .password-store)
 
 verbose () { echo "snapshot: $1" >&2 ; }
+die () { echo "snapshot: $1" >&2 ; exit 1 ; }
 
 cd
 
@@ -12,42 +27,44 @@ case "$1" in
 push)
 	# dotfiles
 	verbose "pushing dotfiles"
-	git "${gitargs[@]}" push
+	git "${gitargs[@]}" push || die "failed to push dotfiles"
 	# state
+	pkill firefox
 	verbose "archiving state"
-	tar -c --zstd -f "$dest/state.tar.zst" .mozilla/ .config/fish/fish_variables .local/share/fish/fish_history
+	mkdir -p "$dest" || die "failed to create snapshot destionation - '$dest'"
+	tar -c --zstd -f "$dest/state.tar.zst" "${state[@]}" || die "failed to snapshot state"
 	# machine specific
 	verbose "archiving '$host' specific"
-	tar -c --zstd -f "$dest/$(hostname)-config.tar.zst" .config/syncthing .stignore
+	tar -c --zstd -f "$dest/$host-config.tar.zst" "${machine[@]}" || die "failed to snapshot machine specific"
 	# secret
 	verbose "archiving secret"
-	tar -c --zstd -f - .ssh/ .gnupg/ .password-store/ | gpg --yes -c -e -r F33D3A25013080DA7C28843CBE2668D9DB47C0D1 --output "$dest/secret.tar.zst.gpg"
+	tar -c --zstd -f - "${secret[@]}" | gpg --yes -c -e -r F33D3A25013080DA7C28843CBE2668D9DB47C0D1 --output "$dest/secret.tar.zst.gpg" \
+		|| die "failed to snapshot secret"
 	verbose "success"
 ;;
 pull)
 	# dotfiles
 	verbose "pulling dotfiles"
-	git "${gitargs[@]}" pull
-	# state
-	verbose "extracting state"
+	git "${gitargs[@]}" pull || die "failed to pull dotfiles"
+	# state & secret
+	mkdir -p "$olddir" || die "failed to create old directory - '$olddir'"
+	verbose "extracting"
 	pkill firefox
-	mv .mozilla mozilla-old
-	tar -x --zstd -f "$dest/state.tar.zst"
-	rm -rf .cache
-	# secret
-	verbose "extracting secret"
-	mkdir secret-old && mv .ssh/ .gnupg/ .password-store/ secret-old
-	gpg --homedir secret-old/.gnupg/ --batch -d "$dest/secret.tar.zst.gpg" | tar -x --zstd -f -
+	mv "${state[@]}" "${secret[@]}" "$olddir" || die "failed to backup state & secret files"
+	tar -x --zstd -f "$dest/state.tar.zst" || die "failed to extract state" || die "failed to extract state"
+	gpg --homedir "$olddir/.gnupg/" --batch -d "$dest/secret.tar.zst.gpg" | tar -x --zstd -f - || die "failed to extract secret"
+	rm -rf .cache/mozilla/firefox || die "failed to delete firefox cache"
 	# not changed often
 	if [[ "$2" == all ]]; then
 		# machine specific
 		verbose "extracting '$host' specific"
-		tar -x --zstd -f "$dest/$host.tar.zst"
+		mv "${machine[@]}" "$olddir" || die "failed to backup '$host' specific"
+		tar -x --zstd -f "$dest/$host-config.tar.zst" || die "failed to extract '$host' specific"
 	fi
 	verbose "success"
 ;;
-c|confirm)
-	verbose "deleting *-old"
-	rm -rf mozilla-old secret-old
+confirm)
+	verbose "deleting old"
+	rm -rf "$olddir"
 	verbose "success"
 esac
