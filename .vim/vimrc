@@ -2,6 +2,8 @@
 packadd termdebug
 let g:termdebug_wide=160
 packadd matchit
+runtime ftplugin/man.vim
+
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary' " 'gc' for commenting
