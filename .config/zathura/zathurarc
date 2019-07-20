@@ -5,9 +5,21 @@ set recolor "true"
 set recolor-lightcolor "#101010"
 set recolor-darkcolor  "#FFFFFF"
 
-map u scroll half-up
-map d scroll half-down
-map r reload
-map R rotate
-#map K zoom in
-#map J zoom out
+map [presentation] <C-r> recolor
+
+map              u scroll half-up
+map [fullscreen] u scroll half-up
+map              d scroll half-down
+map [fullscreen] d scroll half-down
+map              r reload
+map [fullscreen] r reload
+map              R rotate
+map [fullscreen] R rotate
+map              f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+map              F follow
+map [fullscreen] F follow
+map              i zoom in
+map [fullscreen] i zoom in
+map              o zoom out
+map [fullscreen] o zoom out
