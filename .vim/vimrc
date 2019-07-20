@@ -9,9 +9,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary' " 'gc' for commenting
 Plug 'tpope/vim-surround'
 " Plug 'lervag/vimtex' " tex/latex/contex
-Plug 'vim-scripts/DoxygenToolkit.vim' " :Dox for C++
-Plug 'Chiel92/vim-autoformat' " autoformatting different file formats
-Plug 'nanotech/jellybeans.vim' " jellybeans color scheme
+" Plug 'vim-scripts/DoxygenToolkit.vim' " :Dox for C++
+Plug 'aonemd/kuroi.vim' " jellybeans color scheme
 call plug#end()
 
 " Basic
@@ -33,12 +32,10 @@ set t_8f=[38;2;%lu;%lu;%lum " set foreground color
 set t_8b=[48;2;%lu;%lu;%lum " set background color
 
 " Colorscheme
-colorscheme jellybeans
-highlight Normal guibg=NONE
-highlight LineNr guibg=NONE
-highlight CursorLineNr guibg=NONE
-highlight NonText guibg=NONE
-highlight SpecialKey guibg=NONE
+set background=dark
+colorscheme kuroi
+hi Normal guibg=NONE
+hi EndOfBuffer cterm=NONE guibg=NONE
 
 " Search
 set ignorecase
@@ -53,11 +50,6 @@ set scrolloff=2
 " Undo
 set undofile
 set undodir=~/.vim/undodir
-
-" Autoformat
-autocmd BufWrite * :Autoformat
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
 
 " Filetype specific
 filetype plugin on
