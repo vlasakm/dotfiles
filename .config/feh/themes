@@ -1,7 +1,0 @@
-feh -B '#111111' \
--N \
---scale-down \
---auto-zoom \
---draw-filename \
---sort filename \
---version-sort
