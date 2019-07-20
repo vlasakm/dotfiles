@@ -25,3 +25,4 @@ bspc rule -a Pinentry-gtk-2 state=floating
 bspc rule -a Zathura state=tiled
 bspc rule -a Emacs state=tiled
 bspc rule -a Surf state=tiled
+bspc rule -a imv state=tiled
