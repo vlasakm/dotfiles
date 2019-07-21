@@ -10,9 +10,9 @@ super + {_,shift + }Return
 {_,shift + }Print
 	scrot { ,-s} -e 'mv "$f" ~/media/screenshots && notify-send "Screenshot saved" "$f"'
 
-# poweroff
-super + shift + Escape
-	systemctl poweroff
+# suspend / poweroff
+super + shift + {BackSpace,Escape}
+	systemctl {suspend,poweroff}
 
 # launch web browser
 super + {_,shift + }w
@@ -22,10 +22,6 @@ super + {_,shift + }w
 super + {_,shift + }e
 	$TERMEXEC {aerc,neomutt}
 
-# suspend / hibernate
-super + {_,shift + }BackSpace
-	systemctl {suspend,hibernate}
-
 # dmenu menus
 super + d ; {a,c,k,l,p}
 	{dmenu_attach,dmenu_clip,dmenu_kill,dmenu_launch,passmenu}
@@ -34,17 +30,17 @@ super + d ; {a,c,k,l,p}
 super + n
 	$TERMEXEC nnn
 
+# spotify client
 super + m
 	$TERMEXEC tmux new -A -s music ncspot \; set status off \;
 
+# spotify volume control
 super + {equal,plus}
 	pactl set-sink-input-volume $(pactl list sink-inputs | sed -n '/Sink Input #\(.*\)/ \{s//\1/;h\}; /application.name = "librespot"/ \{x;p;q\}') {-,+}5%
 
-super + space
-	playerctl play-pause
-
-super + {less,greater}
-	playerctl {previous,next}
+# dbus-mpris control
+super + {space,less,greater}
+	playerctl {play-pause,previous,next}
 
 #
 # bspwm hotkeys
@@ -57,6 +53,10 @@ super + {_,shift + }q
 # alternate between the tiled and monocle layout
 super + f
 	bspc desktop -l next
+
+super + ctrl + shift + m
+	bspc node -n newest.!automatic.local
+
 
 #
 # state/flags
