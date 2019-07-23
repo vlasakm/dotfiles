@@ -55,9 +55,8 @@ if status is-login
 	# Path
 	set -x PATH $HOME/.local/bin $HOME/projects/scripts /usr/local/texlive/2019/bin/x86_64-linux $PATH
 
-	# Use gpg-agent as ssh-agent
-	set -x SSH_AGENT_PID
-	set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+	# ssh-agent
+	eval (ssh-agent -c)
 
 	# Start X at login on tty1
 	if test -z "$DISPLAY" -a $XDG_VTNR = 1
