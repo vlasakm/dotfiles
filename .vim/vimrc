@@ -4,7 +4,6 @@ let g:termdebug_wide=160
 packadd matchit
 runtime ftplugin/man.vim
 
-
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary' " 'gc' for commenting
 Plug 'tpope/vim-surround'
@@ -50,6 +49,9 @@ set scrolloff=2
 " Undo
 set undofile
 set undodir=~/.vim/undodir
+
+" Delete trailing whitespace on save
+autocmd BufWrite * %s/\s+$//e
 
 " Filetype specific
 filetype plugin on
