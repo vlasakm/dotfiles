@@ -1,3 +1,4 @@
+; vim:ft=dosini
 [colors]
 background = #101010
 foreground = #fafafa
@@ -9,26 +10,25 @@ alert = #55bd2c40
 [bar/top]
 width = 100%
 height = 23
-fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-padding-right = 1
+padding= 1
 module-margin = 1
 
 font-0 = monospace:pixelsize=11;3
 font-1 = SymbolsNerdFont:size=10.5:weight=light;2
 
-modules-left = bspwm i3
-modules-right = player-mpris-tail pulseaudio battery xkeyboard wlan date time
+modules-left = bspwm
+modules-right = player-mpris-tail pulseaudio xkeyboard wlan date time
 
 wm-restack = bspwm
 
 [module/xkeyboard]
 type = internal/xkeyboard
 
-label-layout =  %layout%
+format =  <label-layout>
 
 blacklist-0 = num lock
 blacklist-2 = scroll lock
@@ -36,26 +36,30 @@ blacklist-3 = caps lock
 
 [module/bspwm]
 type = internal/bspwm
+
 enable-click = false
 enable-scroll = false
 
-label-focused = " %name% "
+format = <label-state>
 
-label-urgent = " %name% "
+label-separator = "  "
+
+label-focused = %name%
+
+label-urgent = %name%
 label-urgent-foreground = ${colors.alert}
 
-label-occupied = " %name% "
+label-occupied = %name%
 label-occupied-foreground = ${colors.foreground-dimmed}
 
-label-empty = " %name% "
+label-empty = %name%
 label-empty-foreground = ${colors.foreground-dark}
 
 [module/wlan]
 type = internal/network
-interface = wlp5s0
 interval = 3.0
+interface = wlp5s0
 
-format-connected = <label-connected>
 label-connected =  %essid%
 
 format-disconnected =
@@ -64,15 +68,17 @@ format-disconnected =
 type = internal/date
 interval = 5
 
+format =  <label>
+label = %time%
 time = %H:%M
-label =  %time%
 
 [module/date]
 type = internal/date
 interval = 120
 
+format =  <label>
+label = %date%
 date = "%Y-%m-%d"
-label =  %date%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -87,26 +93,5 @@ exec = ~/.config/polybar/player-mpris-tail.py -f ' {artist} - {title}'
 tail = true
 label = %output%
 
-[module/battery]
-type = internal/battery
-
-full-at = 99
-battery = BAT0
-adapter = AC
-
-label-charging =  %percentage%%
-label-discharging =  %percentage%%
-
-
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-
-;[global/wm]
-;margin-top = 5
-;margin-bottom = 5
-
-; vim:ft=dosini
