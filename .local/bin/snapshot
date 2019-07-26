@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -o pipefail
+shopt -s nullglob
 
 dest="$HOME/backup/snapshot"
 gitargs=("--git-dir=$HOME/.dotfiles.git/" "--work-tree=$HOME")
@@ -25,17 +26,22 @@ cd
 
 case "$1" in
 push)
+	shift
+
 	# dotfiles
 	verbose "pushing dotfiles"
 	git "${gitargs[@]}" push || die "failed to push dotfiles"
+
 	# state
 	pkill firefox
 	verbose "archiving state"
 	mkdir -p "$dest" || die "failed to create snapshot destionation - '$dest'"
 	tar -c --zstd -f "$dest/state.tar.zst" "${state[@]}" || die "failed to snapshot state"
+
 	# machine specific
 	verbose "archiving '$host' specific"
 	tar -c --zstd -f "$dest/$host-config.tar.zst" "${machine[@]}" || die "failed to snapshot machine specific"
+
 	# secret
 	verbose "archiving secret"
 	tar -c --zstd -f - "${secret[@]}" | gpg --yes -c -e -r F33D3A25013080DA7C28843CBE2668D9DB47C0D1 --output "$dest/secret.tar.zst.gpg" \
@@ -43,24 +49,74 @@ push)
 	verbose "success"
 ;;
 pull)
+	shift
+
 	# dotfiles
 	verbose "pulling dotfiles"
 	git "${gitargs[@]}" pull || die "failed to pull dotfiles"
-	# state & secret
+
+	# backup
 	mkdir -p "$olddir" || die "failed to create old directory - '$olddir'"
-	verbose "extracting"
-	pkill firefox
+	verbose "backing up to '$olddir'"
 	mv "${state[@]}" "${secret[@]}" "$olddir" || die "failed to backup state & secret files"
+
+	# state
+	verbose "killing firefox"
+	pkill firefox
+	verbose "extracting state"
 	tar -x --zstd -f "$dest/state.tar.zst" || die "failed to extract state" || die "failed to extract state"
+
+	# secret
+	verbose "extracting secret"
 	gpg --homedir "$olddir/.gnupg/" --batch -d "$dest/secret.tar.zst.gpg" | tar -x --zstd -f - || die "failed to extract secret"
+
+	verbose "deleting firefox cache"
 	rm -rf .cache/mozilla/firefox || die "failed to delete firefox cache"
+
 	# not changed often
-	if [[ "$2" == all ]]; then
+	if [[ "$1" == all ]]; then
 		# machine specific
 		verbose "extracting '$host' specific"
 		mv "${machine[@]}" "$olddir" || die "failed to backup '$host' specific"
 		tar -x --zstd -f "$dest/$host-config.tar.zst" || die "failed to extract '$host' specific"
 	fi
+
+	verbose "success"
+;;
+bootstrap)
+	shift
+	target="${1:-/mnt$HOME}"
+
+	# clean
+	verbose "cleaning '$target'"
+	shopt -s dotglob
+	rm -rf "$target"/* || die "failed to clean '$target'"
+	shopt -u dotglob
+
+	# dotfiles
+	verbose "initializing bare git repository"
+	target_gitargs=("--git-dir=$target/.dotfiles.git/" "--work-tree=$target")
+	git init --bare "$target/.dotfiles.git" || die "failed to initialize bare git repository"
+	git "${target_gitargs[@]}" remote add origin github:lahcim8/dotfiles.git || die "failed to add git remote"
+	git "${target_gitargs[@]}" config status.showUntrackedFiles no || die "failed to set git config option"
+	verbose "pulling dotfiles"
+	git "${target_gitargs[@]}" pull --force origin master || die "failed to pull origin"
+
+	# extract
+	verbose "extracting to '$target'"
+
+	# state
+	verbose "extracting state"
+	tar -x --zstd -f "$dest/state.tar.zst" -C "$target" || die "failed to extract state" || die "failed to extract state"
+
+	# secret
+	verbose "extracting secret"
+	gpg --batch -d "$dest/secret.tar.zst.gpg" | tar -x --zstd -f - -C "$target" || die "failed to extract secret"
+
+	# machine specific
+	verbose "extracting '$host' specific"
+	tar -x --zstd -f "$dest/$host-config.tar.zst" -C "$target" || die "failed to extract '$host' specific"
+
 	verbose "success"
 ;;
 confirm)
