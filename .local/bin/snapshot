@@ -44,7 +44,7 @@ push)
 
 	# secret
 	verbose "archiving secret"
-	tar -c --zstd -f - "${secret[@]}" | gpg --yes -c -e -r F33D3A25013080DA7C28843CBE2668D9DB47C0D1 --output "$dest/secret.tar.zst.gpg" \
+	tar -c --zstd -f - "${secret[@]}" | gpg --yes -c -e --output "$dest/secret.tar.zst.gpg" \
 		|| die "failed to snapshot secret"
 	verbose "success"
 ;;
