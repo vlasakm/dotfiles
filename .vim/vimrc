@@ -1,29 +1,61 @@
 " Plugins
-packadd termdebug
-let g:termdebug_wide=160
-packadd matchit
+packadd! matchit
 runtime ftplugin/man.vim
 
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-commentary' " 'gc' for commenting
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-" Plug 'lervag/vimtex' " tex/latex/contex
-" Plug 'vim-scripts/DoxygenToolkit.vim' " :Dox for C++
-Plug 'aonemd/kuroi.vim' " jellybeans color scheme
+Plug 'lervag/vimtex'
+Plug 'vim-scripts/DoxygenToolkit.vim', { 'for' : 'cpp' }
+Plug 'aonemd/kuroi.vim'
+let g:plug_shallow = 0
+" Repositories not supporting shallow clone
+Plug 'https://sanctum.geek.nz/code/vim-redact-pass.git'
 call plug#end()
 
 " Basic
+filetype plugin indent on
+syntax enable
+set hidden
+set splitbelow splitright
+set history=1000
+set nrformats-=octal
+
+" Input, drawing
 set lazyredraw
 set ttyfast
-set splitbelow splitright
-set clipboard=unnamedplus
-set encoding=utf-8
+set ttimeout
+set ttimeoutlen=100
+
+" Clipboard
+set clipboard^=unnamedplus
 
 " UI
-syntax enable
 set number
 set relativenumber
 set showcmd
+set ruler
+set wildmenu
+set display+=lastline
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+
+" Search
+set ignorecase
+set smartcase
+set incsearch
+
+" Cursor behavior
+set autoindent
+set backspace=indent,eol,start
+set formatoptions+=j
+set smarttab
+set nostartofline
+set scrolloff=2
+
+" Undo, Swap
+set undofile
+set undodir=~/.vim/undo//
+set directory=~/.vim/swap//
 
 " Colors
 set termguicolors " enable 24-bit colors
@@ -36,33 +68,8 @@ colorscheme kuroi
 hi Normal guibg=NONE
 hi EndOfBuffer cterm=NONE guibg=NONE
 
-" Search
-set ignorecase
-set smartcase
-set incsearch
-
-" Indent / cursor behavior
-set autoindent
-set nostartofline
-set scrolloff=2
-
-" Undo
-set undofile
-set undodir=~/.vim/undodir
-
 " Delete trailing whitespace on save
 autocmd BufWrite * %s/\s+$//e
 
 " Filetype specific
-filetype plugin on
 autocmd FileType html,css,tex,latex,context setlocal tabstop=2
-
-" No arrow keys
-noremap <Up> <Nop>
-inoremap <Up> <Nop>
-noremap <Down> <Nop>
-inoremap <Down> <Nop>
-noremap <Left> <Nop>
-inoremap <Left> <Nop>
-noremap <Right> <Nop>
-inoremap <Right> <Nop>

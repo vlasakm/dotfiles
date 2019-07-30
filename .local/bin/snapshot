@@ -9,7 +9,7 @@ host="$(hostname)"
 olddir=".snapshot-old"
 
 # state dirs
-state=(.mozilla/firefox/profile .vim/undodir .gramps .config/transmission-daemon .local/share/zathura)
+state=(.mozilla/firefox/profile .vim/undo .gramps .config/transmission-daemon .local/share/zathura)
 # state files
 state+=(.viminfo .config/fish/fish_variables .local/share/fish/fish_history .clang-format)
 # machine specific dirs
