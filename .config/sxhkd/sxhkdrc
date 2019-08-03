@@ -54,9 +54,9 @@ super + {_,shift + }q
 super + f
 	bspc desktop -l next
 
+# move current node to preselection
 super + ctrl + shift + m
 	bspc node -n newest.!automatic.local
-
 
 #
 # state/flags
