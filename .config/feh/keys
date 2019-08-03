@@ -1,13 +1,10 @@
 save_filelist
 toggle_fullscreen f
 
-scroll_up K
-scroll_down J
-scroll_right L
-scroll_left H
+scroll_left h
+scroll_down j
+scroll_up k
+scroll_right l
 
-zoom_in k
-zoom_out j
-
-next_img l
-prev_img h
+zoom_in i
+zoom_out o
