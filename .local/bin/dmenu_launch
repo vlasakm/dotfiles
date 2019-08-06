@@ -9,6 +9,7 @@ cmus:exec cmus #
 code:exec code
 compton:exec compton #
 emacs:exec emacs
+emacsclient:exec emacsclient -c
 firefox:exec firefox #
 geany:exec geany
 gramps:exec gramps
