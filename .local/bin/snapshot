@@ -11,11 +11,11 @@ olddir=".snapshot-old"
 # state dirs
 state=(.mozilla/firefox/profile .vim/{undo,swap} .gramps .config/transmission-daemon .local/share/zathura .config/mpv/watch_later)
 # state files
-state+=(.viminfo .config/fish/fish_variables .local/share/fish/fish_history .clang-format)
+state+=(.viminfo .config/fish/fish_variables .local/share/fish/fish_history .clang-format "$(readlink .wallpaper)")
 # machine specific dirs
 machine=(.config/syncthing .stfolder)
 # machine specific files
-machine+=(.stignore)
+machine+=(.stignore .config/pulse/default.pa)
 # secret dirs
 secret=(.ssh .gnupg .password-store)
 
