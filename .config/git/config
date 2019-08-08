@@ -5,6 +5,8 @@
 	autocrlf = input
 [diff]
 	; algorithm = patience
+[commit]
+	verbose = true
 [push]
 	default = simple
 [sendemail]
