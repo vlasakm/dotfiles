@@ -42,6 +42,15 @@ super + {equal,plus}
 super + {space,less,greater}
 	playerctl {play-pause,previous,next}
 
+# volume control
+{XF86AudioLowerVolume,XF86AudioRaiseVolume}
+	pactl set-sink-mute @DEFAULT_SINK@ false; \
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}2%
+
+# mute control
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
 #
 # bspwm hotkeys
 #
