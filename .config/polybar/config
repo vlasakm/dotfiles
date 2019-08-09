@@ -1,7 +1,7 @@
 ; vim:ft=dosini
 [colors]
 background = #101010
-foreground = #fafafa
+foreground = #eeeeee
 foreground-bright = #ffffff
 foreground-dimmed = #a0a0a0
 foreground-dark = #404040
@@ -45,6 +45,7 @@ format = <label-state>
 label-separator = "  "
 
 label-focused = %name%
+label-focused-foreground = ${colors.foreground-bright}
 
 label-urgent = %name%
 label-urgent-foreground = ${colors.alert}
