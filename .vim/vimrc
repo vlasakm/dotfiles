@@ -69,7 +69,7 @@ hi Normal guibg=NONE
 hi EndOfBuffer cterm=NONE guibg=NONE
 
 " Delete trailing whitespace on save
-autocmd BufWrite * %s/\s+$//e
+autocmd BufWrite * %s/\s\+$//e
 
 " Filetype specific
 autocmd FileType html,css,tex,latex,context setlocal tabstop=2
