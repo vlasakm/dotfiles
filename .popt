@@ -1,1 +1,0 @@
-rsync alias --from-ntfs --no-p --no-g --chmod=D775,F664
