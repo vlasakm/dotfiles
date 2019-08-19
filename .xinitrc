@@ -5,6 +5,7 @@
 dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
 
 xsetroot -cursor_name left_ptr &
+xbanish &
 SXHKD_SHELL=sh sxhkd -m 1 &
 polybar top &
 feh --bg-scale --no-fehbg "$HOME/.wallpaper" &
