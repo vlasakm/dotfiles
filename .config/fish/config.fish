@@ -9,6 +9,7 @@ if status is-interactive
 	alias la 'ls -lA'
 	alias ll 'ls -l'
 	alias ls 'ls -hN --color=auto --group-directories-first'
+	alias nnn 'nnn -d'
 	alias perldoc 'perldoc -n groff'
 	alias rm 'rm -i'
 
