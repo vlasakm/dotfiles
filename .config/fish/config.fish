@@ -4,6 +4,7 @@ if status is-interactive
 	alias config 'git --git-dir="$HOME/.dotfiles.git/" --work-tree="$HOME"'
 	alias gdb 'gdb -q'
 	alias grep 'grep --color=auto'
+	alias diff 'diff --color=auto'
 	alias info 'info --vi-keys'
 	alias la 'ls -lA'
 	alias ll 'ls -l'
