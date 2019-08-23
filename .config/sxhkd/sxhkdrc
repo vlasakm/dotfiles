@@ -28,7 +28,7 @@ super + d ; {a,c,k,l,p}
 
 # launch nnn
 super + n
-	$TERMEXEC nnn
+	$TERMEXEC nnn -d
 
 # spotify client
 super + m
