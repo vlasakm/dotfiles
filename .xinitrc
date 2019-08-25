@@ -9,7 +9,7 @@ xsetroot -cursor_name left_ptr &
 setxkbmap -layout us,cz -variant ,qwerty -option terminate:ctrl_alt_bksp grp:shifts_toggle caps:escape &
 
 # start X applications
-xbanish &
+xbanish -i shift -i control -i mod1 -i mod4 &
 SXHKD_SHELL=sh sxhkd -m 1 &
 polybar top &
 feh --bg-scale --no-fehbg "$HOME/.wallpaper" &
