@@ -18,7 +18,7 @@ q = quit
 p = select_rel -1
 n = select_rel 1
 gg = select_abs 0
-<Shift+g> = select_abs -1
+<Shift+G> = select_abs -1
 
 # Panning
 j = pan 0 -50
@@ -46,4 +46,4 @@ r = reset
 
 # Slideshow control
 t = slideshow_duration +1
-<Shift+t> = slideshow_duration -1
+<Shift+T> = slideshow_duration -1
