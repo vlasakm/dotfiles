@@ -8,7 +8,9 @@ super + {_,shift + }Return
 
 # screenshot
 {_,shift + }Print
-	scrot { ,-s} -e 'mv "$f" ~/media/screenshots && notify-send "Screenshot saved" "$f"'
+	filename="$(date "+%Y-%m-%d-%H%M%S.png")"; \
+	maim { ,-s} "$HOME/media/screenshots/$filename" && \
+	notify-send "Screenshot saved" "$filename"
 
 # suspend / poweroff
 super + shift + {BackSpace,Escape}
