@@ -24,6 +24,7 @@ ncspot:$TERMEXEC ncspot
 pavucontrol:exec pavucontrol
 reboot:exec reboot
 redshift:exec redshift #
+screenshot selection:exec screenshot -s
 st:exec st
 syncthing:exec syncthing
 vlc:exec vlc #

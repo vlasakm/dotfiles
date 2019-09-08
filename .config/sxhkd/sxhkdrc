@@ -7,10 +7,8 @@ super + {_,shift + }Return
 	$TERMEXEC tmux {new-session \; set status off \; set destroy-unattached, }
 
 # screenshot
-{_,shift + }Print
-	filename="$(date "+%Y-%m-%d-%H%M%S.png")"; \
-	maim { ,-s} "$HOME/media/screenshots/$filename" && \
-	notify-send "Screenshot saved" "$filename"
+Print
+	screenshot
 
 # suspend / poweroff
 super + shift + {BackSpace,Escape}
