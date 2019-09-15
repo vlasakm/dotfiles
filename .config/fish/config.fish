@@ -38,7 +38,7 @@ if status is-interactive
 	set fish_prompt_pwd_dir_length 0
 end
 
-if status is-login
+if status is-login && test -z "$TMUX"
 	# Default applications
 	set -x EDITOR "vim"
 	set -x BROWSER "firefox"
