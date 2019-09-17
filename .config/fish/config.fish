@@ -42,7 +42,7 @@ if status is-login && test -z "$TMUX"
 	# Default applications
 	set -x EDITOR "vim"
 	set -x BROWSER "firefox"
-	set -x TERMINAL "st"
+	set -x TERMINAL "alacritty"
 	set -x TERMEXEC "$TERMINAL -e"
 
 	# Application options
