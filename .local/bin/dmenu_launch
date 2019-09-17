@@ -1,10 +1,10 @@
 #!/bin/bash
 
 programs='
-alacritty:exec alacritty #
+alacritty:exec alacritty
 aerc:$TERMEXEC aerc
 calc:exec localc
-chromium:exec chromium #
+chromium:exec chromium
 cmus:exec cmus #
 code:exec code
 compton:exec compton #
@@ -19,11 +19,11 @@ idle:exec idle #
 impress:exec loimpress
 ipython:$TERMEXEC ipython
 jupyter-lab:exec jupyter-lab
-keepassxc:exec keepassxc
-ncspot:$TERMEXEC ncspot
+keepassxc:exec keepassxc #
 pavucontrol:exec pavucontrol
+polybar:exec polybar top
 reboot:exec reboot
-redshift:exec redshift #
+redshift:exec redshift
 screenshot selection:exec screenshot -s
 st:exec st
 syncthing:exec syncthing
