@@ -20,5 +20,5 @@ function fish_prompt --description 'Write out the prompt'
 		set fish_color_status (set_color red)
 	end
 
-	printf '%s%s%s%s\n%s%s%s ' $blue (prompt_pwd) $gray $host (__fish_git_prompt) $fish_color_status \$ $normal
+	printf '%s%s%s\n%s%s%s ' $blue (prompt_pwd) $gray $host $fish_color_status \$ $normal
 end
