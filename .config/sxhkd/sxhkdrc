@@ -20,7 +20,7 @@ super + {_,shift + }w
 
 # launch email client
 super + {_,shift + }e
-	$TERMEXEC tmux new -A -s email-{aerc,mutt} {aerc,mutt} \; set status off \;
+	$TERMEXEC tmux new -A -s email aerc \; set status off \;
 
 # dmenu menus
 super + d ; {a,c,k,l,p}
