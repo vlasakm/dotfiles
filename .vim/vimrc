@@ -73,3 +73,7 @@ autocmd BufWrite * %s/\s\+$//e
 
 " Filetype specific
 autocmd FileType html,css,tex,latex,context setlocal tabstop=2
+
+augroup filetypedetect
+	autocmd BufRead,BufNewFile *aerc*.eml setfiletype mail
+augroup END
