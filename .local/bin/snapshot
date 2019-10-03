@@ -12,7 +12,9 @@ machine=(.config/syncthing .stfolder)
 # machine specific files
 machine+=(.config/pulse/default.pa)
 # secret dirs
-secret=(.ssh .gnupg .password-store)
+secret=(.password-store)
+# secret files
+secret+=(.ssh/hosts)
 
 verbose () { echo "snapshot: $1" >&2 ; }
 die () { echo "snapshot: $1" >&2 ; exit 1 ; }
