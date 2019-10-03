@@ -13,6 +13,7 @@ if status is-interactive
 	alias nnn 'nnn -d'
 	alias perldoc 'perldoc -n groff'
 	alias rm 'rm -i'
+	alias cal 'cal -3 -m'
 
 	abbr -a -g ga 'git add'
 	abbr -a -g gap 'git add --patch'
