@@ -1,9 +1,9 @@
 set default-bg "#101010"
-set default-fg "#FFFFFF"
+set default-fg "#dddddd"
 
 set recolor "true"
 set recolor-lightcolor "#101010"
-set recolor-darkcolor  "#FFFFFF"
+set recolor-darkcolor  "#dddddd"
 
 map [presentation] <C-r> recolor
 
@@ -23,3 +23,7 @@ map              i zoom in
 map [fullscreen] i zoom in
 map              o zoom out
 map [fullscreen] o zoom out
+map              n navigate next
+map [fullscreen] n navigate next
+map              p navigate previous
+map [fullscreen] p navigate previous
