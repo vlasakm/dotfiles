@@ -9,6 +9,8 @@
 	verbose = true
 [push]
 	default = simple
+[pull]
+	rebase = true
 [sendemail]
 	smtpserver = /usr/bin/msmtp
 	annotate = yes
