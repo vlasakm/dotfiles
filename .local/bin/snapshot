@@ -75,7 +75,7 @@ pull)
 	# backup
 	mkdir -p "$old_dir" || die "failed to create old directory - '$old_dir'"
 	verbose "backing up to '$old_dir'"
-	mv "${state[@]}" "${secret[@]}" "$old_dir" || die "failed to backup state & secret files"
+	mv "${state[@]}" "${secret[@]}" "$old_dir"
 
 	# state
 	verbose "killing firefox"
