@@ -65,8 +65,8 @@ set t_8b=[48;2;%lu;%lu;%lum " set background color
 " Colorscheme
 set background=dark
 colorscheme kuroi
-hi Normal guibg=NONE
-hi EndOfBuffer cterm=NONE guibg=NONE
+highlight Normal guibg=NONE
+highlight EndOfBuffer cterm=NONE gui=NONE guibg=NONE
 
 " Delete trailing whitespace on save
 autocmd BufWrite * %s/\s\+$//e
