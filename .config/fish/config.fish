@@ -14,6 +14,9 @@ if status is-interactive
 	alias perldoc 'perldoc -n groff'
 	alias rm 'rm -i'
 	alias cal 'cal -3 -m'
+	alias less 'less -R'
+	alias gcc 'gcc -fdiagnostics-color=always'
+	alias g++ 'g++ -fdiagnostics-color=always'
 
 	abbr -a -g ga 'git add'
 	abbr -a -g gap 'git add --patch'
@@ -45,7 +48,6 @@ if status is-login && test -z "$TMUX"
 	# Application options
 	set -x NNN_USE_EDITOR "1"
 	set -x PASSWORD_STORE_CLIP_TIME "3"
-	set -x LESS "-R"
 	set -x GOPATH "$HOME/.local/share/go"
 
 	# Address sanitizer options
