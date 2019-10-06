@@ -85,7 +85,7 @@ pull)
 
 	# secret
 	verbose "extracting secret"
-	gpg --homedir "$old_dir/.gnupg/" --batch -d "$snapshot_dir/secret.tar.zst.gpg" | tar -x --zstd -f - || die "failed to extract secret"
+	gpg --batch -d "$snapshot_dir/secret.tar.zst.gpg" | tar -x --zstd -f - || die "failed to extract secret"
 
 	verbose "deleting firefox cache"
 	rm -rf .cache/mozilla/firefox || die "failed to delete firefox cache"
