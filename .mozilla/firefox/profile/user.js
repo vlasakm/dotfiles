@@ -6,6 +6,8 @@ user_pref("browser.bookmarks.showMobileBookmarks", false);
 user_pref("browser.contentblocking.category", "strict");
 user_pref("browser.ctrlTab.migrated", true);
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
+user_pref("browser.display.background_color", "#101010");
+user_pref("browser.display.foreground_color", "#dddddd");
 user_pref("browser.formfill.enable", false);
 user_pref("browser.fullscreen.autohide", false);
 user_pref("browser.newtabpage.enabled", false);

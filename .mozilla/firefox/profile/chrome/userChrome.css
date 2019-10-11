@@ -1,6 +1,7 @@
-/* https://support.mozilla.org/en-US/questions/1170342 */
+/* https://fedidat.com/640-dark-newtab-firefox/ */
 /* Reduce the "white flash" in new tabs */
-browser[type="content-primary"],
-browser[type="content"] {
-				background: #101010 !important;
+
+#browser vbox#appcontent tabbrowser, #content, #tabbrowser-tabpanels,
+browser[type=content-primary], browser[type=content] > html {
+				background: #101010 !important
 }
