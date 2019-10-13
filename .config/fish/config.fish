@@ -56,8 +56,16 @@ if status is-login && test -z "$TMUX"
 	# Path
 	set -x PATH $HOME/.local/bin $HOME/projects/scripts /usr/local/texlive/2019/bin/x86_64-linux $PATH
 
-	# ssh-agent
-	eval (ssh-agent -c)
+	# Start ssh-agent and add keys
+	if ! test -S /tmp/ssh-agent.(id -un)
+		eval (ssh-agent -c -a /tmp/ssh-agent.(id -un))
+		ssh-add $HOME/.ssh/id_{ed25519,rsa}
+	else
+		set -x SSH_AUTH_SOCK /tmp/ssh-agent.(id -un)
+	end
+
+	# Start gpg-agent and add default key
+	gpg --sign - <&- >/dev/null 2>/dev/null
 
 	# Start X at login on tty1
 	if test -z "$DISPLAY" -a $XDG_VTNR = 1
