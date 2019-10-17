@@ -4,20 +4,39 @@ set -o pipefail
 shopt -s nullglob
 
 # state dirs
-state=(.mozilla/firefox/profile .vim/{undo,swap} .gramps .config/transmission-daemon .local/share/zathura .config/mpv/watch_later)
+general=(.mozilla/firefox/profile .vim/{undo,swap} .config/transmission-daemon .local/share/zathura .config/mpv/watch_later)
 # state files
-state+=(.viminfo .config/fish/fish_variables .local/share/fish/fish_history .stignore "$(readlink .wallpaper)")
+general+=(.viminfo .config/fish/fish_variables .local/share/fish/fish_history .stignore "$(readlink .wallpaper)")
+# secret dirs
+general+=(.password-store)
+# secret files
+general+=(.ssh/hosts)
 # machine specific dirs
 machine=(.config/syncthing .stfolder)
 # machine specific files
 machine+=(.config/pulse/default.pa)
-# secret dirs
-secret=(.password-store)
-# secret files
-secret+=(.ssh/hosts)
 
-verbose () { echo "snapshot: $1" >&2 ; }
-die () { echo "snapshot: $1" >&2 ; exit 1 ; }
+verbose () {
+	echo "snapshot: $1" >&2
+}
+
+die () {
+	echo "snapshot: $1" >&2
+	exit 1
+}
+
+# usage: archive archive_name name_of_file_array
+archive () {
+	declare archive="$snapshot_dir/$1.tar.zst.gpg"
+	declare -n files="$2"
+	tar -c --zstd -f - "${files[@]}" | gpg --quiet --yes --encrypt --output "$archive"
+}
+
+# usage: extract archive_name
+extract () {
+	declare archive="$snapshot_dir/$1.tar.zst.gpg"
+	gpg --quiet --batch --decrypt "$archive" | tar -x --zstd -f -
+}
 
 while getopts :d:h:o:t: opt; do
 	case "$opt" in
@@ -27,8 +46,6 @@ while getopts :d:h:o:t: opt; do
 			home_dir="$OPTARG" ;;
 		H)
 			host="$OPTARG" ;;
-		o)
-			old_dir="$OPTARG" ;;
 		t)
 			target="$OPTARG" ;;
 		\?)
@@ -36,57 +53,50 @@ while getopts :d:h:o:t: opt; do
 	esac
 done
 
-snapshot_dir=${snapshot_dir:-"$HOME/.snapshot"}
-home_dir=${home_dir:-"$HOME"}
-host=${host:-"$(hostname)"}
-old_dir=${old_dir:-"$HOME/.snapshot-old"}
-target=${target:-/mnt$HOME}
+shift $(($OPTIND - 1))
+
+: ${snapshot_dir:="$HOME/.archive"}
+: ${home_dir:="$HOME"}
+: ${host:="$(hostname)"}
+: ${target:=/mnt$HOME}
+
 git_args=("--git-dir=$home_dir/.dotfiles.git/" "--work-tree=$home_dir")
 target_git_args=("--git-dir=$target/.dotfiles.git/" "--work-tree=$target")
 
 cd "$home_dir"
 
-case "$1" in
+command="$1"
+shift
+
+# preparation
+mkdir -p "$snapshot_dir" || die "failed to create snapshot destionation - '$snapshot_dir'"
+verbose "killing firefox"
+pkill firefox
+
+case "$command" in
 push)
 	# dotfiles
 	verbose "pushing dotfiles"
 	git "${git_args[@]}" push || die "failed to push dotfiles"
 
-	# state
-	pkill firefox
-	verbose "archiving state"
-	mkdir -p "$snapshot_dir" || die "failed to create snapshot destionation - '$dest'"
-	tar -c --zstd -f "$snapshot_dir/state.tar.zst" "${state[@]}" || die "failed to snapshot state"
-
-	# secret
-	verbose "archiving secret"
-	tar -c --zstd -f - "${secret[@]}" | gpg --yes -c -e --output "$snapshot_dir/secret.tar.zst.gpg" \
-		|| die "failed to snapshot secret"
+	# general
+	verbose "archiving general files"
+	archive general general || die "failed to archive general files"
 
 	# machine specific
 	verbose "archiving '$host' specific"
-	tar -c --zstd -f "$snapshot_dir/$host-config.tar.zst" "${machine[@]}" || die "failed to snapshot machine specific"
+	archive "$host" machine || die "failed to archive '$host' specific"
 ;;
 pull)
 	# dotfiles
 	verbose "pulling dotfiles"
 	git "${git_args[@]}" pull || die "failed to pull dotfiles"
 
-	# backup
-	mkdir -p "$old_dir" || die "failed to create old directory - '$old_dir'"
-	verbose "backing up to '$old_dir'"
-	mv "${state[@]}" "${secret[@]}" "$old_dir"
+	# general
+	verbose "extracting general files"
+	extract general || die "failed to extract general files"
 
-	# state
-	verbose "killing firefox"
-	pkill firefox
-	verbose "extracting state"
-	tar -x --zstd -f "$snapshot_dir/state.tar.zst" || die "failed to extract state" || die "failed to extract state"
-
-	# secret
-	verbose "extracting secret"
-	gpg --batch -d "$snapshot_dir/secret.tar.zst.gpg" | tar -x --zstd -f - || die "failed to extract secret"
-
+	# firefox doesn't like mismatching config/cache
 	verbose "deleting firefox cache"
 	rm -rf .cache/mozilla/firefox || die "failed to delete firefox cache"
 
@@ -94,8 +104,7 @@ pull)
 	if [[ "$1" == all ]]; then
 		# machine specific
 		verbose "extracting '$host' specific"
-		mv "${machine[@]}" "$old_dir" || die "failed to backup '$host' specific"
-		tar -x --zstd -f "$snapshot_dir/$host-config.tar.zst" || die "failed to extract '$host' specific"
+		extract "$host" || die "failed to extract '$host' specific"
 	fi
 ;;
 bootstrap)
@@ -116,20 +125,14 @@ bootstrap)
 
 	# extract
 	verbose "extracting to '$target'"
+	cd "$target" || die "failed to change to '$target'"
 
-	# state
-	verbose "extracting state"
-	tar -x --zstd -f "$snapshot_dir/state.tar.zst" -C "$target" || die "failed to extract state" || die "failed to extract state"
-
-	# secret
-	verbose "extracting secret"
-	gpg --batch -d "$snapshot_dir/secret.tar.zst.gpg" | tar -x --zstd -f - -C "$target" || die "failed to extract secret"
+	# general
+	verbose "extracting general files"
+	extract general || die "failed to extract general files"
 
 	# machine specific
 	verbose "extracting '$host' specific"
-	tar -x --zstd -f "$snapshot_dir/$host-config.tar.zst" -C "$target" || die "failed to extract '$host' specific"
+	extract "$host" || die "failed to extract '$host' specific"
 ;;
-confirm)
-	verbose "deleting old"
-	rm -rf "$old_dir"
 esac
