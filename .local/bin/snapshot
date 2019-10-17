@@ -6,7 +6,7 @@ shopt -s nullglob
 # state dirs
 state=(.mozilla/firefox/profile .vim/{undo,swap} .gramps .config/transmission-daemon .local/share/zathura .config/mpv/watch_later)
 # state files
-state+=(.viminfo .config/fish/fish_variables .local/share/fish/fish_history .clang-format .stignore "$(readlink .wallpaper)")
+state+=(.viminfo .config/fish/fish_variables .local/share/fish/fish_history .stignore "$(readlink .wallpaper)")
 # machine specific dirs
 machine=(.config/syncthing .stfolder)
 # machine specific files
