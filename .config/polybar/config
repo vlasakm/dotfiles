@@ -59,7 +59,7 @@ label-empty-foreground = ${colors.foreground-dark}
 [module/wlan]
 type = internal/network
 interval = 3.0
-interface = wlp5s0
+interface = wlan0
 
 label-connected =  %essid%
 
