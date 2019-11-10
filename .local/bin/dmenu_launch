@@ -11,6 +11,7 @@ compton:exec compton #
 emacs:exec emacs
 emacsclient:exec emacsclient -c
 firefox:exec firefox #
+firefoxtemp:exec firefoxtemp
 geany:exec geany
 gramps:exec gramps
 gucharmap:exec gucharmap
