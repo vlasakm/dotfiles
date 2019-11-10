@@ -27,23 +27,25 @@ die () {
 
 # usage: archive archive_name name_of_file_array
 archive () {
-	declare archive="$snapshot_dir/$1.tar.zst.gpg"
+	declare archive="$1.tar.zst.gpg"
 	declare -n files="$2"
 	tar -c --zstd -f - "${files[@]}" | gpg --quiet --yes --encrypt --output "$archive"
 }
 
 # usage: extract archive_name
 extract () {
-	declare archive="$snapshot_dir/$1.tar.zst.gpg"
+	declare archive="$1.tar.zst.gpg"
 	gpg --quiet --batch --decrypt "$archive" | tar -x --zstd -f -
 }
 
-while getopts :d:h:o:t: opt; do
+while getopts :d:h:o:H:t: opt; do
 	case "$opt" in
 		d)
 			snapshot_dir="$OPTARG" ;;
 		h)
 			home_dir="$OPTARG" ;;
+		o)
+			old_dir="$OPTARG" ;;
 		H)
 			host="$OPTARG" ;;
 		t)
@@ -57,6 +59,7 @@ shift $(($OPTIND - 1))
 
 : ${snapshot_dir:="$HOME/.archive"}
 : ${home_dir:="$HOME"}
+: ${old_dir:="${snapshot_dir}-old"}
 : ${host:="$(hostname)"}
 : ${target:=/mnt$HOME}
 
@@ -81,13 +84,19 @@ push)
 
 	# general
 	verbose "archiving general files"
-	archive general general || die "failed to archive general files"
+	archive "$snapshot_dir/general" general || die "failed to archive general files"
 
 	# machine specific
 	verbose "archiving '$host' specific"
-	archive "$host" machine || die "failed to archive '$host' specific"
+	archive "$snapshot_dir/$host" machine || die "failed to archive '$host' specific"
 ;;
 pull)
+	# backup first
+	mkdir -p "$old_dir" || die "failed to create backup directory - '$old_dir'"
+	verbose "backing up general files"
+	archive "$old_dir/general" general || die "failed to backup general files"
+	mv "${general[@]}" "$old_dir" || die "failed to backup general files"
+
 	# dotfiles
 	verbose "pulling dotfiles"
 	git "${git_args[@]}" pull || die "failed to pull dotfiles"
@@ -102,7 +111,12 @@ pull)
 
 	# not changed often
 	if [[ "$1" == all ]]; then
-		# machine specific
+		# backup
+		verbose "backing up '$host' specific"
+		archive "$snapshot_dir/$host" machine || die "failed to backup '$host' specific"
+		mv "${machine[@]}" "$old_dir" || die "failed to backup '$host' specific"
+
+		# extract
 		verbose "extracting '$host' specific"
 		extract "$host" || die "failed to extract '$host' specific"
 	fi
