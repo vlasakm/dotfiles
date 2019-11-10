@@ -23,7 +23,3 @@ map              i zoom in
 map [fullscreen] i zoom in
 map              o zoom out
 map [fullscreen] o zoom out
-map              n navigate next
-map [fullscreen] n navigate next
-map              p navigate previous
-map [fullscreen] p navigate previous
