@@ -6,7 +6,7 @@ shopt -s nullglob
 # state dirs
 general=(.mozilla/firefox/profile .vim/{undo,swap} .config/transmission-daemon .local/share/zathura .config/mpv/watch_later)
 # state files
-general+=(.viminfo .config/fish/fish_variables .local/share/fish/fish_history .stignore "$(readlink .wallpaper)")
+general+=(.viminfo .config/fish/fish_variables .local/share/fish/fish_history "$(readlink .wallpaper)")
 # secret dirs
 general+=(.password-store)
 # secret files
