@@ -103,7 +103,7 @@ pull)
 
 	# general
 	verbose "extracting general files"
-	extract general || die "failed to extract general files"
+	extract "$snapshot_dir/general" || die "failed to extract general files"
 
 	# firefox doesn't like mismatching config/cache
 	verbose "deleting firefox cache"
@@ -118,7 +118,7 @@ pull)
 
 		# extract
 		verbose "extracting '$host' specific"
-		extract "$host" || die "failed to extract '$host' specific"
+		extract "$snapshot_dir/host" || die "failed to extract '$host' specific"
 	fi
 ;;
 bootstrap)
@@ -143,10 +143,10 @@ bootstrap)
 
 	# general
 	verbose "extracting general files"
-	extract general || die "failed to extract general files"
+	extract "$snapshot_dir/general" || die "failed to extract general files"
 
 	# machine specific
 	verbose "extracting '$host' specific"
-	extract "$host" || die "failed to extract '$host' specific"
+	extract "$snapshot_dir/host" || die "failed to extract '$host' specific"
 ;;
 esac
