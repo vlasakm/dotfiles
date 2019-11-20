@@ -15,22 +15,35 @@ machine=(.config/syncthing .stfolder)
 # machine specific files
 machine+=(.config/pulse/default.pa)
 
+rsync_flags=(-aR --delete -i)
+
 : ${host:="$(hostname)"}
 : ${remote:="${host}_phone"}
-remote_general="$remote:general/./"
-remote_machine="$remote:$host/./"
 
-rsync_flags=(-aR --delete -i)
+cd
+destination="."
+
+push_files() {
+	declare set="$1"
+	declare -n files="$2"
+	rsync "${rsync_flags[@]}" "${files[@]}" "$remote:$set/./"
+}
+
+pull_files() {
+	declare set="$1"
+	declare -n files="$2"
+	rsync "${rsync_flags[@]}" "${files[@]/#/"$remote:$set/./"}" "$destination"
+}
 
 cd
 
 case "$1" in
 push)
-	rsync "${rsync_flags[@]}" "${general[@]}" "$remote_general"
-	rsync "${rsync_flags[@]}" "${machine[@]}" "$remote_machine"
+	push_files general general
+	push_files "$host" machine
 ;;
 pull)
-	rsync "${rsync_flags[@]}" "${general[@]/#/"$remote_general"}" ~
-	rsync "${rsync_flags[@]}" "${machine[@]/#/"$remote_machine"}" ~
+	pull_files general general
+	pull_files "$host" machine
 ;;
 esac
