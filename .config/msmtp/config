@@ -1,3 +1,4 @@
+# vim: ft=msmtp
 defaults
 auth		on
 tls		on
@@ -13,4 +14,3 @@ from
 passwordeval    "pass app/gmail/lahcim8"
 
 account default : gmail
-# vim: ft=msmtp
