@@ -37,6 +37,3 @@ colors:
                 magenta: '0xff6ac1'
                 cyan:    '0x9aedfe'
                 white:   '0xdddddd'
-
-#launcher:
-        #program: None
