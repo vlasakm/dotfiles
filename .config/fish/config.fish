@@ -17,6 +17,7 @@ if status is-interactive
 	alias less 'less -R'
 	alias gcc 'gcc -fdiagnostics-color=always'
 	alias g++ 'g++ -fdiagnostics-color=always'
+	alias vim 'nvim'
 
 	abbr -a -g ga 'git add'
 	abbr -a -g gap 'git add --patch'
@@ -40,7 +41,7 @@ end
 
 if status is-login && test -z "$TMUX"
 	# Default applications
-	set -x EDITOR "vim"
+	set -x EDITOR "nvim"
 	set -x BROWSER "firefox"
 	set -x TERMINAL "alacritty"
 	set -x TERMEXEC "$TERMINAL -e"
