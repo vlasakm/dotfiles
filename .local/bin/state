@@ -15,7 +15,7 @@ machine=(.config/syncthing/config.xml .stfolder)
 # machine specific files
 machine+=(.config/pulse/default.pa)
 
-rsync_flags=(-aR --delete -i)
+rsync_flags=(--archive --relative --delete --itemize-changes)
 
 : ${host:="$(hostname)"}
 : ${remote:="${host}_phone"}
