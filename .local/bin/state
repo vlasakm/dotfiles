@@ -3,9 +3,9 @@
 set -o pipefail
 
 # state dirs
-general=(.mozilla/firefox/profile .vim/{undo,swap} .config/transmission-daemon .local/share/zathura .config/mpv/watch_later)
+general=(.mozilla/firefox/profile .local/share/nvim/{shada,undo,swap} .config/transmission-daemon .local/share/zathura .config/mpv/watch_later)
 # state files
-general+=(.viminfo .config/fish/fish_variables .local/share/fish/fish_history "$(readlink .wallpaper)")
+general+=(.config/fish/fish_variables .local/share/fish/fish_history "$(readlink .wallpaper)")
 # secret dirs
 general+=(.password-store)
 # secret files

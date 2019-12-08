@@ -1,7 +1,5 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-
-call plug#begin('~/.vim/plugged')
+" Plugins
+call plug#begin(stdpath('data') . '/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'lervag/vimtex'
@@ -30,6 +28,7 @@ set relativenumber
 " Search
 set ignorecase
 set smartcase
+set nohlsearch
 
 " Cursor behavior
 set nostartofline
@@ -37,8 +36,6 @@ set scrolloff=2
 
 " Undo
 set undofile
-set undodir=~/.vim/undo//
-set directory=~/.vim/swap//
 
 " Colors
 set termguicolors " enable 24-bit colors
