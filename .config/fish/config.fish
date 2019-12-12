@@ -55,7 +55,7 @@ if status is-login && test -z "$TMUX"
 	set -x ASAN_OPTIONS  "symbolize=1:debug=1:detect_leaks=1:strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1"
 
 	# Path
-	set -x PATH $HOME/.local/bin $HOME/projects/scripts /usr/local/texlive/2019/bin/x86_64-linux $PATH
+	set -x PATH $HOME/.local/bin $HOME/projects/scripts /usr/local/texlive/bin/x86_64-linux $PATH
 
 	# Start ssh-agent and add keys
 	if ! test -S /tmp/ssh-agent.(id -un)
