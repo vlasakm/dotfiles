@@ -14,6 +14,7 @@ call plug#end()
 " Basic
 set hidden
 set splitbelow splitright
+set wildmode=list:longest,full
 
 " Input, drawing
 set lazyredraw
