@@ -1,19 +1,10 @@
 [user]
 	name = Michal Vlasák
 	email = lahcim8@gmail.com
+
 [core]
 	autocrlf = input
-[diff]
-	algorithm = patience
-[commit]
-	verbose = true
-[push]
-	default = simple
-[pull]
-	rebase = true
-[sendemail]
-	smtpserver = /usr/bin/msmtp
-	annotate = yes
+
 [color]
 	diff = auto
 	status = auto
@@ -21,5 +12,22 @@
 	interactive = auto
 	ui = true
 	pager = true
+
+[diff]
+	algorithm = patience
+
+[commit]
+	verbose = true
+
+[push]
+	default = simple
+
+[pull]
+	rebase = true
+
+[sendemail]
+	smtpserver = /usr/bin/msmtp
+	annotate = yes
+
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
