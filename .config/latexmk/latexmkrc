@@ -1,0 +1,3 @@
+$pdf_mode = 4; # lualatex
+$pdf_previewer = 'start zathura';
+$clean_ext = "bbl nav out snm run.xml";
