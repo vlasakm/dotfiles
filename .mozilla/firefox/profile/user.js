@@ -1,4 +1,5 @@
 // https://github.com/mozilla/gecko-dev/blob/master/browser/app/profile/firefox.js
+user_pref("browser.aboutConfig.showWarning", false);
 user_pref("browser.bookmarks.editDialog.firstEditField", "tagsField");
 user_pref("browser.bookmarks.openInTabClosesMenu", false);
 user_pref("browser.bookmarks.restore_default_bookmarks", false);
@@ -31,7 +32,9 @@ user_pref("browser.urlbar.suggest.searches", false);
 user_pref("browser.warnOnQuit", false);
 user_pref("devtools.theme", "dark");
 user_pref("extensions.pocket.enabled", false);
-user_pref("general.warnOnAboutConfig", false);
+user_pref("full-screen-api.transition-duration.enter", "0 0");
+user_pref("full-screen-api.transition-duration.leave", "0 0");
+user_pref("full-screen-api.warning.timeout", 0);
 user_pref("geo.enabled", false);
 user_pref("layout.spellcheckDefault", 0);
 user_pref("layout.word_select.eat_space_to_next_word", true);
@@ -41,7 +44,6 @@ user_pref("media.peerconnection.enabled", false);
 user_pref("network.http.throttle.enable ", false);
 user_pref("privacy.donottrackheader.enabled", true);
 user_pref("signon.remembersignons", false);
-user_pref("signon.rememberSignons", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("widget.chrome.allow-gtk-dark-theme", true);
 user_pref("widget.content.allow-gtk-dark-theme", true);
@@ -60,8 +62,6 @@ user_pref("dom.event.clipboardevents.enabled", false);
 user_pref("findbar.highlightAll", true);
 user_pref("network.IDN_show_punycode", true);
 user_pref("toolkit.cosmeticAnimations.enabled", false);
-user_pref("full-screen-api.transition-duration.enter", "0 0");
-user_pref("full-screen-api.transition-duration.leave", "0 0");
 
 // Allow non-signed extensions in dev-edition
 user_pref("xpinstall.signatures.required", false);
