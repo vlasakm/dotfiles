@@ -4,7 +4,7 @@
 
 # spawn terminal / terminal with tmux
 super + {_,shift + }Return
-	$TERMEXEC tmux {new-session \; set status off \; set destroy-unattached, }
+	$TERMINAL tmux {new-session \; set status off \; set destroy-unattached, }
 
 # screenshot
 Print
@@ -20,7 +20,7 @@ super + {_,shift + }w
 
 # launch email client
 super + {_,shift + }e
-	$TERMEXEC tmux new -A -s email aerc \; set status off \;
+	$TERMINAL tmux new -A -s email aerc \; set status off \;
 
 # dmenu menus
 super + d ; {a,c,k,l,p}
@@ -28,11 +28,11 @@ super + d ; {a,c,k,l,p}
 
 # launch nnn
 super + n
-	$TERMEXEC nnn -do
+	$TERMINAL nnn -do
 
 # spotify client
 super + m
-	$TERMEXEC tmux new -A -s music ncspot \; set status off \;
+	$TERMINAL tmux new -A -s music ncspot \; set status off \;
 
 # spotify volume control
 super + {equal,plus}

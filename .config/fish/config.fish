@@ -43,8 +43,7 @@ if status is-login && test -z "$TMUX"
 	# Default applications
 	set -x EDITOR "nvim"
 	set -x BROWSER "firefox"
-	set -x TERMINAL "alacritty"
-	set -x TERMEXEC "$TERMINAL -e"
+	set -x TERMINAL "alacritty -e"
 
 	# Application options
 	set -x NNN_USE_EDITOR "1"
