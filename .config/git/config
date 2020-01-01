@@ -13,6 +13,9 @@
 	ui = true
 	pager = true
 
+[init]
+	templateDir =
+
 [diff]
 	algorithm = patience
 
