@@ -35,6 +35,7 @@ set gdefault
 
 " Cursor behavior
 set nostartofline
+set nojoinspaces
 set scrolloff=2
 
 " Undo
