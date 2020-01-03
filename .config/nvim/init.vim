@@ -30,6 +30,9 @@ set ignorecase
 set smartcase
 set nohlsearch
 
+" Substitute
+set gdefault
+
 " Cursor behavior
 set nostartofline
 set scrolloff=2
