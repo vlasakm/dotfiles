@@ -21,19 +21,13 @@ if status is-interactive
 
 	abbr -a -g ga 'git add'
 	abbr -a -g gap 'git add --patch'
-	abbr -a -g gb 'git branch'
 	abbr -a -g gc 'git commit'
 	abbr -a -g gca 'git commit -a'
-	abbr -a -g gcam 'git commit --amend'
-	abbr -a -g gco 'git checkout'
-	abbr -a -g gcob 'git checkout -b'
 	abbr -a -g gd 'git diff'
-	abbr -a -g gdc 'git diff --cached'
+	abbr -a -g gds 'git diff --staged'
 	abbr -a -g gl 'git lg'
-	abbr -a -g gr 'git reset'
-	abbr -a -g gs 'git status'
+	abbr -a -g gst 'git status'
 	abbr -a -g gsh 'git show'
-	abbr -a -g s 'sudo'
 	abbr -a -g ytdl 'youtube-dl'
 
 	set fish_prompt_pwd_dir_length 0
