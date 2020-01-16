@@ -31,6 +31,12 @@ if status is-interactive
 	abbr -a -g ytdl 'youtube-dl'
 
 	set fish_prompt_pwd_dir_length 0
+
+	function fish_prompt
+		if test $status -eq 0; set status_color green; else; set status_color red; end
+		printf '%s%s%s\n%s%s%s ' (set_color -o blue) (prompt_pwd) (set_color normal) (set_color $status_color) \$ (set_color normal)
+	end
+
 end
 
 if status is-login && test -z "$TMUX"
