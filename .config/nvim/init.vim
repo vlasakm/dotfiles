@@ -4,6 +4,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/DoxygenToolkit.vim', { 'for' : 'cpp' }
 Plug 'rhysd/vim-clang-format'
+Plug 'psf/black'
 Plug 'aonemd/kuroi.vim'
 let g:plug_shallow = 0
 " Repositories not supporting shallow clone
