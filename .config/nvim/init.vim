@@ -48,4 +48,4 @@ highlight Normal guibg=NONE
 highlight EndOfBuffer gui=NONE guibg=NONE
 
 " Delete trailing whitespace on save
-autocmd BufWrite * %s/\s\+$//e
+autocmd BufWritePre * %s/\s\+$//e
