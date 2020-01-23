@@ -1,22 +1,26 @@
 set -x GPG_TTY (tty)
 
 if status is-interactive
+
+	alias cal 'cal -3 -m'
 	alias config 'git --git-dir="$HOME/.dotfiles.git/" --work-tree="$HOME"'
+	alias df 'df -h'
+	alias diff 'diff --color=auto'
+	alias ffmpeg 'ffmpeg -hide_banner'
+	alias free 'free -h'
+	alias g++ 'g++ -fdiagnostics-color=always'
+	alias gcc 'gcc -fdiagnostics-color=always'
 	alias gdb 'gdb -q'
 	alias grep 'grep --color=auto'
-	alias diff 'diff --color=auto'
 	alias info 'info --vi-keys'
-	alias ffmpeg 'ffmpeg -hide_banner'
 	alias la 'ls -lA'
+	alias less 'less -R'
 	alias ll 'ls -l'
+	alias llblk 'lsblk -o NAME,SIZE,FSTYPE,LABEL,MOUNTPOINT'
 	alias ls 'ls -hN --color=auto --group-directories-first'
 	alias nnn 'nnn -do'
 	alias perldoc 'perldoc -n groff'
 	alias rm 'rm -i'
-	alias cal 'cal -3 -m'
-	alias less 'less -R'
-	alias gcc 'gcc -fdiagnostics-color=always'
-	alias g++ 'g++ -fdiagnostics-color=always'
 	alias vim 'nvim'
 
 	abbr -a -g ga 'git add'
