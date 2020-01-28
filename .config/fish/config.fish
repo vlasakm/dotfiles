@@ -88,12 +88,10 @@ if status is-login && test -z "$TMUX"
 	# Path
 	set -x PATH $HOME/.local/bin $HOME/projects/scripts /usr/local/texlive/bin/x86_64-linux $PATH
 
-	# Start ssh-agent and add keys
-	if ! test -S /tmp/ssh-agent.(id -un)
-		eval (ssh-agent -c -a /tmp/ssh-agent.(id -un))
-		ssh-add $HOME/.ssh/id_{ed25519,rsa}
-	else
-		set -x SSH_AUTH_SOCK /tmp/ssh-agent.(id -un)
+	# Start ssh-agent
+	set -x SSH_AUTH_SOCK /tmp/ssh-agent.(id -un)
+	if ! test -S $SSH_AUTH_SOCK
+		eval (ssh-agent -c -a $SSH_AUTH_SOCK)
 	end
 
 	# Start gpg-agent and add default key
