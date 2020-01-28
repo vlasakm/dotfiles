@@ -11,7 +11,7 @@ compton:exec compton #
 emacs:exec emacs
 emacsclient:exec emacsclient -c
 firefox:exec firefox #
-firefoxtemp:exec firefoxtemp
+firefoxtemp:exec firefoxtemp about:blank
 geany:exec geany
 gramps:exec gramps
 gucharmap:exec gucharmap
@@ -32,4 +32,4 @@ vlc:exec vlc #
 writer:exec lowriter
 '
 
-eval "$(grep "^$(grep -v '#$\|^$\|^#' <<< "$programs" | cut -d ':' -f 1 | dmenu -p "run:"):" <<< "$programs" | cut -d ':' -f 2)"
+eval "$(grep "^$(grep -v '#$\|^$\|^#' <<< "$programs" | cut -d ':' -f 1 | dmenu -p "run:"):" <<< "$programs" | cut -d ':' -f 2,3)"
