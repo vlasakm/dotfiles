@@ -28,7 +28,7 @@ super + d ; {a,c,k,l,p}
 
 # launch nnn
 super + n
-	$TERMINAL nnn -do
+	$TERMINAL tmux new-session nnn -do \; set status off \; set destroy-unattached
 
 # spotify client
 super + m
