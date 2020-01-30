@@ -1,6 +1,3 @@
-[Added Associations]
-x-scheme-handler/magnet=transmission-add.desktop;
-
 [Default Applications]
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 x-scheme-handler/magnet=transmission-add.desktop;
