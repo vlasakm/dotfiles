@@ -1,7 +1,7 @@
 #!/bin/sh
+
 set -e
-DIR="${XDG_CACHE_HOME:-$HOME/.cache}"
-mkdir -p "$DIR"
-TEMP="$(mktemp -d "$DIR/firefox-XXXXXX")"
+
+TEMP="$(mktemp -d)"
 trap "rm -rf '$TEMP'" INT TERM EXIT
-firefox -profile "$TEMP" -no-remote "$@"
+firefox --profile "$TEMP" --no-remote "$@"
