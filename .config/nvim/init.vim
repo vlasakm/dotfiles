@@ -48,5 +48,8 @@ colorscheme kuroi
 highlight Normal guibg=NONE
 highlight EndOfBuffer gui=NONE guibg=NONE
 
+" netrw settings
+let g:netrw_banner=0
+
 " Delete trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
