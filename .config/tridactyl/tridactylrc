@@ -1,0 +1,22 @@
+" vim: filetype=vim
+
+sanitize tridactyllocal tridactylsync
+
+colorscheme dark
+
+set newtab about:blank
+
+unbind <C-f>
+
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext -1
+
+set smoothscroll true
+
+" Smaller scroll steps
+bind j scrollline 5
+bind k scrollline -5
+
+guiset_quiet hoverlink right
