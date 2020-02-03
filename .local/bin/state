@@ -3,7 +3,7 @@
 set -o pipefail
 
 # state dirs
-general=(.mozilla/firefox/profile .local/share/nvim/{shada,undo,swap} .config/transmission-daemon .local/share/zathura .config/mpv/watch_later)
+general=(.mozilla/firefox/profile .local/share/nvim/{shada,undo,swap} .local/share/zathura .config/mpv/watch_later)
 # state files
 general+=(.local/share/fish/fish_history .local/share/gdb/history "$(readlink .wallpaper)")
 # secret dirs
