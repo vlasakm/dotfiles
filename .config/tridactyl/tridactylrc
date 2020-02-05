@@ -1,16 +1,17 @@
 " vim: filetype=vim
 
-sanitize tridactyllocal tridactylsync
+" sanitize tridactyllocal tridactylsync
 
 colorscheme dark
 
 set newtab about:blank
 
 unbind <C-f>
+unbind <C-b>
 
 bind / fillcmdline find
 bind ? fillcmdline find -?
-bind n findnext 1
+bind n findnext  1
 bind N findnext -1
 
 set smoothscroll true
