@@ -1,0 +1,41 @@
+#!/bin/sh
+
+case "${1%%:*}" in
+	http*)
+		exec firefox "$1"
+		;;
+	magnet)
+		if ! transmission-remote -a "$1"; then
+			transmission-daemon
+			while ! transmission-remote -a "$1"; do
+				sleep 1
+			done
+		fi
+
+		notify-send "Torrent added" "$(echo "$1" | cut -d\& -f2 | cut -d= -f2)"
+		exit
+		;;
+esac
+
+[ -r "$1" ] || exit 1
+
+case "$(xdg-mime query filetype "$1")" in
+	text/*|application/json)
+		exec alacritty -e nvim "$1"
+		;;
+	image/*)
+		exec imv "$1"
+		;;
+	audio/*|video/*)
+		exec mpv "$1"
+		;;
+	application/pdf|application/epub+zip)
+		exec zathura "$1"
+		;;
+	application/x-xpinstall)
+		exec firefox "$1"
+		;;
+	# TODO: libreoffice
+esac
+
+notify-send "Failed xdg-open" "$@"

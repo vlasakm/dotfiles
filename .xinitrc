@@ -14,7 +14,7 @@ SXHKD_SHELL=sh sxhkd -m 1 &
 polybar top &
 feh --bg-scale --no-fehbg "$HOME/.wallpaper" &
 redshift &
-"$BROWSER" &
+firefox &
 
 # execute window manager
 exec bspwm

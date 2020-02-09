@@ -2,7 +2,7 @@
 
 programs='
 alacritty:exec alacritty
-aerc:$TERMINAL aerc
+aerc:exec alacritty -e aerc
 calc:exec localc
 chromium:exec chromium
 cmus:exec cmus #
@@ -15,10 +15,10 @@ firefoxtemp:exec firefoxtemp about:blank
 geany:exec geany
 gramps:exec gramps
 gucharmap:exec gucharmap
-htop:$TERMINAL htop
+htop:exec alacritty -e htop
 idle:exec idle #
 impress:exec loimpress
-ipython:$TERMINAL ipython
+ipython:exec alacritty -e ipython
 jupyter-lab:exec jupyter-lab
 keepassxc:exec keepassxc #
 pavucontrol:exec pavucontrol

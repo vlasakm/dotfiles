@@ -1,2 +1,3 @@
 #!/bin/sh
-exec $TERMINAL tmux attach -t "$(tmux ls | dmenu | cut -d: -f1)"
+
+exec alacritty -e tmux attach -t "$(tmux ls | dmenu | cut -d: -f1)"

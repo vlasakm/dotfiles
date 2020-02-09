@@ -4,7 +4,7 @@
 
 # spawn terminal / terminal with tmux
 super + {_,shift + }Return
-	$TERMINAL tmux {new-session \; set status off \; set destroy-unattached, }
+	alacritty -e tmux {new-session \; set status off \; set destroy-unattached, }
 
 # screenshot
 Print
@@ -16,11 +16,11 @@ super + shift + {BackSpace,Escape}
 
 # launch web browser
 super + {_,shift + }w
-	"$BROWSER" { ,--private-window}
+	firefox { ,--private-window}
 
 # launch email client
 super + {_,shift + }e
-	$TERMINAL tmux new -A -s email aerc \; set status off \;
+	alacritty -e tmux new -A -s email aerc \; set status off \;
 
 # dmenu menus
 super + d ; {a,c,k,l,p}
@@ -28,11 +28,11 @@ super + d ; {a,c,k,l,p}
 
 # launch nnn
 super + n
-	$TERMINAL tmux new-session nnn -do \; set status off \; set destroy-unattached
+	alacritty -e tmux new-session nnn -do \; set status off \; set destroy-unattached
 
 # spotify client
 super + m
-	$TERMINAL tmux new -A -s music ncspot \; set status off \;
+	alacritty -e tmux new -A -s music ncspot \; set status off \;
 
 # spotify volume control
 super + {equal,plus}

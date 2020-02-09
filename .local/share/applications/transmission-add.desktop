@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Add torrent to Transmission
-Exec=/usr/bin/env transmission-add %U
