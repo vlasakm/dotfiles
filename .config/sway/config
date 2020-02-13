@@ -1,0 +1,103 @@
+set $mod Mod4
+
+output * {
+	background ~/.wallpaper center
+	#subpixel rgb
+}
+
+input * {
+	xkb_layout  "us,cz"
+	xkb_variant ",qwerty"
+	xkb_options "grp:shifts_toggle,caps:escape"
+}
+
+set $background        #101010
+set $foreground        #eeeeee
+set $foreground-bright #ffffff
+set $foreground-dimmed #a0a0a0
+
+bar {
+	position top
+
+	colors {
+		background $background
+		statusline $foreground
+		focused_workspace  $background $background $foreground-bright
+		inactive_workspace $background $background $foreground-dimmed
+	}
+}
+
+default_border pixel 1
+smart_borders on
+focus_wrapping no
+xwayland force
+
+exec redshift -m wayland
+
+client.focused   #000000 #817f7f #000000
+client.unfocused #000000 #30302f #000000
+
+bindsym --to-code {
+	$mod+Return       exec tmux_term -d
+	$mod+Shift+Return exec tmux_term -S
+	$mod+w            exec env MOZ_ENABLE_WAYLAND=1 firefox
+	$mod+Shift+w      exec env MOZ_ENABLE_WAYLAND=1 firefox --private-window
+	$mod+e            exec tmux_term -s email aerc
+	$mod+n            exec tmux_term -d nnn -do
+	$mod+m            exec tmux_term -s music ncspot
+	$mod+d            exec dmenu_launch
+	$mod+p            exec tmux_term -s ipython ipython
+	$mod+Shift+p      exec passmenu
+
+	$mod+q kill
+	$mod+f fullscreen
+	$mod+t split toggle
+
+	$mod+Shift+r         reload
+	Ctrl+Mod1+Backspace exit
+	$mod+Shift+Backspace exec systemctl suspend
+	$mod+Shift+Escape    exec systemctl poweroff
+
+	# focus in given direction
+	$mod+h focus left
+	$mod+j focus down
+	$mod+k focus up
+	$mod+l focus right
+
+	# focus next/previous in current layout
+	$mod+c       focus next
+	$mod+Shift+c focus prev
+
+	# switch to last workspace
+	$mod+Tab workspace back_and_forth
+
+	# move
+	$mod+Shift+h move left
+	$mod+Shift+j move down
+	$mod+Shift+k move up
+	$mod+Shift+l move right
+
+	# TODO: resize
+	#$mod+Mod1+h       grow width 10 px
+	#$mod+Mod1+Shift+h shrink width 10 px
+	#$mod+Mod1+j       grow height 10 px
+	#$mod+Mod1+Shift+j shrink height 10 px
+	#$mod+Mod1+k       grow height 10 px
+	#$mod+Mod1+Shift+j shrink height 10 px
+	#$mod+Mod1+l       grow width 10 px
+	#$mod+Mod1+Shift+l shrink width 10 px
+
+	# workspace
+	$mod+1       workspace 1
+	$mod+Shift+1 move container to workspace 1
+	$mod+2       workspace 2
+	$mod+Shift+2 move container to workspace 2
+	$mod+3       workspace 3
+	$mod+Shift+3 move container to workspace 3
+	$mod+4       workspace 4
+	$mod+Shift+4 move container to workspace 4
+	$mod+5       workspace 5
+	$mod+Shift+5 move container to workspace 5
+}
+
+include /etc/sway/config.d/*
