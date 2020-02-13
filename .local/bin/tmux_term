@@ -1,0 +1,16 @@
+#!/bin/sh
+
+tmux_cmds="; set status off"
+tmux_args=""
+while getopts :ds:S opt; do
+	case "$opt" in
+		d)  tmux_cmds="$tmux_cmds ; set destroy-unattached" ;;
+		S)  tmux_cmds="$tmux_cmds ; set status on" ;;
+		s)  tmux_args="$tmux_args -A -s $OPTARG" ;;
+		\?) exit 1 ;;
+	esac
+done
+shift $((OPTIND - 1))
+
+exec alacritty -e \
+	tmux new-session ${tmux_args:+$tmux_args} "$@" ${tmux_cmds:+$tmux_cmds}

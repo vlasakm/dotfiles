@@ -4,7 +4,7 @@
 
 # spawn terminal / terminal with tmux
 super + {_,shift + }Return
-	alacritty -e tmux {new-session \; set status off \; set destroy-unattached, }
+	tmux_term {-d,-S}
 
 # screenshot
 Print
@@ -20,7 +20,7 @@ super + {_,shift + }w
 
 # launch email client
 super + {_,shift + }e
-	alacritty -e tmux new -A -s email aerc \; set status off \;
+	tmux_term -s email aerc
 
 # dmenu menus
 super + d ; {a,c,l,p}
@@ -28,15 +28,15 @@ super + d ; {a,c,l,p}
 
 # launch nnn
 super + n
-	alacritty -e tmux new-session nnn -do \; set status off \; set destroy-unattached
+	tmux_term -d nnn -do
 
 # launch ipython
 super + p
-	alacritty -e tmux new -A -s ipython ipython \; set status off \;
+	tmux_term -s ipython ipython
 
 # spotify client
 super + m
-	alacritty -e tmux new -A -s music ncspot \; set status off \;
+	tmux_term -s music ncspot
 
 # spotify volume control
 super + {equal,plus}
