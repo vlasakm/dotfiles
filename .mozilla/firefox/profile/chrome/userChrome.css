@@ -1,7 +1,17 @@
 /* https://fedidat.com/640-dark-newtab-firefox/ */
+
 /* Reduce the "white flash" in new tabs */
 
-#browser vbox#appcontent tabbrowser, #content, #tabbrowser-tabpanels,
-browser[type=content-primary], browser[type=content] > html {
-				background: #101010 !important
+#browser vbox#appcontent tabbrowser,
+#content,
+#tabbrowser-tabpanels,
+browser[type=content-primary],
+browser[type=content] > html {
+  background: #101010 !important;
+}
+
+statuspanel[type="overLink"],
+#statuspanel[type="overLink"] {
+  right: 0;
+  display: inline;
 }
