@@ -30,6 +30,10 @@ super + d ; {a,c,k,l,p}
 super + n
 	alacritty -e tmux new-session nnn -do \; set status off \; set destroy-unattached
 
+# launch ipython
+super + p
+	alacritty -e tmux new -A -s ipython ipython \; set status off \;
+
 # spotify client
 super + m
 	alacritty -e tmux new -A -s music ncspot \; set status off \;

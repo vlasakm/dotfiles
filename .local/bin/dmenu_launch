@@ -1,35 +1,29 @@
 #!/bin/bash
 
-programs='
-alacritty:exec alacritty
-aerc:exec alacritty -e aerc
-calc:exec localc
-chromium:exec chromium
-cmus:exec cmus #
-code:exec code
-compton:exec compton #
-emacs:exec emacs
-emacsclient:exec emacsclient -c
-firefox:exec firefox #
-firefoxtemp:exec firefoxtemp about:blank
-geany:exec geany
-gramps:exec gramps
-gucharmap:exec gucharmap
-htop:exec alacritty -e htop
-idle:exec idle #
-impress:exec loimpress
-ipython:exec alacritty -e ipython
-jupyter-lab:exec jupyter-lab
-keepassxc:exec keepassxc #
-pavucontrol:exec pavucontrol
-polybar:exec polybar top
-reboot:exec reboot
-redshift:exec redshift
-screenshot selection:exec screenshot -s
-st:exec st
-syncthing:exec syncthing
-vlc:exec vlc #
-writer:exec lowriter
-'
+set -e
 
-eval "$(grep "^$(grep -v '#$\|^$\|^#' <<< "$programs" | cut -d ':' -f 1 | dmenu -p "run:"):" <<< "$programs" | cut -d ':' -f 2,3)"
+declare -A programs=(
+	[alacritty]=s
+	[calc]=localc
+	[chromium]=s
+	[firefoxtemp]="firefoxtemp about:blank"
+	[gramps]=s
+	[gucharmap]=s
+	[impress]=loimpress
+	[jupyter-lab]=s
+	[reboot]=s
+	[screenshot]="screenshot -s"
+	[st]=s
+	[syncthing]=s
+	[writer]=s
+)
+
+program=$(printf '%s\n' "${!programs[@]}" | sort | dmenu -p "run:")
+execute=${programs["$program"]}
+
+if [[ $execute = s ]]; then
+	# standalone program
+	exec "$program"
+fi
+
+exec $execute
