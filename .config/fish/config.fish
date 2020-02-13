@@ -5,7 +5,7 @@ if status is-interactive
 	alias cal 'cal -3 -m'
 	alias config 'git --git-dir="$HOME/.dotfiles.git/" --work-tree="$HOME"'
 	alias df 'df -h'
-	alias diff 'diff --color=auto'
+	alias diff 'diff --unified --color=always'
 	alias ffmpeg 'ffmpeg -hide_banner'
 	alias free 'free -h'
 	alias g++ 'g++ -fdiagnostics-color=always'
