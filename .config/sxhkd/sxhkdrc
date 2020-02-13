@@ -23,8 +23,8 @@ super + {_,shift + }e
 	alacritty -e tmux new -A -s email aerc \; set status off \;
 
 # dmenu menus
-super + d ; {a,c,k,l,p}
-	{dmenu_attach,dmenu_clip,dmenu_kill,dmenu_launch,passmenu}
+super + d ; {a,c,l,p}
+	{dmenu_attach,dmenu_clip,dmenu_launch,passmenu}
 
 # launch nnn
 super + n
