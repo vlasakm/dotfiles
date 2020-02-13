@@ -2,6 +2,11 @@
 
 /* Reduce the "white flash" in new tabs */
 
+* {
+  font-family: sans !important;
+  font-size: 10pt;
+}
+
 #browser vbox#appcontent tabbrowser,
 #content,
 #tabbrowser-tabpanels,
