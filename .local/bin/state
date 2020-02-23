@@ -11,7 +11,7 @@ general+=(.password-store)
 # secret files
 general+=(.ssh/hosts .config/aerc/accounts.conf)
 # machine specific dirs
-machine=(.config/syncthing/config.xml .stfolder)
+machine=(.config/syncthing/config.xml .config/transmission-daemon .stfolder)
 # machine specific files
 machine+=(.config/pulse/default.pa)
 
