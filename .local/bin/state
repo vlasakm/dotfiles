@@ -2,18 +2,35 @@
 
 set -o pipefail
 
-# state dirs
-general=(.mozilla/firefox/profile .local/share/nvim/{shada,undo,swap} .local/share/zathura .config/mpv/watch_later)
-# state files
-general+=(.local/share/fish/fish_history .local/share/gdb/history "$(readlink .wallpaper)")
-# secret dirs
-general+=(.password-store)
-# secret files
-general+=(.ssh/hosts .config/aerc/accounts.conf)
-# machine specific dirs
-machine=(.config/syncthing/config.xml .config/transmission-daemon .stfolder)
-# machine specific files
-machine+=(.config/pulse/default.pa)
+general=(
+	# state dirs
+	.mozilla/firefox/profile
+	.local/share/nvim/{shada,undo,swap}
+	.local/share/zathura
+	.config/mpv/watch_later
+
+	# state files
+	.local/share/fish/fish_history
+	.local/share/gdb/history
+	"$(readlink .wallpaper)"
+
+	# secret dirs
+	.password-store
+
+	# secret files
+	.ssh/hosts
+	.config/aerc/accounts.conf
+)
+
+machine=(
+	# machine specific dirs
+	.config/syncthing/config.xml
+	.config/transmission-daemon
+	.stfolder
+
+	# machine specific files
+	.config/pulse/default.pa
+)
 
 rsync_flags=(--archive --relative --delete --itemize-changes)
 
