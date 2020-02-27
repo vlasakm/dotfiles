@@ -1,4 +1,4 @@
-autocmd BufWritePre <buffer> call Black()
+" autocmd BufWritePre <buffer> call Black()
 
 function! Black()
 	let pos = getcurpos()

@@ -1,1 +1,1 @@
-ClangFormatAutoEnable
+" ClangFormatAutoEnable
