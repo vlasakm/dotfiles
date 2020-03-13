@@ -2,10 +2,9 @@
 
 clip="$(xclip -out)"
 
-case "$(printf '%s\n' mpv youtube-dl feh firefox img | dmenu -p "clip:")" in
+case "$(printf '%s\n' mpv youtube-dl feh firefox | dmenu -p "clip:")" in
 	mpv)        exec mpv "$clip" ;;
 	youtube-dl) exec youtube-dl "$clip" ;;
 	feh)        exec feh "$clip" ;;
 	firefox)    exec firefox "$clip" ;;
-	img)        exec img.py "$clip" ;;
 esac
