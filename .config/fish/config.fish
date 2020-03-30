@@ -2,6 +2,7 @@ set -x GPG_TTY (tty)
 
 if status is-interactive
 
+	alias bc 'bc -q'
 	alias cal 'cal -3 -m'
 	alias config 'git --git-dir="$HOME/.dotfiles.git/" --work-tree="$HOME"'
 	alias df 'df -h'
@@ -24,6 +25,7 @@ if status is-interactive
 	alias nnn 'nnn -do'
 	alias objdump ' objdump -M intel'
 	alias perldoc 'perldoc -n groff'
+	alias rsync 'rsync --no-motd'
 	alias rm 'rm -i'
 	alias vim 'nvim'
 
