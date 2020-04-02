@@ -20,9 +20,6 @@ esac
 [ -r "$1" ] || exit 1
 
 case "$(xdg-mime query filetype "$1")" in
-	text/*|application/json)
-		exec alacritty -e nvim "$1"
-		;;
 	image/*)
 		exec imv "$1"
 		;;
