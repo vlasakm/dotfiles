@@ -14,6 +14,7 @@ call plug#end()
 set hidden
 set splitbelow splitright
 set wildmode=list:longest,full
+let mapleader = " "
 
 " Input, drawing
 set lazyredraw
@@ -37,6 +38,10 @@ set scrolloff=2
 
 " Undo
 set undofile
+
+" Current directory
+" https://vimways.org/2019/vim-and-the-working-directory/
+nnoremap <leader>cd :lcd %:h<CR>
 
 " Colors
 set termguicolors " enable 24-bit colors
