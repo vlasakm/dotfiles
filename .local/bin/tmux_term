@@ -12,5 +12,5 @@ while getopts :ds:S opt; do
 done
 shift $((OPTIND - 1))
 
-exec alacritty -e \
+exec st -e \
 	tmux new-session ${tmux_args:+$tmux_args} "$@" ${tmux_cmds:+$tmux_cmds}

@@ -5,4 +5,4 @@ set -e
 session=$(tmux ls | dmenu)
 session=$(echo "$session" | cut -d: -f1)
 
-exec alacritty -e tmux attach -t "$session"
+exec st -e tmux attach -t "$session"
