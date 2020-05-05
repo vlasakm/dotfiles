@@ -12,6 +12,7 @@ general=(
 	# state files
 	.local/share/fish/fish_history
 	.local/share/gdb/history
+	.ipython/profile_default/history.sqlite
 	"$(readlink .wallpaper)"
 
 	# secret dirs
