@@ -9,6 +9,7 @@ if status is-interactive
 	alias diff 'diff --unified --color=always'
 	alias disas 'objdump -d'
 	alias ffmpeg 'ffmpeg -hide_banner'
+	alias ffprobe 'ffprobe -hide_banner'
 	alias free 'free -h'
 	alias g++ 'g++ -fdiagnostics-color=always'
 	alias gcc 'gcc -fdiagnostics-color=always'
