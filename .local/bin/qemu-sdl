@@ -1,0 +1,11 @@
+#!/bin/sh
+
+qemu-system-x86_64 \
+	-daemonize \
+	-enable-kvm \
+	-cpu host \
+	-smp 3 \
+	-m 3072 \
+	-sdl \
+	-vga virtio \
+	"$@"
