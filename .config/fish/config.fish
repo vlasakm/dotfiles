@@ -1,5 +1,3 @@
-set -x GPG_TTY (tty)
-
 if status is-interactive
 
 	alias bc 'bc -q'
@@ -99,9 +97,6 @@ if status is-login && test -z "$TMUX"
 	if ! test -S $SSH_AUTH_SOCK
 		eval (ssh-agent -c -a $SSH_AUTH_SOCK)
 	end
-
-	# Start gpg-agent and add default key
-	gpg --sign - <&- >/dev/null 2>/dev/null
 
 	# Start tmux server
 	tmux start-server &
