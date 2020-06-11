@@ -5,6 +5,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/DoxygenToolkit.vim', { 'for' : 'cpp' }
 Plug 'rhysd/vim-clang-format'
 Plug 'aonemd/kuroi.vim'
+Plug 'sheerun/vim-polyglot'
 let g:plug_shallow = 0
 " Repositories not supporting shallow clone
 Plug 'https://sanctum.geek.nz/code/vim-redact-pass.git'
