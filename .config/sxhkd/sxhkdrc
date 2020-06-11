@@ -12,7 +12,11 @@ Print
 
 # suspend / poweroff
 super + shift + {BackSpace,Escape}
-	systemctl {suspend,poweroff}
+	if [ $(pgrep -c minidlna) -gt 1 ]; then \
+		notify-send "Warning" "minidlna stream running"; \
+	else \
+		systemctl {suspend,poweroff}; \
+	fi
 
 # launch web browser
 super + {_,shift + }w
