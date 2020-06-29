@@ -2,10 +2,12 @@
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/DoxygenToolkit.vim', { 'for' : 'cpp' }
 Plug 'rhysd/vim-clang-format'
 Plug 'aonemd/kuroi.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'ziglang/zig.vim'
 let g:plug_shallow = 0
 " Repositories not supporting shallow clone
 Plug 'https://sanctum.geek.nz/code/vim-redact-pass.git'
