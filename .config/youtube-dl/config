@@ -1,2 +1,2 @@
--f bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best
+--format bestvideo[height<=?1080][fps<?50][vcodec!=vp9]+bestaudio/best[height<=?1080][fps<?50][vcodec!=vp9]
 --external-downloader aria2c
