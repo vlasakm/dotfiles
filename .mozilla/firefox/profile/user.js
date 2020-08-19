@@ -44,7 +44,7 @@ user_pref("media.peerconnection.enabled", false);
 user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
 user_pref("network.http.throttle.enable ", false);
 user_pref("privacy.donottrackheader.enabled", true);
-user_pref("signon.remembersignons", false);
+user_pref("signon.rememberSignons", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("widget.chrome.allow-gtk-dark-theme", true);
 user_pref("widget.content.allow-gtk-dark-theme", true);
