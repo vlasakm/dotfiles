@@ -14,7 +14,7 @@ user_pref("browser.fullscreen.autohide", false);
 user_pref("browser.newtabpage.enabled", false);
 user_pref("browser.search.context.loadInBackground", true);
 user_pref("browser.search.countryCode", "CZ");
-user_pref("browser.search.hiddenOneOffs", "Google,Bing,Amazon.com,DuckDuckGo,Twitter,Wikipedia (en)");
+user_pref("browser.search.hiddenOneOffs", "Google,Bing,Amazon.com,DuckDuckGo,Twitter,eBay,Wikipedia (en)");
 user_pref("browser.search.region", "CZ");
 user_pref("browser.search.suggest.enabled", false);
 user_pref("browser.startup.homepage", "about:blank");
