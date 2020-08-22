@@ -8,6 +8,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'aonemd/kuroi.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ziglang/zig.vim'
+Plug 'junegunn/fzf.vim'
 let g:plug_shallow = 0
 " Repositories not supporting shallow clone
 Plug 'https://sanctum.geek.nz/code/vim-redact-pass.git'
@@ -33,6 +34,7 @@ set relativenumber
 set ignorecase
 set smartcase
 set nohlsearch
+nnoremap <silent> <Leader>f :Files<CR>
 
 " Cursor behavior
 set nostartofline
