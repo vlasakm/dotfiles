@@ -31,8 +31,10 @@ default_border pixel 1
 smart_borders on
 focus_wrapping no
 xwayland force
+focus_follows_mouse no
 
 exec redshift -m wayland
+exec --no-startup-id ~/.config/sway/alternating_layouts.py
 
 client.focused   #000000 #817f7f #000000
 client.unfocused #000000 #30302f #000000
