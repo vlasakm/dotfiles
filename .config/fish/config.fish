@@ -18,7 +18,7 @@ if status is-interactive
 	alias la 'ls -lA'
 	alias less 'less -R'
 	alias ll 'ls -l'
-	alias llblk 'lsblk -o NAME,SIZE,FSTYPE,LABEL,MOUNTPOINT'
+	alias llblk 'lsblk -o NAME,SIZE,FSTYPE,LABEL,MOUNTPOINT,PARTUUID'
 	alias ls 'ls -hN --color=auto --group-directories-first'
 	alias n 'nnn'
 	alias nnn 'nnn -do'
@@ -90,7 +90,7 @@ if status is-login && test -z "$TMUX"
 	set -x TSAN_OPTIONS "color=always"
 
 	# Path
-	set -x PATH $HOME/.local/bin /usr/local/texlive/bin/x86_64-linux $PATH
+	set -x PATH $HOME/.local/bin $PATH
 
 	# Start ssh-agent
 	set -x SSH_AUTH_SOCK /tmp/ssh-agent.(id -un)
