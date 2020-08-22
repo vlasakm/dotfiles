@@ -29,6 +29,7 @@ user_pref("browser.urlbar.suggest.bookmark", true);
 user_pref("browser.urlbar.suggest.history", true);
 user_pref("browser.urlbar.suggest.openpage", false);
 user_pref("browser.urlbar.suggest.searches", false);
+user_pref("browser.urlbar.openViewOnFocus", false);
 user_pref("browser.warnOnQuit", false);
 user_pref("devtools.theme", "dark");
 user_pref("extensions.pocket.enabled", false);
