@@ -13,7 +13,7 @@ xbanish -i shift -i control -i mod1 -i mod4 &
 SXHKD_SHELL=sh sxhkd -m 1 &
 polybar top &
 feh --bg-scale --no-fehbg "$HOME/.wallpaper" &
-redshift -m vidmode &
+gammastep -m vidmode &
 firefox &
 
 # execute window manager
