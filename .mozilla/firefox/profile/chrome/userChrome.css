@@ -6,6 +6,7 @@
 }
 
 /* Reduce the "white flash" in new tabs */
+
 #browser vbox#appcontent tabbrowser,
 #content,
 #tabbrowser-tabpanels,

@@ -1,5 +1,6 @@
 // https://github.com/mozilla/gecko-dev/blob/master/browser/app/profile/firefox.js
 user_pref("browser.aboutConfig.showWarning", false);
+user_pref("extensions.webextensions.restrictedDomains", "");
 user_pref("browser.bookmarks.editDialog.firstEditField", "tagsField");
 user_pref("browser.bookmarks.openInTabClosesMenu", false);
 user_pref("browser.bookmarks.restore_default_bookmarks", false);
