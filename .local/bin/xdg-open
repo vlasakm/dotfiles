@@ -32,7 +32,9 @@ case "$(xdg-mime query filetype "$1")" in
 	application/x-xpinstall)
 		exec firefox "$1"
 		;;
-	# TODO: libreoffice
+	application/vnd.oasis.opendocument.*)
+		exec libreoffice "$1"
+		;;
 esac
 
 notify-send "Failed xdg-open" "$@"
