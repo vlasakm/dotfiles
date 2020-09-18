@@ -20,7 +20,7 @@ declare -A programs=(
 	[spotify]=s
 	[st]=s
 	[syncthing]=s
-	[writer]=s
+	[writer]=lowriter
 )
 
 program=$(printf '%s\n' "${!programs[@]}" | sort | dmenu -p "run:")
