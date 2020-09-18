@@ -20,6 +20,9 @@ esac
 [ -r "$1" ] || exit 1
 
 case "$(xdg-mime query filetype "$1")" in
+	text/html)
+		exec firefox "$1"
+		;;
 	image/*)
 		exec imv "$1"
 		;;
