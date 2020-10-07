@@ -1,16 +1,22 @@
 # vim: ft=msmtp
 defaults
-auth		on
-tls		on
-tls_trust_file	/etc/ssl/certs/ca-certificates.crt
-port		587
-logfile		~/.cache/msmtp.log
-
-account		gmail
-host		smtp.gmail.com
-user		lahcim8
+auth on
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+port 587
+logfile ~/.cache/msmtp.log
 # from has to be set, but is infered from 'From:'
 from
-passwordeval    "pass app/gmail/lahcim8"
 
-account default : gmail
+account      gmail
+host         smtp.gmail.com
+user         lahcim8
+from         lahcim8@gmail.com
+passwordeval "pass app/gmail/lahcim8"
+
+account      fit
+host         outlook.office365.com
+tls_starttls on
+user         vlasami6@cvut.cz
+from         vlasami6@fit.cvut.cz
+passwordeval "pass school/fit/vlasami6"

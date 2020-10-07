@@ -30,6 +30,7 @@
 
 [sendemail]
 	smtpserver = /usr/bin/msmtp
+	smtpServerOption = --read-envelope-from
 	annotate = yes
 
 [alias]

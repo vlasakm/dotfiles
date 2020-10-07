@@ -2,6 +2,7 @@ SyncState *
 Create Both
 Expunge Both
 
+
 IMAPStore gmail-remote
 Host imap.gmail.com
 User lahcim8@gmail.com
@@ -32,3 +33,49 @@ Slave :gmail-local:Spam
 Channel gmail-trash
 Master :gmail-remote:"[Gmail]/Trash"
 Slave :gmail-local:Trash
+
+Group gmail
+Channel gmail-inbox
+Channel gmail-sent
+Channel gmail-drafts
+Channel gmail-spam
+Channel gmail-trash
+
+
+IMAPStore fit-remote
+Host outlook.office365.com
+User vlasami6@cvut.cz
+PassCmd "pass school/fit/vlasami6"
+SSLType IMAPS
+
+MaildirStore fit-local
+Subfolders Verbatim
+Path ~/.mail/fit/
+Inbox ~/.mail/fit/Inbox
+
+Channel fit-inbox
+Master :fit-remote:
+Slave :fit-local:
+
+Channel fit-sent
+Master :fit-remote:"Odeslan&AOE- po&AWE-ta"
+Slave :fit-local:"Sent"
+
+Channel fit-drafts
+Master :fit-remote:Koncepty
+Slave :fit-local:Drafts
+
+Channel fit-spam
+Master :fit-remote:"Nevy&AX4A4Q-dan&AOE- po&AWE-ta"
+Slave :fit-local:Spam
+
+Channel fit-trash
+Master :fit-remote:"Odstran&ARs-n&AOE- po&AWE-ta"
+Slave :fit-local:Trash
+
+Group fit
+Channel fit-inbox
+Channel fit-sent
+Channel fit-drafts
+Channel fit-spam
+Channel fit-trash
