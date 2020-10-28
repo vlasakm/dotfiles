@@ -15,7 +15,6 @@ polybar top &
 feh --bg-scale --no-fehbg "$HOME/.wallpaper" &
 gammastep -m vidmode &
 firefox &
-spotify &
 
 # execute window manager
 exec bspwm
