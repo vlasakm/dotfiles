@@ -1,6 +1,5 @@
 [user]
 	name = Michal Vlasák
-	email = lahcim8@gmail.com
 
 [core]
 	autocrlf = input
@@ -27,6 +26,7 @@
 
 [pull]
 	rebase = true
+	ff = only
 
 [sendemail]
 	smtpserver = /usr/bin/msmtp
