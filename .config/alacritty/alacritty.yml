@@ -1,13 +1,13 @@
 window:
         padding:
-                x: 10
-                y: 6
+                x: 5
+                y: 5
 
 scrolling:
         history: 0
 
 font:
-        size: 10
+        size: 9.9
 
 colors:
         primary:
