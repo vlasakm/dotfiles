@@ -5,8 +5,6 @@ tls on
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
 port 587
 logfile ~/.cache/msmtp.log
-# from has to be set, but is infered from 'From:'
-from
 
 account      gmail
 host         smtp.gmail.com
