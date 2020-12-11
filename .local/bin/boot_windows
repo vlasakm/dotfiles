@@ -1,0 +1,6 @@
+#!/bin/sh
+
+num=$(efibootmgr | sed -nE '/Windows/ s/Boot([0-9]{4}).*/\1/p')
+
+efibootmgr -n "$num"
+reboot
