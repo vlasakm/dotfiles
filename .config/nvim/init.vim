@@ -1,3 +1,6 @@
+" disable V language, *.v is verilog
+let g:polyglot_disabled = ['v']
+
 " Plugins
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'tpope/vim-commentary'

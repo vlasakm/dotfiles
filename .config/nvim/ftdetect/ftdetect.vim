@@ -1,6 +1,3 @@
-" disable V language, *.v is verilog
-let g:polyglot_disabled = ['v']
-
 au BufNewFile,BufRead *aerc*.eml setf mail
 au BufNewFile,BufRead /tmp/* setf temporary
 
