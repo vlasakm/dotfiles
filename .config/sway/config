@@ -18,6 +18,8 @@ set $foreground-dimmed #a0a0a0
 
 bar {
 	position top
+	height 20
+	font Monospace 9
 
 	colors {
 		background $background
@@ -30,10 +32,10 @@ bar {
 default_border pixel 1
 smart_borders on
 focus_wrapping no
-xwayland force
+xwayland disable
 focus_follows_mouse no
 
-exec redshift -m wayland
+exec gammastep -m wayland
 exec --no-startup-id ~/.config/sway/alternating_layouts.py
 
 client.focused   #000000 #817f7f #000000
