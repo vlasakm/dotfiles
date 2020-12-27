@@ -97,6 +97,9 @@ if status is-login && test -z "$TMUX"
 	# Start tmux server
 	tmux start-server &
 
+	# Start aria2 daemon
+	aria2c --daemon --enable-rpc
+
 	# Start X at login on tty1
 	if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
 		exec startx -- -keeptty
