@@ -83,7 +83,6 @@ if status is-login && test -z "$TMUX"
 
 	# Application options
 	set -x NNN_USE_EDITOR "1"
-	set -x PASSWORD_STORE_CLIP_TIME "3"
 
 	# Address sanitizer options
 	set -x ASAN_OPTIONS "color=always:symbolize=1:debug=1:detect_leaks=1:strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1"
@@ -92,11 +91,8 @@ if status is-login && test -z "$TMUX"
 	# Path
 	set -x PATH $HOME/.local/bin $PATH
 
-	# Start ssh-agent
-	set -x SSH_AUTH_SOCK /tmp/ssh-agent.(id -un)
-	if ! test -S $SSH_AUTH_SOCK
-		eval (ssh-agent -c -a $SSH_AUTH_SOCK)
-	end
+	# Finish initialization of gnome keyring
+	set -x (gnome-keyring-daemon --start | string split "=")
 
 	# Start tmux server
 	tmux start-server &

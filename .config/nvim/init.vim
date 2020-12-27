@@ -12,9 +12,6 @@ Plug 'aonemd/kuroi.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ziglang/zig.vim'
 Plug 'junegunn/fzf.vim'
-let g:plug_shallow = 0
-" Repositories not supporting shallow clone
-Plug 'https://sanctum.geek.nz/code/vim-redact-pass.git'
 call plug#end()
 
 " Basic

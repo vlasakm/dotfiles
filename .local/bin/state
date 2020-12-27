@@ -15,12 +15,9 @@ general=(
 	.ipython/profile_default/history.sqlite
 	"$(readlink .wallpaper)"
 
-	# secret dirs
-	.password-store
-
 	# secret files
 	.ssh/hosts
-	.config/aerc/accounts.conf
+	.local/share/keyrings/login.keyring
 )
 
 machine=(

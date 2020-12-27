@@ -6,7 +6,7 @@ Expunge Both
 IMAPStore gmail-remote
 Host imap.gmail.com
 User lahcim8@gmail.com
-PassCmd "pass app/gmail/lahcim8"
+PassCmd "secret-tool lookup service email user lahcim8@gmail.com"
 SSLType IMAPS
 
 MaildirStore gmail-local
@@ -45,7 +45,7 @@ Channel gmail-trash
 IMAPStore fit-remote
 Host outlook.office365.com
 User vlasami6@cvut.cz
-PassCmd "pass school/fit/vlasami6"
+PassCmd "secret-tool lookup service email user vlasami6@cvut.cz"
 SSLType IMAPS
 
 MaildirStore fit-local
