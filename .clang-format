@@ -4,7 +4,7 @@ AlignAfterOpenBracket: DontAlign
 AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
 AlignConsecutiveMacros: true
-AlignEscapedNewlines: Right
+AlignEscapedNewlines: DontAlign
 AlignOperands: false
 AlignTrailingComments: false
 AllowAllArgumentsOnNextLine: false
