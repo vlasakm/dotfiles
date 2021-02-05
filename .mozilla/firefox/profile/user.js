@@ -2,8 +2,6 @@
 user_pref("browser.aboutConfig.showWarning", false);
 user_pref("browser.bookmarks.editDialog.firstEditField", "tagsField");
 user_pref("browser.bookmarks.openInTabClosesMenu", false);
-user_pref("browser.bookmarks.restore_default_bookmarks", false);
-user_pref("browser.bookmarks.showMobileBookmarks", false);
 user_pref("browser.contentblocking.category", "strict");
 user_pref("browser.ctrlTab.migrated", true);
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
@@ -21,6 +19,7 @@ user_pref("browser.tabs.closeWindowWithLastTab", true);
 user_pref("browser.tabs.extraDragSpace", true);
 user_pref("browser.tabs.insertAfterCurrent", true);
 user_pref("browser.tabs.loadBookmarksInBackground", true);
+user_pref("browser.toolbars.bookmarks.showOtherBookmarks", false);
 user_pref("browser.uidensity", 1);
 user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
 user_pref("browser.urlbar.suggest.bookmark", true);
