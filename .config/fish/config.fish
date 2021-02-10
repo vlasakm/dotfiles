@@ -22,11 +22,13 @@ if status is-interactive
 	alias ls 'ls -hN --color=auto --group-directories-first'
 	alias n 'nnn'
 	alias nnn 'nnn -do'
+	alias o 'xdg-open'
 	alias objdump ' objdump -M intel'
 	alias perldoc 'perldoc -n groff'
 	alias rsync 'rsync --no-motd'
 	alias rm 'rm -i'
 	alias vim 'nvim'
+	alias yd 'youtube-dl'
 
 	abbr -a -g ga 'git add'
 	abbr -a -g gap 'git add --patch'
@@ -37,7 +39,6 @@ if status is-interactive
 	abbr -a -g gl 'git lg'
 	abbr -a -g gst 'git status'
 	abbr -a -g gsh 'git show'
-	abbr -a -g ytdl 'youtube-dl'
 
 	set fish_greeting ''
 	set fish_key_bindings fish_default_key_bindings
