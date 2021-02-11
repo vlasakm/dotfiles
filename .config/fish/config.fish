@@ -90,7 +90,7 @@ if status is-login && test -z "$TMUX"
 	set -x TSAN_OPTIONS "color=always"
 
 	# Path
-	set -x PATH $HOME/.local/bin $PATH
+	set -x PATH $HOME/.local/bin /usr/local/texlive/bin/x86_64-linux/ $HOME/src/context/tex/texmf-linux-64/bin/ $PATH
 
 	# Finish initialization of gnome keyring
 	set -x (gnome-keyring-daemon --start | string split "=")
