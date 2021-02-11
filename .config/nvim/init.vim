@@ -6,8 +6,6 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-scripts/DoxygenToolkit.vim', { 'for' : 'cpp' }
-Plug 'rhysd/vim-clang-format'
 Plug 'aonemd/kuroi.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ziglang/zig.vim'
@@ -35,6 +33,7 @@ set ignorecase
 set smartcase
 set nohlsearch
 nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>r :Rg<CR>
 
 " Cursor behavior
 set nostartofline
@@ -57,5 +56,9 @@ highlight EndOfBuffer gui=NONE guibg=NONE
 " netrw settings
 let g:netrw_banner=0
 
-" Delete trailing whitespace on save
-autocmd BufWritePre * %s/\s\+$//e
+" Highlight trailing whitespace
+" https://stackoverflow.com/a/7255709/6184792
+highlight link ExtraWhitespace Error
+autocmd BufEnter    * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
