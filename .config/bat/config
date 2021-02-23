@@ -1,0 +1,6 @@
+--map-syntax "*.lmt:Lua"
+--map-syntax "*.mkiv:TeX"
+--map-syntax "*.mkxl:TeX"
+--map-syntax "*.mklx:TeX"
+--map-syntax "*.mkvi:TeX"
+--map-syntax "*.opm:TeX"
