@@ -71,6 +71,11 @@ if status is-interactive
 	set fish_pager_color_prefix 'white'  '--bold'  '--underline'
 	set fish_pager_color_progress 'brwhite'  '--background=cyan'
 
+	# don't search in repositories for missing commands
+	function fish_command_not_found
+	       __fish_default_command_not_found_handler $argv[1]
+	end
+
 	function fish_prompt
 		if test $status -eq 0; set status_color green; else; set status_color red; end
 		printf '%s%s%s\n%s%s%s ' (set_color -o blue) (prompt_pwd) (set_color normal) (set_color $status_color) \$ (set_color normal)
