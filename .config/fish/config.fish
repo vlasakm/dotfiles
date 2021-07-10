@@ -100,6 +100,8 @@ if status is-login && test -z "$TMUX"
 	# Finish initialization of gnome keyring
 	set -x (gnome-keyring-daemon --start | string split "=")
 
+	# https://mastransky.wordpress.com/2020/03/16/wayland-x11-how-to-run-firefox-in-mixed-environment/
+	set -x MOZ_DBUS_REMOTE 1
 
 	# Start aria2 daemon
 	aria2c --daemon --enable-rpc
