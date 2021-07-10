@@ -15,7 +15,7 @@ super + shift + {BackSpace,Escape}
 	if [ $(pgrep -c minidlna) -gt 1 ]; then \
 		notify-send "Warning" "minidlna stream running"; \
 	else \
-		systemctl {suspend,poweroff}; \
+		{echo mem | doas tee /sys/power/state,poweroff}; \
 	fi
 
 # launch web browser
@@ -44,7 +44,7 @@ super + m
 
 # spotify volume control
 super + {equal,plus}
-	pactl set-sink-input-volume $(pactl list sink-inputs | sed -En '/Sink Input #(.*)/ \{s//\1/;h\}; /application.name = "(librespot|Spotify)"/ \{x;p;q\}') {-,+}5%
+	pactl set-sink-input-volume $(pactl list sink-inputs | sed -En '/Sink Input #(.*)/ \{s//\1/;h\}; /application.name = "(librespot|Spotify)"/ \{x;p;q\}') {-,+}3%
 
 # dbus-mpris control
 super + {space,less,greater}
@@ -93,7 +93,7 @@ super + {_,shift + }{h,j,k,l}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
-        bspc node -f {next,prev}.local
+        bspc node -f {next,prev}.local.!hidden.window
 
 # focus the last node/desktop
 super + {grave,Tab}
