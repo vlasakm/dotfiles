@@ -15,24 +15,28 @@ Path ~/.mail/gmail/
 Inbox ~/.mail/gmail/Inbox
 
 Channel gmail-inbox
-Master :gmail-remote:
-Slave :gmail-local:
+Far :gmail-remote:
+Near :gmail-local:
 
 Channel gmail-sent
-Master :gmail-remote:"[Gmail]/Sent Mail"
-Slave :gmail-local:Sent
+Far :gmail-remote:"[Gmail]/Sent Mail"
+Near :gmail-local:Sent
 
 Channel gmail-drafts
-Master :gmail-remote:"[Gmail]/Drafts"
-Slave :gmail-local:Drafts
+Far :gmail-remote:"[Gmail]/Drafts"
+Near :gmail-local:Drafts
 
 Channel gmail-spam
-Master :gmail-remote:"[Gmail]/Spam"
-Slave :gmail-local:Spam
+Far :gmail-remote:"[Gmail]/Spam"
+Near :gmail-local:Spam
 
 Channel gmail-trash
-Master :gmail-remote:"[Gmail]/Trash"
-Slave :gmail-local:Trash
+Far :gmail-remote:"[Gmail]/Trash"
+Near :gmail-local:Trash
+
+Channel gmail-lists
+Far :gmail-remote:"Lists"
+Near :gmail-local:Lists
 
 Group gmail
 Channel gmail-inbox
@@ -40,6 +44,7 @@ Channel gmail-sent
 Channel gmail-drafts
 Channel gmail-spam
 Channel gmail-trash
+Channel gmail-lists
 
 
 IMAPStore fit-remote
@@ -54,24 +59,24 @@ Path ~/.mail/fit/
 Inbox ~/.mail/fit/Inbox
 
 Channel fit-inbox
-Master :fit-remote:
-Slave :fit-local:
+Far :fit-remote:
+Near :fit-local:
 
 Channel fit-sent
-Master :fit-remote:"Odeslan&AOE- po&AWE-ta"
-Slave :fit-local:"Sent"
+Far :fit-remote:"Sent Items"
+Near :fit-local:"Sent"
 
 Channel fit-drafts
-Master :fit-remote:Koncepty
-Slave :fit-local:Drafts
+Far :fit-remote:Drafts
+Near :fit-local:Drafts
 
 Channel fit-spam
-Master :fit-remote:"Nevy&AX4A4Q-dan&AOE- po&AWE-ta"
-Slave :fit-local:Spam
+Far :fit-remote:"Junk Email"
+Near :fit-local:Spam
 
 Channel fit-trash
-Master :fit-remote:"Odstran&ARs-n&AOE- po&AWE-ta"
-Slave :fit-local:Trash
+Far :fit-remote:"Deleted Items"
+Near :fit-local:Trash
 
 Group fit
 Channel fit-inbox
