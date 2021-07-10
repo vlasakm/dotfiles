@@ -21,3 +21,8 @@ bind j scrollline 5
 bind k scrollline -5
 
 guiset_quiet hoverlink right
+
+" https://github.com/BurntSushi/dotfiles/blob/master/.config/tridactyl/tridactylrc
+bind zv composite js document.location.href | exclaim_quiet mpv --loop
+
+autocmd DocStart netflix.com mode ignore
