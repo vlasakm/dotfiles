@@ -38,7 +38,7 @@ nnoremap <silent> <Leader>r :Rg<CR>
 " Cursor behavior
 set nostartofline
 set nojoinspaces
-set scrolloff=2
+set scrolloff=8
 
 " Undo
 set undofile
