@@ -100,8 +100,6 @@ if status is-login && test -z "$TMUX"
 	# Finish initialization of gnome keyring
 	set -x (gnome-keyring-daemon --start | string split "=")
 
-	# Start tmux server
-	tmux start-server &
 
 	# Start aria2 daemon
 	aria2c --daemon --enable-rpc
