@@ -4,7 +4,9 @@
 }
 
 /* Reduce the "white flash" in new tabs */
+
 /* https://fedidat.com/640-dark-newtab-firefox/ */
+
 /* https://www.reddit.com/r/firefox/comments/ahfhaq/white_flash_between_webpages/ */
 
 #browser vbox#appcontent tabbrowser,
@@ -19,4 +21,14 @@ statuspanel[type="overLink"],
 #statuspanel[type="overLink"] {
   right: 0;
   display: inline;
+}
+
+/*
+ * https://support.mozilla.org/en-US/questions/1212156
+ * Override hiding of Bookmarks Toolbar in F11 full screen
+ * when you roll down the tabs/main toolbar.
+*/
+
+#navigator-toolbox[inFullscreen="true"] #PersonalToolbar {
+  visibility: unset !important;
 }

@@ -63,5 +63,11 @@ user_pref("findbar.highlightAll", true);
 user_pref("network.IDN_show_punycode", true);
 user_pref("toolkit.cosmeticAnimations.enabled", false);
 
+// Lepton (https://github.com/black7375/Firefox-UI-Fix/blob/master/user.js)
+user_pref("browser.proton.enabled", false);
+user_pref("svg.context-properties.content.enabled", true);
+user_pref("layout.css.backdrop-filter.enabled", true);
+user_pref("browser.compactmode.show", true);
+
 // Allow non-signed extensions in dev-edition
 user_pref("xpinstall.signatures.required", false);
