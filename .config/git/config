@@ -29,6 +29,9 @@
 	rebase = true
 	ff = only
 
+[fetch]
+	prune = true
+
 [merge]
 	ff = only
 
