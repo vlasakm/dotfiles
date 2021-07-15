@@ -29,6 +29,9 @@
 	rebase = true
 	ff = only
 
+[merge]
+	ff = only
+
 [sendemail]
 	smtpserver = /usr/bin/msmtp
 	smtpServerOption = --read-envelope-from
