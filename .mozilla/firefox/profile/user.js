@@ -41,6 +41,7 @@ user_pref("media.eme.enabled", true);
 user_pref("media.hardwaremediakeys.enabled", false);
 user_pref("media.peerconnection.enabled", false);
 user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
+user_pref("mousewheel.system_scroll_override.enabled", false);
 user_pref("network.http.throttle.enable ", false);
 user_pref("privacy.donottrackheader.enabled", true);
 user_pref("signon.rememberSignons", false);
