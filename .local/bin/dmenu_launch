@@ -14,12 +14,12 @@ declare -A programs=(
 	[gucharmap]=s
 	[impress]=loimpress
 	[jupyter-lab]=s
-	[pavucontrol]=s
 	[reboot]=s
 	[screenshot]="screenshot -s"
 	[spotify]=s
 	[st]=s
 	[syncthing]=s
+	[teams]=s
 	[writer]=lowriter
 )
 
