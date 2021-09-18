@@ -34,6 +34,7 @@
 
 [merge]
 	ff = only
+	conflictStyle = diff3
 
 [sendemail]
 	smtpserver = /usr/bin/msmtp
