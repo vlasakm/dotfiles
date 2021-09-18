@@ -6,6 +6,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'aonemd/kuroi.vim', { 'commit': '6ec47dc72c5031e1ceab6ee2100a7329052d97a7' }
 Plug 'ziglang/zig.vim'
 Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " Basic
@@ -30,6 +34,10 @@ set smartcase
 set nohlsearch
 nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>r :Rg<CR>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Cursor behavior
 set nostartofline
@@ -58,3 +66,21 @@ highlight link ExtraWhitespace Error
 autocmd BufEnter    * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+
+" https://github.com/nvim-treesitter/nvim-treesitter
+lua <<EOF
+require("nvim-treesitter.configs").setup {
+  ensure_installed = "all",
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = {
+	"html", "latex",
+    },
+  },
+  indent = {
+    enable = true,
+  },
+}
+EOF
+
+lua require'plenary.filetype'.add_file('filetypes')
