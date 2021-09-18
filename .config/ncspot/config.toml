@@ -1,3 +1,5 @@
+volnorm = true
+
 [theme]
 background = "black"
 primary = "light white"
