@@ -1,14 +1,10 @@
-" disable V language, *.v is verilog
-" disable vim-sensible - rather be explicit
-let g:polyglot_disabled = ['v', 'sensible', 'autoindent']
-
 " Plugins
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'aonemd/kuroi.vim'
-Plug 'sheerun/vim-polyglot'
+Plug 'ziglang/zig.vim'
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
