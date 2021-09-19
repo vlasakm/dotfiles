@@ -20,7 +20,7 @@ general=(
 	.local/share/keyrings/login.keyring
 
 	# ordinary files
-	#archive
+	archive
 	backup
 	fit
 	media
@@ -47,24 +47,36 @@ machine=(
 rsync_flags=(--archive --relative --delete --itemize-changes)
 
 : ${host:="$(hostname)"}
-: ${remote:="${host}_phone"}
+: ${subdir:=""}
+: ${remote:="${host}_phone:"}
 
 cd
 destination="."
 
 push_files() {
+	echo PUSH "$@"
 	declare set="$1"
 	declare -n files="$2"
-	rsync "${rsync_flags[@]}" "${files[@]}" "$remote:$set/./"
+	rsync "${rsync_flags[@]}" "${files[@]}" "$remote$set/./"
 }
 
 pull_files() {
+	echo PULL "$@"
 	declare set="$1"
 	declare -n files="$2"
-	rsync "${rsync_flags[@]}" "${files[@]/#/"$remote:$set/./"}" "$destination"
+	rsync "${rsync_flags[@]}" "${files[@]/#/"$remote$set/./"}" "$destination"
 }
 
 cd
+
+while getopts :np opt; do
+	case "$opt" in
+	n) rsync_flags+=(--dry-run) ;;
+	p) rsync_flags+=(--info=progress2) ;;
+	\?) echo "invalid option '-$OPTARG'"; exit 1 ;;
+	esac
+done
+shift $(( OPTIND - 1 ))
 
 case "$1" in
 push)
