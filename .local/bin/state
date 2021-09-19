@@ -18,6 +18,20 @@ general=(
 	# secret files
 	.ssh/hosts
 	.local/share/keyrings/login.keyring
+
+	# ordinary files
+	#archive
+	backup
+	fit
+	media
+	projects
+	media/books
+	media/documents
+	media/inspiration
+	media/music
+	media/screenshots
+	media/wallpapers
+	sync
 )
 
 machine=(
