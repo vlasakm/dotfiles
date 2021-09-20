@@ -1,0 +1,24 @@
+[database]
+mail_root=/home/michal/.mail
+
+[user]
+name=Michal Vlasák
+primary_email=lahcim8@gmail.com
+other_email=lahcim8@centrum.cz;vlasami6@fit.cvut.cz
+
+[new]
+tags=unread;inbox;
+ignore=.mbsyncstate;.uidvalidity
+
+[search]
+exclude_tags=deleted;spam;
+
+[maildir]
+# Flag	Tag
+# ----	-------
+# D	draft
+# F	flagged
+# P	passed
+# R	replied
+# S	unread (added when 'S' flag is not present)
+synchronize_flags=true
