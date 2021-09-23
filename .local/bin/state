@@ -4,12 +4,13 @@ set -o pipefail
 
 general=(
 	# state dirs
-	.mozilla/firefox/profile
+	.mozilla/firefox/profile{,2}
 	.local/share/nvim/{shada,undo,swap}
 	.local/share/zathura
 	.config/mpv/watch_later
 
 	# state files
+	.local/share/notmuch
 	.local/share/fish/fish_history
 	.local/share/gdb/history
 	.ipython/profile_default/history.sqlite
@@ -22,8 +23,9 @@ general=(
 	# ordinary files
 	archive
 	backup
+	documents
 	fit
-	media
+	#media
 	projects
 	media/books
 	media/documents
@@ -44,7 +46,7 @@ machine=(
 	.config/pulse/default.pa
 )
 
-rsync_flags=(--archive --relative --delete --itemize-changes)
+rsync_flags=(--archive --keep-dirlinks --relative --delete --itemize-changes)
 
 : ${host:="$(hostname)"}
 : ${subdir:=""}
@@ -57,17 +59,20 @@ push_files() {
 	echo PUSH "$@"
 	declare set="$1"
 	declare -n files="$2"
-	rsync "${rsync_flags[@]}" "${files[@]}" "$remote$set/./"
+	rsync "${rsync_flags[@]}" "${files[@]}" "$remote"
 }
 
 pull_files() {
 	echo PULL "$@"
 	declare set="$1"
 	declare -n files="$2"
-	rsync "${rsync_flags[@]}" "${files[@]/#/"$remote$set/./"}" "$destination"
+	rsync "${rsync_flags[@]}" "${files[@]/#/"$remote"}" "$destination"
 }
 
 cd
+
+cmd="$1"
+shift
 
 while getopts :np opt; do
 	case "$opt" in
@@ -78,13 +83,13 @@ while getopts :np opt; do
 done
 shift $(( OPTIND - 1 ))
 
-case "$1" in
+case "$cmd" in
 push)
 	push_files general general
-	push_files "$host" machine
+	#push_files "$host" machine
 ;;
 pull)
 	pull_files general general
-	pull_files "$host" machine
+	#pull_files "$host" machine
 ;;
 esac
