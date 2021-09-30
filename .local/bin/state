@@ -10,7 +10,7 @@ general=(
 	.config/mpv/watch_later
 
 	# state files
-	.local/share/notmuch
+	#.local/share/notmuch
 	.local/share/fish/fish_history
 	.local/share/gdb/history
 	.ipython/profile_default/history.sqlite
