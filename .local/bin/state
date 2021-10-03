@@ -46,7 +46,7 @@ machine=(
 	.config/pulse/default.pa
 )
 
-rsync_flags=(--archive --keep-dirlinks --relative --delete --itemize-changes)
+rsync_flags=(--archive --human-readable --keep-dirlinks --relative --delete --itemize-changes)
 
 : ${host:="$(hostname)"}
 : ${subdir:=""}
