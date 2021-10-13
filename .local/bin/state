@@ -50,7 +50,7 @@ rsync_flags=(--archive --human-readable --keep-dirlinks --relative --delete --it
 
 : ${host:="$(hostname)"}
 : ${subdir:=""}
-: ${remote:="${host}_phone:"}
+: ${remote:="phobos:"}
 
 cd
 destination="."
