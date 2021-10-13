@@ -10,6 +10,7 @@ declare -A programs=(
 	[element]="element-desktop"
 	[emacs]="emacsclient -c"
 	[firefoxtemp]="firefoxtemp about:blank"
+	[foot]=s
 	[gramps]=s
 	[gucharmap]=s
 	[impress]=loimpress
