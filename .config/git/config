@@ -1,5 +1,6 @@
 [user]
 	name = Michal Vlasák
+	useConfigOnly = true
 
 [core]
 	autocrlf = input
