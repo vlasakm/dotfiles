@@ -13,6 +13,8 @@ user_pref("browser.search.countryCode", "CZ");
 user_pref("browser.search.hiddenOneOffs", "Google,Bing,Amazon.com,DuckDuckGo,Twitter,eBay,Wikipedia (en)");
 user_pref("browser.search.region", "CZ");
 user_pref("browser.search.suggest.enabled", false);
+user_pref("browser.sessionstore.max_tabs_undo", 30);
+user_pref("browser.sessionstore.max_windows_undo", 15);
 user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.startup.page", 3);
 user_pref("browser.tabs.closeWindowWithLastTab", true);
