@@ -28,7 +28,7 @@ if status is-interactive
 	alias rsync 'rsync --no-motd'
 	alias rm 'rm -i'
 	alias vim 'nvim'
-	alias yd 'youtube-dl'
+	alias yd 'yt-dlp'
 
 	abbr -a -g ga 'git add'
 	abbr -a -g gap 'git add --patch'

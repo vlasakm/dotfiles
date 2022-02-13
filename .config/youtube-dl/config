@@ -1,5 +1,0 @@
-# https://gist.github.com/AgentOak/34d47c65b1d28829bb17c24c04a0096f
-#--format bestvideo[height<=?1080][fps<?50][vcodec!=vp9]+bestaudio/best[height<=?1080][fps<?50][vcodec!=vp9]
---format ((303/299/248/137/302/298/247/136)+(251/250))/hls-1667/1667/hls-main-2176/3200/best[protocol=m3u8_native,height=576]/bestvideo[protocol=http_dash_segments,height=576]+(bestaudio[protocol=http_dash_segments,language=cze]/bestaudio[protocol=http_dash_segments,language=ces])
---external-downloader aria2c
---hls-prefer-native
