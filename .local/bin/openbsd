@@ -9,4 +9,4 @@ qemu-system-x86_64 \
 	-no-reboot \
 	-nic user,hostfwd=tcp::2222-:22 \
 	"$@" \
-	/data/michal/vm/openbsd.qcow2
+	/mnt/vm/openbsd.qcow2
