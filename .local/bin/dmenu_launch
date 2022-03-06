@@ -6,6 +6,7 @@ declare -A programs=(
 	[alacritty]=s
 	[calc]=localc
 	[chromium]=s
+	[code]=code
 	[discord]=s
 	[element]="element-desktop"
 	[emacs]="emacsclient -c"
