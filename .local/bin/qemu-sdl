@@ -6,6 +6,6 @@ qemu-system-x86_64 \
 	-cpu host \
 	-smp 3 \
 	-m 3072 \
-	-sdl \
+	-display sdl \
 	-vga virtio \
 	"$@"
