@@ -35,7 +35,7 @@ case "$(xdg-mime query filetype "$1")" in
 	application/x-xpinstall)
 		exec firefox "$1"
 		;;
-	application/vnd.oasis.opendocument.*)
+	application/vnd.oasis.opendocument.*|application/vnd.openxmlformats-officedocument.*)
 		exec libreoffice "$1"
 		;;
 esac
