@@ -36,6 +36,7 @@ user_pref("full-screen-api.transition-duration.enter", "0 0");
 user_pref("full-screen-api.transition-duration.leave", "0 0");
 user_pref("full-screen-api.warning.timeout", 0);
 user_pref("geo.enabled", false);
+user_pref("layout.css.prefers-color-scheme.content-override", 0); // https://www.reddit.com/r/firefox/comments/razjjv/firefox_950_see_all_new_features_updates_and_fixes/hnlnqpd/
 user_pref("layout.spellcheckDefault", 0);
 user_pref("layout.word_select.eat_space_to_next_word", true);
 user_pref("lightweightThemes.selectedThemeID", "firefox-compact-dark@mozilla.org");
@@ -48,8 +49,8 @@ user_pref("network.http.throttle.enable ", false);
 user_pref("privacy.donottrackheader.enabled", true);
 user_pref("signon.rememberSignons", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-user_pref("widget.chrome.allow-gtk-dark-theme", true);
-user_pref("widget.content.allow-gtk-dark-theme", true);
+//user_pref("widget.chrome.allow-gtk-dark-theme", false);
+//user_pref("widget.content.allow-gtk-dark-theme", true);
 
 // Fonts
 user_pref("font.default.x-western", "sans-serif");
