@@ -66,6 +66,8 @@ user_pref("dom.event.clipboardevents.enabled", false);
 user_pref("findbar.highlightAll", true);
 user_pref("network.IDN_show_punycode", true);
 user_pref("toolkit.cosmeticAnimations.enabled", false);
+user_pref("privacy.firstparty.isolate", true);
+//user_pref("privacy.resistFingerprinting", true); // breaks dark theme
 
 // Lepton (https://github.com/black7375/Firefox-UI-Fix/blob/master/user.js)
 user_pref("browser.proton.enabled", false);
