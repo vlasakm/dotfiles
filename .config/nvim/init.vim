@@ -5,8 +5,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'aonemd/kuroi.vim', { 'commit': '6ec47dc72c5031e1ceab6ee2100a7329052d97a7' }
 Plug 'ziglang/zig.vim'
-Plug 'junegunn/fzf.vim'
-Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -32,8 +30,6 @@ set relativenumber
 set ignorecase
 set smartcase
 set nohlsearch
-nnoremap <silent> <Leader>f :Files<CR>
-nnoremap <silent> <Leader>r :Rg<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
