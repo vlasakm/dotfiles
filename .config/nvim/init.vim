@@ -3,7 +3,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'aonemd/kuroi.vim', { 'commit': '6ec47dc72c5031e1ceab6ee2100a7329052d97a7' }
+Plug 'Mofiqul/vscode.nvim'
 Plug 'ziglang/zig.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -49,9 +49,9 @@ nnoremap <leader>cd :lcd %:h<CR>
 
 " Colors
 set termguicolors " enable 24-bit colors
-colorscheme kuroi
-highlight Normal guibg=NONE
-highlight EndOfBuffer gui=NONE guibg=NONE
+let g:vscode_style = "dark"
+let g:vscode_transparent = 1
+colorscheme vscode
 
 " netrw settings
 let g:netrw_banner=0
