@@ -72,13 +72,13 @@ set cinoptions+=:0  " align case with switch
 set cinkeys-=0#     " directives aren't special
 
 lua <<EOF
+-- https://github.com/nvim-treesitter/nvim-treesitter
 require("nvim-treesitter.configs").setup {
-  ensure_installed = "all",
+  ensure_installed = {
+    "bash", "bibtex", "c", "cmake", "cpp", "css", "dockerfile", "fish", "html", "json", "latex", "llvm", "lua", "make", "python", "rst", "rust", "scala", "toml", "vim", "zig",
+  },
   highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = {
-	"html", "latex",
-    },
+    enable = true,
   },
   indent = {
     enable = true,
