@@ -63,7 +63,13 @@ autocmd BufEnter    * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
-" https://github.com/nvim-treesitter/nvim-treesitter
+" C style
+" https://www.reddit.com/r/vim/comments/svntkt/question_about_reformattingindenting_c_code/hxh4w30/
+set cinoptions+=t0  " don't indent function type
+set cinoptions+=l1  " align with case label
+set cinoptions+=:0  " align case with switch
+set cinkeys-=0#     " directives aren't special
+
 lua <<EOF
 require("nvim-treesitter.configs").setup {
   ensure_installed = "all",
