@@ -3,6 +3,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'itchyny/lightline.vim'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'ziglang/zig.vim'
 Plug 'nvim-lua/plenary.nvim'
@@ -53,6 +54,20 @@ set termguicolors " enable 24-bit colors
 let g:vscode_style = "dark"
 let g:vscode_transparent = 1
 colorscheme vscode
+highlight ModeMsg guibg=NONE
+
+" Status line
+set noshowmode
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'filetype' ] ],
+      \ },
+      \ 'colorscheme': 'one',
+      \ }
 
 " netrw settings
 let g:netrw_banner=0
