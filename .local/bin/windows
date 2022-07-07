@@ -1,0 +1,23 @@
+#!/bin/sh
+
+	#-nic user,restrict=on \
+	#-nic user,restrict=on,guestfwd=tcp:10.0.2.2:445- \
+qemu-system-x86_64 \
+	-enable-kvm \
+	-cpu host \
+	-smp 4 \
+	-m 6120 \
+	-drive file="/mnt/vm/ie-vm/MSEdge - Win10.qcow2",if=virtio \
+	-rtc base=2021-11-16T18:44:21 \
+	-cdrom /mnt/vm/ie-vm/virtio-win-0.1.208.iso \
+	-nic user,restrict=on,smb="$HOME/fit/rev" \
+	-usb \
+	-device usb-ehci,id=ehci \
+	-device usb-tablet \
+	-monitor stdio \
+	-vga qxl \
+	-snapshot \
+	-no-shutdown \
+	"$@"
+
+# use 'commit' to write to disk and 'quit' to exit
