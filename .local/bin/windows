@@ -1,7 +1,13 @@
 #!/bin/sh
 
-	#-nic user,restrict=on \
-	#-nic user,restrict=on,guestfwd=tcp:10.0.2.2:445- \
+# https://github.com/lentinj/ie-vm
+# + virtio
+# + qemu snapshot
+# + SMB share
+
+# (optionally) use 'commit virtio0' to write to disk
+# use 'quit' to exit
+
 qemu-system-x86_64 \
 	-enable-kvm \
 	-cpu host \
@@ -20,4 +26,5 @@ qemu-system-x86_64 \
 	-no-shutdown \
 	"$@"
 
-# use 'commit' to write to disk and 'quit' to exit
+	#-nic user,restrict=on \
+	#-nic user,restrict=on,guestfwd=tcp:10.0.2.2:445- \
