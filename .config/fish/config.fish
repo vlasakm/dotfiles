@@ -21,7 +21,7 @@ if status is-interactive
 	alias llblk 'lsblk -o NAME,SIZE,FSTYPE,LABEL,MOUNTPOINT,PARTUUID'
 	alias ls 'ls -hN --color=auto --group-directories-first'
 	alias n 'nnn'
-	alias nnn 'nnn -do'
+	alias nnn 'nnn -Ado'
 	alias o 'xdg-open'
 	alias objdump ' objdump -M intel'
 	alias perldoc 'perldoc -n groff'
