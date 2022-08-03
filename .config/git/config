@@ -37,6 +37,9 @@
 	ff = only
 	conflictStyle = diff3
 
+[advice]
+	detachedHead = false
+
 [sendemail]
 	smtpserver = /usr/bin/msmtp
 	smtpServerOption = --read-envelope-from
