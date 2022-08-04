@@ -22,6 +22,7 @@ declare -A programs=(
 	[st]=s
 	[syncthing]=s
 	[teams]=s
+	[thunderbird]=s
 	[writer]=lowriter
 )
 
