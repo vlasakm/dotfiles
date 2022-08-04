@@ -55,8 +55,8 @@ bindsym --to-code {
 	$mod+p            exec tmux_term -s ipython ipython
 	$mod+Shift+p      exec passmenu
 
-	$mod+equal        exec pactl set-sink-input-volume $(pactl list sink-inputs | sed -En '/Sink Input #(.*)/ {s//\1/;h}; /application.name = "(librespot|Spotify)"/ {x;p;q}') -3%
-	$mod+plus         exec pactl set-sink-input-volume $(pactl list sink-inputs | sed -En '/Sink Input #(.*)/ {s//\1/;h}; /application.name = "(librespot|Spotify)"/ {x;p;q}') +3%
+	$mod+equal        exec pactl set-sink-input-volume $(pactl list sink-inputs | sed -En '/Sink Input #(.*)/ {s//\1/;h}; /application.name = "(ncspot|Spotify)"/ {x;p;q}') -3%
+	$mod+plus         exec pactl set-sink-input-volume $(pactl list sink-inputs | sed -En '/Sink Input #(.*)/ {s//\1/;h}; /application.name = "(ncspot|Spotify)"/ {x;p;q}') +3%
 	$mod+space        exec playerctl play-pause
 	$mod+less         exec playerctl next
 	$mod+greater      exec playerctl next

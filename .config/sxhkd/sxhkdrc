@@ -44,7 +44,7 @@ super + m
 
 # spotify volume control
 super + {equal,plus}
-	pactl set-sink-input-volume $(pactl list sink-inputs | sed -En '/Sink Input #(.*)/ \{s//\1/;h\}; /application.name = "(librespot|Spotify)"/ \{x;p;q\}') {-,+}3%
+	pactl set-sink-input-volume $(pactl list sink-inputs | sed -En '/Sink Input #(.*)/ \{s//\1/;h\}; /application.name = "(ncspot|Spotify)"/ \{x;p;q\}') {-,+}3%
 
 # dbus-mpris control
 super + {space,less,greater}
