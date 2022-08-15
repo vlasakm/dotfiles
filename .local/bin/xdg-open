@@ -23,14 +23,14 @@ case "$(xdg-mime query filetype "$1")" in
 	text/html)
 		exec firefox "$1"
 		;;
+	application/pdf|application/epub+zip|image/vnd.djvu)
+		exec zathura "$1"
+		;;
 	image/*)
 		exec imv "$1"
 		;;
 	audio/*|video/*)
 		exec mpv "$1"
-		;;
-	application/pdf|application/epub+zip)
-		exec zathura "$1"
 		;;
 	application/x-xpinstall)
 		exec firefox "$1"
