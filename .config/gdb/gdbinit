@@ -5,3 +5,4 @@ set print asm-demangle on
 set history save on
 set history filename ~/.local/share/gdb/history
 set disassembly-flavor intel
+add-auto-load-safe-path /home/michal/src/linux/scripts/gdb/vmlinux-gdb.py
