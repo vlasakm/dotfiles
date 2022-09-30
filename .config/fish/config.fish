@@ -11,7 +11,6 @@ if status is-interactive
 	alias free 'free -h'
 	alias g++ 'g++ -fdiagnostics-color=always'
 	alias gcc 'gcc -fdiagnostics-color=always'
-	alias gdb 'gdb -q'
 	alias grep 'grep --color=auto'
 	alias info 'info --vi-keys'
 	alias l 'll'
