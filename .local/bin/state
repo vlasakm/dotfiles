@@ -5,6 +5,7 @@ set -o pipefail
 general=(
 	# state dirs
 	.mozilla/firefox/profile{,2}
+	.thunderbird
 	.local/share/nvim/{shada,undo,swap}
 	.local/share/zathura
 	.config/mpv/watch_later
@@ -45,7 +46,7 @@ machine=(
 	.config/pulse/default.pa
 )
 
-rsync_flags=(--archive --human-readable --keep-dirlinks --relative --delete --itemize-changes)
+rsync_flags=(--archive --human-readable --keep-dirlinks --links --relative --delete --itemize-changes)
 
 : ${host:="$(hostname)"}
 : ${subdir:=""}
