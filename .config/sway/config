@@ -11,6 +11,12 @@ input * {
 	xkb_options "grp:shifts_toggle,caps:escape"
 }
 
+input type:touchpad {
+        #tap enabled
+        natural_scroll enabled
+}
+
+
 set $background        #101010
 set $foreground        #eeeeee
 set $foreground-bright #ffffff
