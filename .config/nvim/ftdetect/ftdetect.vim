@@ -6,6 +6,7 @@ au BufNewFile,BufRead etex.src setf tex
 au BufNewFile,BufRead *.ins setf tex
 au BufNewFile,BufRead *.lfg setf lua
 au BufNewFile,BufRead *.lmt setf lua
+au BufNewFile,BufRead *.fml setf fml
 
 
 " override filetype.vim
