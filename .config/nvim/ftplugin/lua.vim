@@ -1,3 +1,3 @@
 set shiftwidth=4
 set expandtab
-set colorcolumn=100
+set colorcolumn=101
