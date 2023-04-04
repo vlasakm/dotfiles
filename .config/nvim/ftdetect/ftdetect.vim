@@ -9,6 +9,7 @@ au BufNewFile,BufRead *.lmt setf lua
 au BufNewFile,BufRead *.fml setf fml
 
 au BufNewFile,BufRead *.dasc setf c
+au BufNewFile,BufRead *.dash setf c
 
 " override filetype.vim
 au BufNewFile,BufRead *.am set ft=automake
