@@ -7,6 +7,7 @@ set history filename ~/.local/share/gdb/history
 set disassembly-flavor intel
 set debuginfod enabled off
 add-auto-load-safe-path ~/src/linux/scripts/gdb/vmlinux-gdb.py
+add-auto-load-safe-path /usr/lib/libthread_db.so.1
 
 # https://www.reddit.com/r/C_Programming/comments/zr5g1c/please_help_setup_a_basic_c_project/j11tu9a/
 set environment  ASAN_OPTIONS color=always:abort_on_error=1:halt_on_error=1:symbolize=1:debug=1:detect_leaks=0:strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1
