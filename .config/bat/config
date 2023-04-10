@@ -4,3 +4,5 @@
 --map-syntax "*.mklx:TeX"
 --map-syntax "*.mkvi:TeX"
 --map-syntax "*.opm:TeX"
+--map-syntax "*.dasc:C"
+--map-syntax "*.dash:C"
