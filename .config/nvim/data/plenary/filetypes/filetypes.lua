@@ -5,5 +5,7 @@ return {
     ['lmt'] = 'lua',
     ['mkxl'] = 'context',
     ['mklx'] = 'context',
+    ['dasc'] = 'c',
+    ['dash'] = 'c',
   },
 }
