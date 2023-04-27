@@ -1,4 +1,6 @@
 set confirm off
+set verbose off
+set print thread-events off
 set pagination off
 set print pretty on
 set print asm-demangle on
