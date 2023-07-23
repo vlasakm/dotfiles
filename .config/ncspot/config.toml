@@ -1,4 +1,5 @@
 volnorm = true
+backend = "pulseaudio"
 
 [theme]
 background = "black"
