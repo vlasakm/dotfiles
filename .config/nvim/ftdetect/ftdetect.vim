@@ -7,6 +7,7 @@ au BufNewFile,BufRead *.ins setf tex
 au BufNewFile,BufRead *.lfg setf lua
 au BufNewFile,BufRead *.lmt setf lua
 au BufNewFile,BufRead *.fml setf fml
+au BufNewFile,BufRead *.lalrpop setf lalrpop
 
 au BufNewFile,BufRead *.dasc setf c
 au BufNewFile,BufRead *.dash setf c
