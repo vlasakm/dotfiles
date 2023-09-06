@@ -5,3 +5,4 @@
 --hls-prefer-native
 --no-mtime
 --playlist-items=-1
+--legacy-server-connect
