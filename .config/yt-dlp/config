@@ -6,3 +6,4 @@
 --no-mtime
 --playlist-items=-1
 --legacy-server-connect
+--netrc
