@@ -22,19 +22,7 @@ set $foreground        #eeeeee
 set $foreground-bright #ffffff
 set $foreground-dimmed #a0a0a0
 
-bar {
-	position top
-	height 20
-	font Monospace 9
-	status_command while date +" %Y-%m-%d  %H:%M"; do sleep 10; done
-
-	colors {
-		background $background
-		statusline $foreground
-		focused_workspace  $background $background $foreground-bright
-		inactive_workspace $background $background $foreground-dimmed
-	}
-}
+bar swaybar_command waybar
 
 default_border pixel 1
 smart_borders on
