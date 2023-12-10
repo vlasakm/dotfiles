@@ -5,7 +5,7 @@
 
     "modules-left": [
       "sway/workspaces",
-      "sway/mode",
+      "hyprland/workspaces"
     ],
 
     "modules-center": [],
@@ -27,6 +27,11 @@
       "all-outputs": false,
       "disable-scroll-wraparound": true,
       "enable-bar-scroll": true,
+      "format": "{index}",
+    },
+
+    "hyprland/workspaces": {
+      "all-outputs": false,
       "format": "{index}",
     },
 
