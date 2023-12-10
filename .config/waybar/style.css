@@ -1,0 +1,41 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: monospace;
+    font-size: 9pt;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #101010;
+    color: #eeeeee;
+}
+
+tooltip {
+    background: #101010;
+    border: 2px solid #303030;
+}
+tooltip label {
+    color: #eeeeee;
+}
+
+#workspaces button {
+    color: #a0a0a0;
+    padding: 0 2px;
+}
+
+#workspaces button.urgent {
+    color: #bd2c40;
+}
+
+#workspaces button.visible {
+    color: #ffffff;
+}
+
+widget > label {
+    padding: 0 6px;
+}
+
+.modules-right > widget:last-child > label {
+    padding-right: 2px;
+}

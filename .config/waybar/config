@@ -1,0 +1,84 @@
+[
+  {
+    "position": "top",
+    "height": 20,
+
+    "modules-left": [
+      "sway/workspaces",
+      "sway/mode",
+    ],
+
+    "modules-center": [],
+
+    "modules-right": [
+      "tray",
+      "mpris",
+      "battery",
+      "pulseaudio",
+      "sway/language",
+      "network",
+      "clock#date",
+      "clock#time",
+    ],
+
+
+
+    "sway/workspaces": {
+      "all-outputs": false,
+      "disable-scroll-wraparound": true,
+      "enable-bar-scroll": true,
+      "format": "{index}",
+    },
+
+    "tray": {
+      "icon-size": 16,
+      "spacing": 10,
+    },
+
+    "mpris": {
+      "format": " {artist} - {title}",
+    },
+
+    "battery": {
+      "interval": 60,
+      "states": {
+        "critical": 15,
+        "warning": 30,
+      },
+      "format": "{icon} {capacity}%",
+      "format-icons": [ "", "", "", "", "" ],
+    },
+
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{icon} {volume}%",
+      "format-muted": "",
+      "format-icons": {
+        "default": [ "", "" ],
+      },
+    },
+
+    "sway/language": {
+      "format": " {short}",
+    },
+
+    "network": {
+      "interface": "wlan*",
+      "interval": 20,
+      "format-wifi": " {essid}",
+      "format-disconnected": "⚠ ",
+      "tooltip-format": "{ifname}: {ipaddr}, {signalStrength}",
+    },
+
+    "clock#date": {
+      "interval": 10,
+      "format": " {:%Y-%m-%d}",
+    },
+
+    "clock#time": {
+      "interval": 1,
+      "format": " {:%H:%M}",
+      "tooltip": false,
+    },
+  }
+]
