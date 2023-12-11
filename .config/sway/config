@@ -1,7 +1,7 @@
 set $mod Mod4
 
 output * {
-	background ~/.wallpaper center
+	background ~/.wallpaper fill
 	#subpixel rgb
 }
 
