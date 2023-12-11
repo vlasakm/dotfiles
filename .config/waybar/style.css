@@ -3,7 +3,7 @@
     border-radius: 0;
     font-family: monospace;
     font-size: 9pt;
-    min-height: 0;
+    min-height: 1.5em;
 }
 
 window#waybar {
@@ -13,7 +13,7 @@ window#waybar {
 
 tooltip {
     background: #101010;
-    border: 2px solid #303030;
+    border: 0.1em solid #303030;
 }
 tooltip label {
     color: #eeeeee;
@@ -21,7 +21,7 @@ tooltip label {
 
 #workspaces button {
     color: #a0a0a0;
-    padding: 0 2px;
+    padding: 0 0.1em;
 }
 
 #workspaces button.urgent {
@@ -33,9 +33,9 @@ tooltip label {
 }
 
 widget > label {
-    padding: 0 6px;
+    padding: 0 0.5em;
 }
 
 .modules-right > widget:last-child > label {
-    padding-right: 2px;
+    padding-right: 0.1em;
 }
