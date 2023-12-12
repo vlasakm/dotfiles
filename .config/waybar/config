@@ -11,9 +11,8 @@
 
     "modules-right": [
       "tray",
-      "mpris",
-      "battery",
       "pulseaudio",
+      "battery",
       "sway/language",
       "network",
       "clock#date",
