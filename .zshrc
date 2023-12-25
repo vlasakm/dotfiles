@@ -156,12 +156,6 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
-# GUIX_PROFILE="/home/michal/.guix-profile"
-# . "$GUIX_PROFILE/etc/profile"
-
-# GUIX_PROFILE="/home/michal/.config/guix/current"
-# . "$GUIX_PROFILE/etc/profile"
-
 # End of arch wiki
 
 # must be at end (https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
