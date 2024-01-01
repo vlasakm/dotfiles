@@ -30,6 +30,8 @@ focus_wrapping no
 xwayland force
 focus_follows_mouse no
 
+bindswitch --reload --locked lid:on exec swaylock -f
+
 exec gammastep -m wayland
 exec mako
 exec ~/.config/sway/alternating_layouts.py
