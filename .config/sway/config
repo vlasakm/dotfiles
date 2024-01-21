@@ -5,6 +5,10 @@ output * {
 	#subpixel rgb
 }
 
+output 'BOE 0x0AE0 Unknown' scale 1.4
+output "Dell Inc. DELL P2723QE 1MKZGZ3" scale 1
+output DP-1 scale 2
+
 input * {
 	xkb_layout  "us,cz"
 	xkb_variant ",qwerty"
