@@ -7,7 +7,7 @@ output * {
 
 output 'BOE 0x0AE0 Unknown' scale 1.4
 output "Dell Inc. DELL P2723QE 1MKZGZ3" scale 1
-output DP-1 scale 2
+output 'BNQ BenQ PD2700U ETL2P02436SL0' scale 2
 
 input * {
 	xkb_layout  "us,cz"
