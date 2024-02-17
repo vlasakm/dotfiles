@@ -18,7 +18,7 @@
 	defaultBranch = master
 
 [diff]
-	algorithm = patience
+	algorithm = histogram
 
 [commit]
 	verbose = true
