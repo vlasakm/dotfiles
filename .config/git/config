@@ -38,7 +38,7 @@
 
 [merge]
 	ff = only
-	# conflictStyle = diff3
+	conflictStyle = zdiff3
 
 [advice]
 	detachedHead = false
