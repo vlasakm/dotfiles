@@ -97,10 +97,8 @@ if status is-login && test -z "$TMUX"
 	set -x PATH $HOME/.local/bin $HOME/src/texlive/bin/x86_64-linux/ $HOME/src/context/tex/texmf-linux-64/bin/ $HOME/.cargo/bin $PATH
 
 	# Finish initialization of gnome keyring
-	#set -x (gnome-keyring-daemon --start | string split "=")
-	gnome-keyring-daemon --start >/dev/null 2>/dev/null
 	set -x GNOME_KEYRING_CONTROL "$XDG_RUNTIME_DIR/keyring"
-	set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/keyring/ssh"
+	set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/gcr/ssh"
 
 	# https://mastransky.wordpress.com/2020/03/16/wayland-x11-how-to-run-firefox-in-mixed-environment/
 	set -x MOZ_DBUS_REMOTE 1
