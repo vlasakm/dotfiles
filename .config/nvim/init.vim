@@ -94,6 +94,9 @@ autocmd BufEnter    * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
+" Enable back the "swapfile error": https://github.com/neovim/neovim/pull/25336
+autocmd! nvim_swapfile
+
 lua <<EOF
 -- https://github.com/nvim-treesitter/nvim-treesitter
 require("nvim-treesitter.configs").setup {
