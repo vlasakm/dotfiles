@@ -97,6 +97,10 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 " Enable back the "swapfile error": https://github.com/neovim/neovim/pull/25336
 autocmd! nvim_swapfile
 
+" Subset of https://github.com/tpope/vim-unimpaired
+nnoremap [q <cmd>cprev<cr>
+nnoremap ]q <cmd>cnext<cr>
+
 lua <<EOF
 -- https://github.com/nvim-treesitter/nvim-treesitter
 require("nvim-treesitter.configs").setup {
